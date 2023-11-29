@@ -1,0 +1,24 @@
+.Header {
+	width: 70vw;
+	margin: 20px auto;
+
+	border: 1px solid black;
+	display: flex;
+	justify-content: space-between;
+
+	h1 {
+		padding-left: 20px;
+		font-size: 1rem;
+		display: flex;
+		align-items: center;
+	}
+	ul {
+		display: flex;
+		align-items: center;
+
+		li {
+			font-size: 0.8rem;
+			padding: 20px;
+		}
+	}
+}
