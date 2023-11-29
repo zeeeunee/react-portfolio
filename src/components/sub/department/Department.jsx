@@ -1,9 +1,10 @@
+import Layout from '../../common/layout/Layout';
 import './Department.scss';
 
 export default function Department() {
 	return (
-		<main className='Department Layout'>
-			<h1>Department</h1>
-		</main>
+		<Layout title={'Department'}>
+			<p>department내용</p>
+		</Layout>
 	);
 }
