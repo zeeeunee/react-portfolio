@@ -1,0 +1,74 @@
+.Department {
+	width: 70vw;
+	margin: 0 auto;
+
+	.historyBox {
+		width: 100%;
+		margin: 0 auto;
+		padding: 30px;
+
+		.con {
+			width: 100%;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+
+			article {
+				width: 30%;
+				padding: 0 20px;
+				border-left: 1px solid black;
+			}
+		}
+	}
+
+	h2 {
+		width: 100%;
+		font-size: 2rem;
+	}
+	.memberBox {
+		width: 100%;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	.leftBox {
+		width: 40%;
+		padding: 50px;
+		background-color: rgba(255, 255, 0, 0.815);
+		display: flex;
+		flex-wrap: wrap;
+		align-content: space-between;
+		h3 {
+			font-size: 8rem;
+		}
+		p {
+			font-size: 1.6rem;
+		}
+	}
+
+	.memberPics {
+		width: 60%;
+		display: flex;
+		flex-wrap: wrap;
+
+		article {
+			width: 33.3%;
+			display: flex;
+			flex-wrap: wrap;
+			overflow: hidden;
+
+			img {
+				width: 100%;
+				object-fit: cover;
+
+				cursor: pointer;
+			}
+
+			.memberDetail {
+				position: absolute;
+				color: #fff;
+			}
+		}
+	}
+}
