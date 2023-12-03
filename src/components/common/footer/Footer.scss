@@ -1,4 +1,71 @@
 .Footer {
 	width: 70vw;
 	margin: 0 auto;
+	padding: 40px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	border: 1px solid var(--bgColor);
+
+	.FooterBox1 {
+		width: 30%;
+		h1 {
+			margin: 10px;
+			font-size: 1rem;
+		}
+		p {
+			margin: 10px;
+			font-size: var(--bodySize2);
+		}
+	}
+	.FooterBox2 {
+		width: 15%;
+		h2 {
+			margin: 10px;
+			font-size: 1rem;
+		}
+		ul {
+			margin: 10px;
+			font-size: var(--bodySize2);
+			li {
+				margin-bottom: 5px;
+			}
+		}
+	}
+	.FooterBox3 {
+		width: 15%;
+		h2 {
+			margin: 10px;
+			font-size: 1rem;
+		}
+		ul {
+			margin: 10px;
+			font-size: var(--bodySize2);
+			li {
+				margin-bottom: 5px;
+			}
+		}
+	}
+	.FooterBox4 {
+		width: 30%;
+		h2 {
+			margin: 10px;
+			font-size: 1rem;
+		}
+		ul {
+			margin: 10px;
+			font-size: var(--bodySize2);
+			li {
+				margin-bottom: 5px;
+			}
+		}
+	}
+	.Copy {
+		width: 100%;
+		border-top: 1px solid var(--baseColor);
+		font-size: var(--bodySize2);
+		padding: 30px;
+		display: flex;
+		justify-content: center;
+	}
 }

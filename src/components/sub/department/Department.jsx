@@ -53,6 +53,7 @@ export default function Department() {
 				</div>
 			</section>
 			<h2>{MemberTit}</h2>
+			<h3>A team United by shared values</h3>
 			<section className='memberBox'>
 				<div className='leftBox'>
 					<h3>6</h3>
