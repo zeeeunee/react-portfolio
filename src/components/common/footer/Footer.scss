@@ -17,6 +17,12 @@
 			margin: 10px;
 			font-size: var(--bodySize2);
 		}
+		ul {
+			font-size: var(--bodySize2);
+			display: flex;
+			margin: 10px;
+			gap: 10px;
+		}
 	}
 	.FooterBox2 {
 		width: 15%;

@@ -10,19 +10,25 @@ import Youtube from './components/sub/youtube/Youtube';
 import { Route } from 'react-router-dom';
 import './globalStyles/Variables.scss';
 import './globalStyles/Reset.scss';
+import { useState } from 'react';
+import { useMedia } from './hooks/useMedia';
 
 function App() {
+	const [Dark, setDark] = useState(false);
+
 	return (
 		<>
-			<Header />
-			<Route exact path='/' component={MainWrap} />
-			<Route path='/department' component={Department} />
-			<Route path='/youtube' component={Youtube} />
-			<Route path='/gallery' component={Gallery} />
-			<Route path='/community' component={Community} />
-			<Route path='/members' component={Members} />
-			<Route path='/contact' component={Contact} />
-			<Footer />
+			<div className={`wrap ${Dark ? 'dark' : ''} ${useMedia()}`}>
+				<Header Dark={Dark} setDark={setDark} />
+				<Route exact path='/' component={MainWrap} />
+				<Route path='/department' component={Department} />
+				<Route path='/youtube' component={Youtube} />
+				<Route path='/gallery' component={Gallery} />
+				<Route path='/community' component={Community} />
+				<Route path='/members' component={Members} />
+				<Route path='/contact' component={Contact} />
+				<Footer />
+			</div>
 		</>
 	);
 }

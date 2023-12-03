@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&family=Orbitron&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=PT+Serif&display=swap');
 
 :root {
-	--baseFont: 'Nanum Myeongjo', 'arial', '돋움';
-	--pointFont: 'orbitron', 'arial';
+	--baseFont: 'PT Serif', 'arial', '돋움';
+	--pointFont: 'DM Serif Display', 'arial';
 	--baseColor: #111;
 	--pointColor: hotpink;
 	--bgColor: #efefef;
@@ -13,4 +13,9 @@
 	--titSize2: 2rem;
 	--pointSize: 8rem;
 	--pointSize2: 1.6rem;
+}
+
+.dark {
+	--baseColor: #fff;
+	--bgColor: #222;
 }

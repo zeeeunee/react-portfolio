@@ -1,4 +1,5 @@
 import './Footer.scss';
+import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa';
 
 export default function Footer() {
 	return (
@@ -10,6 +11,17 @@ export default function Footer() {
 					Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti deserunt ratione dignissimos, maiores sint enim rerum iusto temporibus
 					autem provident distinctio.
 				</p>
+				<ul>
+					<li>
+						<FaInstagram />
+					</li>
+					<li>
+						<FaTwitter />
+					</li>
+					<li>
+						<FaFacebook />
+					</li>
+				</ul>
 			</div>
 			<div className='FooterBox2'>
 				<h2>Helpful Links</h2>
