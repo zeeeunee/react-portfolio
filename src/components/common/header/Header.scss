@@ -5,7 +5,7 @@
 	justify-content: space-between;
 
 	h1 {
-		padding-left: 20px;
+		padding: 20px;
 		font-size: var(--logoSize);
 		font-family: var(--pointFont);
 		display: flex;
@@ -16,8 +16,8 @@
 		align-items: center;
 
 		li {
+			padding: 10px;
 			font-size: var(--bodySize2);
-			padding: 20px;
 		}
 		a.on {
 			padding: 20px;
@@ -44,7 +44,7 @@
 			left: 2px;
 			transition: 0.7s;
 		}
-		.menuTolggle {
+		.menuToggle {
 			display: none;
 		}
 	}
@@ -58,11 +58,8 @@
 	.Header {
 		ul {
 			display: none;
-			li {
-				padding: 8px;
-			}
 		}
-		.menuTolggle {
+		.menuToggle {
 			display: block;
 		}
 	}
