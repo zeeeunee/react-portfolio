@@ -1,7 +1,7 @@
 .Header {
 	width: 70vw;
 	margin: 0px auto;
-	border: 1px solid var(--baseColor);
+	// border: 1px solid var(--baseColor);
 	display: flex;
 	justify-content: space-between;
 
@@ -19,6 +19,10 @@
 		li {
 			font-size: var(--bodySize2);
 			padding: 20px;
+		}
+		a.on {
+			padding: 20px;
+			background-color: var(--pointColor);
 		}
 	}
 	.themeBox {
