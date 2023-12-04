@@ -3,9 +3,32 @@
 	margin: 100px auto;
 	font-family: var(--baseFont);
 	min-height: 60vh;
+	opacity: 0;
+	transform: translateY(200px);
+	transition: opacity 1s, transform 1s;
+
 	h1 {
 		font-size: 4rem;
 		font-weight: normal;
+
+		span {
+			font-size: 5rem;
+			display: inline-block;
+			transform: scale(4);
+			opacity: 0;
+			transition-property: opacity, transform;
+		}
+	}
+	&.on {
+		opacity: 1;
+		transform: translateY(0px);
+
+		h1 {
+			span {
+				opacity: 1;
+				transform: scale(1);
+			}
+		}
 	}
 }
 .tablet {
