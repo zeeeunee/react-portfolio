@@ -1,7 +1,6 @@
 .Header {
 	width: 70vw;
 	margin: 0px auto;
-	// border: 1px solid var(--baseColor);
 	display: flex;
 	justify-content: space-between;
 
@@ -45,6 +44,9 @@
 			left: 2px;
 			transition: 0.7s;
 		}
+		.menuTolggle {
+			display: none;
+		}
 	}
 	.themeBox.dark {
 		.ball {
@@ -55,9 +57,13 @@
 .tablet {
 	.Header {
 		ul {
+			display: none;
 			li {
 				padding: 8px;
 			}
+		}
+		.menuTolggle {
+			display: block;
 		}
 	}
 }
