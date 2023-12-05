@@ -1,0 +1,95 @@
+.Youtube {
+	width: 70vw;
+	margin: 50px auto;
+	.YoutubeData {
+		width: 100%;
+		margin: 100px auto;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+
+		.box1 {
+			width: 40%;
+			padding: 50px;
+			background-color: var(--pointColor);
+			margin-bottom: 50px;
+
+			h3 {
+				font-size: (--bodySize1);
+				margin-bottom: 40px;
+			}
+			p {
+				font-size: var(--bodySize2);
+				word-break: break-all;
+			}
+		}
+		.box2 {
+			width: 40%;
+			padding: 50px;
+			background-color: var(--pointColor2);
+			margin-bottom: 50px;
+			h3 {
+				font-size: var(--bodySize1);
+				margin-bottom: 40px;
+			}
+			p {
+				font-size: var(--bodySize2);
+				word-break: break-all;
+			}
+		}
+	}
+	article {
+		width: 25%;
+		margin-bottom: 70px;
+		.pic {
+			width: 100%;
+
+			img {
+				width: 100%;
+				height: 100%;
+			}
+		}
+		.infoBox {
+			width: 100%;
+			font-size: var(--bodySize2);
+			color: var(--baseColor);
+			display: flex;
+			justify-content: space-between;
+		}
+		.txt {
+			width: 100%;
+			word-break: break-all;
+			h2 {
+				font-size: var(--bodySize1);
+				color: var(--baseColor);
+				margin: 10px 0;
+			}
+			p {
+				font-size: var(--bodySize2);
+				color: var(--baseColor);
+			}
+		}
+	}
+}
+
+.tablet {
+	.Youtube {
+		width: 80vw;
+	}
+}
+
+.mobile {
+	.Youtube {
+		.YoutubeData {
+			.box1 {
+				width: 100%;
+			}
+			.box2 {
+				width: 100%;
+			}
+		}
+		article {
+			width: 100%;
+		}
+	}
+}

@@ -6,13 +6,13 @@ import Contact from './components/sub/contact/Contact';
 import Department from './components/sub/department/Department';
 import Gallery from './components/sub/gallery/Gallery';
 import Members from './components/sub/members/Members';
-import Youtube from './components/sub/youtube/Youtube';
 import { Route } from 'react-router-dom';
 import './globalStyles/Variables.scss';
 import './globalStyles/Reset.scss';
 import { useState } from 'react';
 import { useMedia } from './hooks/useMedia';
 import Menu from './components/common/menu/Menu';
+import Youtube from './components/sub/youtube/Youtube';
 import Detail from './components/sub/youtube/Detail';
 
 function App() {

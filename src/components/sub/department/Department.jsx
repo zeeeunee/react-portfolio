@@ -48,7 +48,7 @@ export default function Department() {
 			{/* <h2>{HistoryTit}</h2> */}
 
 			<div className='historyYellow'>
-				<section className='yellow'>
+				<section className='yellowImage'>
 					{YellowImage.map((yellow, idx) => {
 						return (
 							<article key={yellow + idx}>

@@ -15,7 +15,7 @@
 		display: flex;
 		flex-wrap: wrap;
 
-		.yellow {
+		.yellowImage {
 			width: 50%;
 			display: flex;
 			article {
@@ -61,6 +61,8 @@
 				height: 100px;
 				padding: 0 20px;
 				align-items: center;
+				display: flex;
+				justify-content: center;
 
 				&:nth-of-type(odd) {
 					display: flex;
@@ -144,6 +146,7 @@
 				}
 
 				.memberDetail {
+					background-color: rgba(var(--pointColor), transparent);
 					color: #fff;
 					font-size: var(--bodySize2);
 				}
@@ -160,6 +163,21 @@
 
 .tablet {
 	.Department {
+		.historyYellow {
+			.yellowImage {
+				width: 100%;
+
+				article {
+					width: 100%;
+					height: 300px;
+					margin: 7px;
+				}
+			}
+			.yellowRightBox {
+				width: 100%;
+			}
+		}
+
 		.memberBox {
 			justify-content: center;
 			.leftBox {
@@ -177,6 +195,44 @@
 
 .mobile {
 	.Department {
+		.historyYellow {
+			.yellowImage {
+				width: 100%;
+
+				article {
+					width: 100%;
+					height: 300px;
+					margin: 7px;
+				}
+			}
+			.yellowRightBox {
+				width: 100%;
+			}
+		}
+
+		.historyBox {
+			width: 100%;
+			margin: 80px auto;
+
+			.con {
+				border-left: 1px solid var(--baseColor);
+				article {
+					width: 100%;
+
+					&:nth-of-type(odd) {
+						justify-content: flex-start;
+						border-right: none;
+						margin-right: 0;
+					}
+
+					&:nth-of-type(even) {
+						justify-content: flex-start;
+						border-left: none;
+						margin-left: 0;
+					}
+				}
+			}
+		}
 		.memberBox {
 			.leftBox {
 				width: 100%;
@@ -185,6 +241,7 @@
 				width: 100%;
 				article {
 					width: 100%;
+					height: 300px;
 				}
 			}
 		}

@@ -1,5 +1,6 @@
 import './Header.scss';
 import { NavLink, Link } from 'react-router-dom';
+import { TiThMenu } from 'react-icons/ti';
 
 export default function Header({ Dark, setDark, Toggle, setToggle }) {
 	return (
@@ -39,12 +40,12 @@ export default function Header({ Dark, setDark, Toggle, setToggle }) {
 					</NavLink>
 				</li>
 			</ul>
+			<button className='menuToggle' onClick={() => setToggle(!Toggle)}>
+				<TiThMenu />
+			</button>
 			<div className={`themeBox ${Dark && 'dark'}`} onClick={() => setDark(!Dark)}>
 				<div className='ball'></div>
 			</div>
-			<button className='menuToggle' onClick={() => setToggle(!Toggle)}>
-				menu
-			</button>
 		</header>
 	);
 }

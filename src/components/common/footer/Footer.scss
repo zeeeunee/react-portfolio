@@ -79,3 +79,30 @@
 		justify-content: center;
 	}
 }
+.tablet {
+	.Footer {
+		width: 80vw;
+	}
+}
+
+.mobile {
+	.Footer {
+		display: flex;
+		flex-wrap: wrap;
+		.FooterBox1 {
+			width: 100%;
+		}
+		.FooterBox2 {
+			width: 100%;
+		}
+		.FooterBox3 {
+			width: 100%;
+		}
+		.FooterBox4 {
+			width: 100%;
+		}
+		.Copy {
+			padding: 30px 0;
+		}
+	}
+}
