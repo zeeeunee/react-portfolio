@@ -58,6 +58,9 @@
 			color: rgba(var(--baseColor-code), 0.5);
 			display: flex;
 			justify-content: space-between;
+			em {
+				color: var(--pointColor2);
+			}
 		}
 		.txt {
 			width: 100%;
