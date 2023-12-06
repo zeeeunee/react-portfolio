@@ -31,12 +31,12 @@ export default function Youtube() {
 	return (
 		<Layout title={'Youtube'}>
 			<section className='YoutubeData'>
-				<div className='box1'>
-					<h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, beatae?</h3>
-					<p>
-						Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem temporibus dolorum assumenda? Ducimus, unde a quis pariatur repellat eius
-						nobis ipsa veritatis, quasi, rem possimus expedita totam dolore nam similique!
-					</p>
+				<div className='topPic'>
+					<img src='/img/image.jpg' alt='house' />
+				</div>
+				<div className='our'>
+					<h3>Our Youtube Post</h3>
+					<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis, saepe.</p>
 				</div>
 
 				{Vids.map((data, idx) => {
@@ -55,19 +55,12 @@ export default function Youtube() {
 							</div>
 
 							<div className='txt'>
-								<h2>{shortenText(data.snippet.title, 30)}</h2>
-								<p>{shortenText(data.snippet.description, 120)}</p>
+								<h2>{shortenText(data.snippet.title, 40)}</h2>
+								<p>{shortenText(data.snippet.description, 140)}</p>
 							</div>
 						</article>
 					);
 				})}
-				<div className='box2'>
-					<h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, beatae?</h3>
-					<p>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, molestiae! Possimus, quo. Ab, iste? Repellendus nostrum enim non illo
-						quibusdam debitis laudantium maxime iure explicabo, distinctio, aperiam, voluptatem minus vitae.
-					</p>
-				</div>
 			</section>
 		</Layout>
 	);
