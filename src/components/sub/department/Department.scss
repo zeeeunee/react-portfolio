@@ -165,8 +165,8 @@
 
 .tablet {
 	.Department {
-		.historyYellow {
-			.yellowImage {
+		.historyGray {
+			.grayImage {
 				width: 100%;
 
 				article {
@@ -175,7 +175,7 @@
 					margin: 7px;
 				}
 			}
-			.yellowRightBox {
+			.grayRightBox {
 				width: 100%;
 			}
 		}
@@ -197,8 +197,10 @@
 
 .mobile {
 	.Department {
-		.historyYellow {
-			.yellowImage {
+		.historyGray {
+			display: flex;
+			flex-wrap: wrap;
+			.grayImage {
 				width: 100%;
 
 				article {
@@ -207,7 +209,7 @@
 					margin: 7px;
 				}
 			}
-			.yellowRightBox {
+			.grayRightBox {
 				width: 100%;
 			}
 		}
