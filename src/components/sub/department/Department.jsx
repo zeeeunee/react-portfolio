@@ -7,7 +7,7 @@ export default function Department() {
 	const [HistoryData, setHistoryData] = useState([]);
 	const [MemberTit, setMemberTit] = useState('');
 	const [MemberData, setMemberData] = useState([]);
-	const [YellowImage, setYellowImage] = useState([]);
+	const [GrayImage, setGrayImage] = useState([]);
 
 	const path = process.env.PUBLIC_URL;
 
@@ -29,35 +29,35 @@ export default function Department() {
 			});
 	};
 
-	const fetchYellow = () => {
-		fetch(`${path}/DB/yellow.json`)
+	const fetchGray = () => {
+		fetch(`${path}/DB/gray.json`)
 			.then((data) => data.json())
 			.then((json) => {
-				setYellowImage(Object.values(json)[0]);
+				setGrayImage(Object.values(json)[0]);
 			});
 	};
 
 	useEffect(() => {
 		fetchDepartment();
 		fetchHistory();
-		fetchYellow();
+		fetchGray();
 	}, []);
 
 	return (
 		<Layout title={'Department'}>
 			{/* <h2>{HistoryTit}</h2> */}
 
-			<div className='historyYellow'>
-				<section className='yellowImage'>
-					{YellowImage.map((yellow, idx) => {
+			<div className='historyGray'>
+				<section className='grayImage'>
+					{GrayImage.map((gray, idx) => {
 						return (
-							<article key={yellow + idx}>
-								<img src={`${path}/img/${yellow.pic}`} alt={yellow.pic} />
+							<article key={gray + idx}>
+								<img src={`${path}/img/${gray.pic}`} alt={gray.pic} />
 							</article>
 						);
 					})}
 				</section>
-				<section className='yellowRightBox'>
+				<section className='grayRightBox'>
 					<h2>History Our Creation</h2>
 					<p>
 						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente fuga molestias, suscipit omnis quis vel accusantium rerum debitis
@@ -89,7 +89,7 @@ export default function Department() {
 				<h3>A team United by shared values</h3>
 				<div className='leftBox'>
 					<h3>6</h3>
-					<p>Professional members in our team</p>
+					<p>Professional Designers in our Team</p>
 				</div>
 				<div className='memberPics'>
 					{MemberData.map((member, idx) => {
@@ -98,7 +98,7 @@ export default function Department() {
 								<img src={`${path}/img/${member.pic}`} alt={member.name} />
 								<div className='memberDetail'>
 									<h3>{member.name}</h3>
-									<p>{member.position}</p>
+									{/* <p>{member.position}</p> */}
 								</div>
 							</article>
 						);

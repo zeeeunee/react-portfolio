@@ -5,7 +5,7 @@
 	justify-content: space-between;
 
 	h1 {
-		padding: 20px;
+		padding: 20px 0;
 		font-size: var(--logoSize);
 		font-family: var(--pointFont);
 		display: flex;
@@ -25,6 +25,9 @@
 		}
 	}
 	.menuToggle {
+		color: var(--baseColor);
+		font-family: var(--baseFont);
+		background-color: var(--bgColor);
 		display: none;
 		border: none;
 		cursor: pointer;

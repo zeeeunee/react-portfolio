@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=PT+Serif&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Fira+Sans:wght@300&display=swap');
 
 :root {
-	--baseFont: 'PT Serif', 'arial', '돋움';
+	--baseFont: 'Fira Sans', 'arial', '돋움';
 	--pointFont: 'DM Serif Display', 'arial';
 	--baseColor: #111;
 	--pointColor: rgba(255, 255, 0, 0.815);
@@ -13,7 +13,7 @@
 	--titSize1: 2.4rem;
 	--titSize2: 2rem;
 	--pointSize: 8rem;
-	--pointSize2: 1.6rem;
+	--pointSize2: 1.8rem;
 }
 
 .dark {
