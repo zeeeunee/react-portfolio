@@ -63,18 +63,17 @@
 				align-items: center;
 				display: flex;
 				justify-content: center;
+				border-bottom: 1px solid var(--baseColor);
 
 				&:nth-of-type(odd) {
 					display: flex;
 					justify-content: flex-end;
-					border-right: 1px solid var(--baseColor);
 					margin-right: 50%;
 				}
 
 				&:nth-of-type(even) {
 					display: flex;
 					justify-content: flex-start;
-					border-left: 1px solid var(--baseColor);
 					margin-left: 50%;
 				}
 
@@ -111,7 +110,7 @@
 			width: 38%;
 			padding: 50px;
 			margin: 7px;
-			background-color: var(--pointColor);
+			background-color: var(--pointColor1);
 			display: flex;
 			flex-wrap: wrap;
 			align-content: space-between;
@@ -148,7 +147,6 @@
 				}
 
 				.memberDetail {
-					background-color: rgba(var(--pointColor), transparent);
 					color: #fff;
 					font-size: var(--bodySize1);
 				}
