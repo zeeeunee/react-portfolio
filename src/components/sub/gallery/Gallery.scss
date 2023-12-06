@@ -1,0 +1,74 @@
+.Gallery {
+	.frame {
+		width: 100%;
+		margin: 70px 0;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+
+		article {
+			width: 23%;
+			margin-bottom: 70px;
+			.profile {
+				width: 100%;
+
+				gap: 10px;
+				margin-bottom: 20px;
+
+				img {
+					width: 40px;
+					border-radius: 50%;
+				}
+				span {
+					font-size: var(--bodySize2);
+				}
+			}
+			.pic {
+				width: 100%;
+				height: 300px;
+				overflow: hidden;
+				margin-bottom: 10px;
+
+				img {
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+				}
+			}
+			h2 {
+				width: 100%;
+				font-weight: bold;
+				font-size: var(--bodySize1);
+				line-height: 1.2;
+				margin-bottom: 10px;
+			}
+		}
+	}
+}
+
+.laptop {
+	.Gallery {
+		article {
+			width: 30%;
+			.pic {
+				height: 200px;
+			}
+		}
+	}
+}
+
+.tablet {
+	.Gallery {
+		article {
+			width: 48%;
+		}
+	}
+}
+
+.mobile {
+	.Gallery {
+		article {
+			width: 100%;
+		}
+	}
+}

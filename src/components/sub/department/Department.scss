@@ -2,13 +2,6 @@
 	width: 70vw;
 	margin: 50px auto;
 
-	// h2 {
-	// 	width: 100%;
-	// 	font-size: var(--titSize2);
-	// 	font-weight: normal;
-	// 	margin: 50px 0;
-	// }
-
 	.historyGray {
 		width: 100%;
 		margin: 100px 0;
@@ -34,12 +27,12 @@
 			width: 50%;
 
 			h2 {
-				margin: 20px 0;
-				padding: 20px;
+				margin: 40px 0;
+				padding: 30px;
 				font-size: var(--titSize2);
 			}
 			p {
-				padding: 20px;
+				padding: 30px;
 				font-size: var(--bodySize2);
 				word-break: break-all;
 			}
@@ -89,10 +82,6 @@
 		}
 	}
 
-	h3 {
-		font-weight: normal;
-		margin: 7px;
-	}
 	.memberBox {
 		width: 100%;
 		margin: 80px auto;
@@ -102,7 +91,7 @@
 
 		h3 {
 			width: 100%;
-			font-weight: normal;
+			font-weight: bold;
 			margin: 7px;
 		}
 
@@ -220,6 +209,7 @@
 				border-left: 1px solid var(--baseColor);
 				article {
 					width: 100%;
+					border-bottom: none;
 
 					&:nth-of-type(odd) {
 						justify-content: flex-start;

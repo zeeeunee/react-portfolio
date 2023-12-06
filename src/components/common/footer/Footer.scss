@@ -10,13 +10,14 @@
 	.FooterBox1 {
 		width: 30%;
 		margin-bottom: 50px;
-		h1 {
+		h2 {
 			margin: 10px;
-			font-size: 1rem;
+			font-size: var(--bodySize1);
 		}
 		p {
 			margin: 10px;
 			font-size: var(--bodySize2);
+			word-break: break-all;
 		}
 		ul {
 			font-size: var(--bodySize2);
@@ -30,7 +31,7 @@
 		margin-bottom: 50px;
 		h2 {
 			margin: 10px;
-			font-size: 1rem;
+			font-size: var(--bodySize1);
 		}
 		ul {
 			margin: 10px;
@@ -45,7 +46,7 @@
 		margin-bottom: 50px;
 		h2 {
 			margin: 10px;
-			font-size: 1rem;
+			font-size: var(--bodySize1);
 		}
 		ul {
 			margin: 10px;
@@ -60,7 +61,7 @@
 		margin-bottom: 50px;
 		h2 {
 			margin: 10px;
-			font-size: 1rem;
+			font-size: var(--bodySize1);
 		}
 		ul {
 			margin: 10px;

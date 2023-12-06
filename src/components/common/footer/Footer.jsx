@@ -6,7 +6,7 @@ export default function Footer() {
 		<footer className='Footer'>
 			{' '}
 			<div className='FooterBox1'>
-				<h1>Zeeeunee</h1>
+				<h2>Zeeeunee</h2>
 				<p>
 					Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti deserunt ratione dignissimos, maiores sint enim rerum iusto temporibus
 					autem provident distinctio.
