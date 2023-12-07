@@ -39,7 +39,7 @@ export default function Youtube() {
 					<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis, saepe.</p>
 				</div>
 
-				{Vids.map((data, idx) => {
+				{Vids.map((data) => {
 					const [date, time] = data.snippet.publishedAt.split('T');
 
 					return (
