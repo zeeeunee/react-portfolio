@@ -14,9 +14,9 @@
 	ul {
 		display: flex;
 		align-items: center;
+		gap: 40px;
 
 		li {
-			padding: 20px;
 			font-size: var(--bodySize2);
 		}
 		a.on {

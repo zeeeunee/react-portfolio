@@ -8,6 +8,14 @@ export default function Gallery() {
 	const shortenText = useCustomText('shorten');
 	const [Pics, setPics] = useState([]);
 	const myID = useRef('199697926@N08');
+	const refNav = useRef(null);
+
+	const activateBtn = (e) => {
+		const btns = refNav.current.querySelectorAll('button');
+		btns.forEach((btn) => btn.classList.remove('on'));
+		e.target.classList.add('on');
+	};
+
 	const fetchFlickr = async (opt) => {
 		const num = 100;
 		const flickr_api = process.env.REACT_APP_FLICKR_API;
@@ -32,10 +40,34 @@ export default function Gallery() {
 
 	return (
 		<Layout title={'Gallery'}>
+			<div className='topTit'>
+				<h3>
+					<span>Let's connect</span>
+					<span>your passion with</span>
+					<span>our team</span>
+				</h3>
+				<p>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere neque at doloremque dolorem quod unde odit molestiae labore, nobis ad odio
+					maiores voluptate, ea ipsum! Nesciunt tenetur nam sed fugiat.
+				</p>
+			</div>
 			<article className='controls'>
-				<nav className='btnSet'>
-					<button onClick={() => fetchFlickr({ type: 'interest' })}>Interest Gallery</button>
-					<button className='on' onClick={() => fetchFlickr({ type: 'user', id: myID.current })}>
+				<nav className='btnSet' ref={refNav}>
+					<button
+						onClick={(e) => {
+							activateBtn(e);
+							fetchFlickr({ type: 'interest' });
+						}}
+					>
+						Interest Gallery
+					</button>
+					<button
+						className='on'
+						onClick={(e) => {
+							activateBtn(e);
+							fetchFlickr({ type: 'user', id: myID.current });
+						}}
+					>
 						My Gallery
 					</button>
 				</nav>
@@ -53,13 +85,14 @@ export default function Gallery() {
 									/>
 									<span onClick={() => fetchFlickr({ type: 'user', id: pic.owner })}>{pic.owner}</span>
 								</div>
+
 								<div className='pic'>
 									<img
 										src={`https://live.staticflickr.com/${pic.server}/${pic.id}_${pic.secret}_m.jpg`}
 										alt={`https://live.staticflickr.com/${pic.server}/${pic.id}_${pic.secret}_b.jpg`}
 									/>
 								</div>
-								<h2>{shortenText(pic.title, 30)}</h2>
+								<h2>{shortenText(pic.title, 20)}</h2>
 							</article>
 						);
 					})}

@@ -7,7 +7,7 @@ export default function Department() {
 	const [HistoryData, setHistoryData] = useState([]);
 	const [MemberTit, setMemberTit] = useState('');
 	const [MemberData, setMemberData] = useState([]);
-	const [GrayImage, setGrayImage] = useState([]);
+	const [Gray, setGray] = useState([]);
 
 	const path = process.env.PUBLIC_URL;
 
@@ -33,7 +33,7 @@ export default function Department() {
 		fetch(`${path}/DB/gray.json`)
 			.then((data) => data.json())
 			.then((json) => {
-				setGrayImage(Object.values(json)[0]);
+				setGray(Object.values(json)[0]);
 			});
 	};
 
@@ -49,7 +49,7 @@ export default function Department() {
 
 			<div className='historyGray'>
 				<section className='grayImage'>
-					{GrayImage.map((gray, idx) => {
+					{Gray.map((gray, idx) => {
 						return (
 							<article key={gray + idx}>
 								<img src={`${path}/img/${gray.pic}`} alt={gray.pic} />
