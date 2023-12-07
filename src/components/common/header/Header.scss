@@ -5,7 +5,6 @@
 	justify-content: space-between;
 
 	h1 {
-		padding: 20px 0;
 		font-size: var(--logoSize);
 		font-family: var(--pointFont);
 		display: flex;
@@ -31,6 +30,9 @@
 		display: none;
 		border: none;
 		cursor: pointer;
+		.menuIcon {
+			color: var(--baseColor);
+		}
 	}
 	.themeBox {
 		width: 60px;
