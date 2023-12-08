@@ -1,4 +1,5 @@
 import './Modal.scss';
+import { IoClose } from 'react-icons/io5';
 
 export default function Modal({ Open, setOpen, children }) {
 	return (
@@ -6,7 +7,9 @@ export default function Modal({ Open, setOpen, children }) {
 			{Open && (
 				<aside className='Modal'>
 					<div className='con'>{children}</div>
-					<span onClick={() => setOpen(false)}>close</span>
+					<span onClick={() => setOpen(false)}>
+						<IoClose />
+					</span>
 				</aside>
 			)}
 		</>
