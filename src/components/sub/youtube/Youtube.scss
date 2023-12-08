@@ -29,12 +29,14 @@
 			margin: 10px 0;
 			text-align: center;
 			font-size: var(--titSize2);
+			color: var(--baseColor);
 		}
 		p {
 			width: 100%;
 			margin: 10px 0;
 			text-align: center;
 			font-size: var(--bodySize2);
+			color: rgba(var(--baseColor-code), 0.4);
 		}
 	}
 	article {
