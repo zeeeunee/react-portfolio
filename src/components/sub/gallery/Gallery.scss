@@ -64,10 +64,12 @@
 			button {
 				border: none;
 				margin: 30px;
+				padding: 10px;
 				cursor: pointer;
-				font-size: var(--bodySize2);
+				font-size: var(--bodySize1);
 				color: rgba(var(--baseColor-code), 0.3);
 				background-color: var(--bgColor);
+				border-bottom: 1px solid rgba(var(--baseColor-code), 0.6);
 
 				&.on {
 					color: rgba(var(--baseColor-code), 1);
@@ -123,7 +125,7 @@
 				// }
 				.personIcon {
 					font-size: var(--bodySize2);
-					color: var(--baseColor);
+					color: rgba(var(--baseColor-code), 0.6);
 				}
 				span {
 					font-size: var(--bodySize2);

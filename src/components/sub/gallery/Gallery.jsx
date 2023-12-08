@@ -7,14 +7,15 @@ import { IoSearch, IoPerson } from 'react-icons/io5';
 import Modal from '../../common/modal/Modal';
 
 export default function Gallery() {
+	const myID = useRef('199697926@N08');
+	const isUser = useRef(myID.current);
+	const refNav = useRef(null);
 	const searched = useRef(false);
 	const shortenText = useCustomText('shorten');
+
 	const [Pics, setPics] = useState([]);
 	const [Open, setOpen] = useState(false);
 	const [Index, setIndex] = useState(0);
-	const myID = useRef('199697926@N08');
-	const refNav = useRef(null);
-	const isUser = useRef(myID.current);
 
 	const activateBtn = (e) => {
 		const btns = refNav.current.querySelectorAll('button');
@@ -61,10 +62,8 @@ export default function Gallery() {
 		const method_search = 'flickr.photos.search';
 
 		const interestURL = `${baseURL}${method_interest}`;
-
 		const userURL = `${baseURL}${method_user}&user_id=${opt.id}`;
 		let url = '';
-
 		const searchURL = `${baseURL}${method_search}&tags=${opt.keyword}`;
 
 		opt.type === 'user' && (url = userURL);
@@ -73,8 +72,10 @@ export default function Gallery() {
 
 		const data = await fetch(url);
 		const json = await data.json();
+
 		setPics(json.photos.photo);
 	};
+
 	const openModal = (e) => {
 		setOpen(true);
 	};

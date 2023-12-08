@@ -84,21 +84,20 @@
 .tablet {
 	.Youtube {
 		width: 80vw;
+		.YoutubeData {
+			article {
+				width: 48%;
+			}
+		}
 	}
 }
 
 .mobile {
 	.Youtube {
 		.YoutubeData {
-			.box1 {
+			article {
 				width: 100%;
 			}
-			.box2 {
-				width: 100%;
-			}
-		}
-		article {
-			width: 100%;
 		}
 	}
 }

@@ -5,9 +5,9 @@ import { useCustomText } from '../../../hooks/useText';
 import { Link } from 'react-router-dom';
 
 export default function Youtube() {
+	const [Vids, setVids] = useState([]);
 	const customText = useCustomText('combined');
 	const shortenText = useCustomText('shorten');
-	const [Vids, setVids] = useState([]);
 
 	const fetchYoutube = async () => {
 		const api_key = process.env.REACT_APP_YOUTUBE_API;
@@ -20,7 +20,7 @@ export default function Youtube() {
 			const json = await data.json();
 			setVids(json.items);
 		} catch (err) {
-			console.log(err);
+			console.error(err);
 		}
 	};
 
