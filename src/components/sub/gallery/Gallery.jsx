@@ -73,7 +73,8 @@ export default function Gallery() {
 		const data = await fetch(url);
 		const json = await data.json();
 
-		setPics(json.photos.photo);
+		const abc = setPics(json.photos.photo);
+		console.log(abc);
 	};
 
 	const openModal = (e) => {

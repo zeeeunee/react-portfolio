@@ -7,14 +7,16 @@
 		margin: 100px 0;
 		display: flex;
 		flex-wrap: wrap;
+		justify-content: space-between;
 
 		.grayImage {
 			width: 50%;
+			padding: 30px 0;
 			display: flex;
 			article {
-				width: 50%;
+				width: 45%;
 				height: 300px;
-				margin: 7px;
+				margin-right: 10px;
 				overflow: hidden;
 				img {
 					width: 100%;
@@ -24,16 +26,18 @@
 			}
 		}
 		.grayRightBox {
-			width: 50%;
+			width: 45%;
+			padding: 30px 0;
+			display: flex;
+			flex-wrap: wrap;
+			align-content: flex-end;
 
 			h2 {
-				margin: 20px 0;
-				padding: 30px;
-				font-size: var(--titSize2);
+				font-size: var(--titSize1);
 				color: var(--baseColor);
 			}
 			p {
-				padding: 30px;
+				padding: 30px 0;
 				font-size: var(--bodySize2);
 				word-break: break-all;
 				color: rgba(var(--baseColor-code), 0.4);
@@ -75,7 +79,7 @@
 				h3 {
 					font-weight: bold;
 					padding: 20px;
-					font-size: var(--bodySize1);
+					font-size: var(--titSize1);
 				}
 				ul {
 					font-size: var(--bodySize2);

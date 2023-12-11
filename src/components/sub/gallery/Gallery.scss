@@ -13,18 +13,18 @@
 
 		.leftTit {
 			width: 50%;
+			padding: 60px;
 			display: flex;
 			flex-wrap: wrap;
-			align-content: center;
+			align-content: flex-end;
 
 			h3 {
 				display: flex;
 				flex-wrap: wrap;
 				align-content: center;
 				line-height: 1;
-				font-size: var(--titSize2);
+				font-size: var(--titSize1);
 				font-weight: bold;
-				padding: 0 60px;
 				margin: 30px 0;
 
 				span {
@@ -33,7 +33,6 @@
 			}
 
 			p {
-				padding: 0 60px;
 				word-break: break-all;
 				font-size: var(--bodySize2);
 				color: rgba(var(--baseColor-code), 0.4);
@@ -126,7 +125,7 @@
 				span {
 					margin-left: 10px;
 					font-size: var(--bodySize2);
-					color: var(--pointColor2);
+					color: rgba(var(--baseColor-code), 0.5);
 					cursor: pointer;
 					border-bottom: 1px solid rgba(var(--baseColor-code), 0.4);
 				}

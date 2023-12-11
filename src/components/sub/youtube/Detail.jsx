@@ -19,6 +19,7 @@ export default function Detail() {
 	useEffect(() => {
 		fetchSingleData();
 	}, []);
+
 	return (
 		<Layout title={'Detail'}>
 			<div className='videoBox'>

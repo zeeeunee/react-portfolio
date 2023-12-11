@@ -18,8 +18,7 @@ export default function Youtube() {
 		try {
 			const data = await fetch(baseURL);
 			const json = await data.json();
-			const abc = setVids(json.items);
-			console.log(abc);
+			setVids(json.items);
 		} catch (err) {
 			console.error(err);
 		}
@@ -31,14 +30,23 @@ export default function Youtube() {
 
 	return (
 		<Layout title={'Youtube'}>
+			<div className='singleVideo'>
+				<iframe
+					width='560'
+					height='315'
+					src='https://www.youtube.com/embed/xXWUgGLByIw?si=CVoxHAJY2yeJo4Zd&amp;controls=0'
+					title='YouTube video player'
+					frameborder='0'
+					allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+					allowfullscreen
+				></iframe>
+			</div>
+
 			<section className='YoutubeData'>
-				<div className='topPic'>
-					<img src='/img/image.jpg' alt='house' />
-				</div>
-				<div className='our'>
+				<section className='our'>
 					<h3>Our Youtube Post</h3>
 					<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis, saepe.</p>
-				</div>
+				</section>
 
 				{Vids &&
 					Vids.map((data) => {
