@@ -3,7 +3,7 @@ import Layout from '../../common/layout/Layout';
 import './Gallery.scss';
 import { useCustomText } from '../../../hooks/useText';
 import Masonry from 'react-masonry-component';
-import { IoSearch, IoPerson } from 'react-icons/io5';
+import { IoSearch } from 'react-icons/io5';
 import Modal from '../../common/modal/Modal';
 
 export default function Gallery() {
@@ -121,32 +121,32 @@ export default function Gallery() {
 				</article>
 				<section>
 					<Masonry className={'frame'} options={{ transitionDuration: '0.5s', gutter: 20 }}>
-						{Pics.map((pic, idx) => {
-							return (
-								<article key={pic.id}>
-									<div
-										className='pic'
-										onClick={() => {
-											setOpen(true);
-											setIndex(idx);
-										}}
-									>
-										<img src={`https://live.staticflickr.com/${pic.server}/${pic.id}_${pic.secret}_m.jpg`} alt={pic.title} />
-									</div>
-									<div className='profile'>
-										{/* <img
-										src={`http://farm${pic.farm}.staticflickr.com/${pic.server}/buddyicons/${pic.owner}.jpg`}
-										alt='사용자프로필이미지'
-										onError={(e) => e.target.setAttribute('src', 'https://www.flickr.com/images/buddyicon.gif')}
-									/> */}
+						{Pics &&
+							Pics.map((pic, idx) => {
+								return (
+									<article key={pic.id}>
+										<div
+											className='pic'
+											onClick={() => {
+												setOpen(true);
+												setIndex(idx);
+											}}
+										>
+											<img src={`https://live.staticflickr.com/${pic.server}/${pic.id}_${pic.secret}_m.jpg`} alt={pic.title} />
+										</div>
+										<div className='profile'>
+											<img
+												src={`http://farm${pic.farm}.staticflickr.com/${pic.server}/buddyicons/${pic.owner}.jpg`}
+												alt='사용자프로필이미지'
+												onError={(e) => e.target.setAttribute('src', 'https://www.flickr.com/images/buddyicon.gif')}
+											/>
 
-										<IoPerson className='personIcon' />
-										<span onClick={handleUser}>{pic.owner}</span>
-									</div>
-									{/* <h2>{shortenText(pic.title, 20)}</h2> */}
-								</article>
-							);
-						})}
+											<span onClick={handleUser}>{pic.owner}</span>
+										</div>
+										{/* <h2>{shortenText(pic.title, 20)}</h2> */}
+									</article>
+								);
+							})}
 					</Masonry>
 				</section>
 			</Layout>

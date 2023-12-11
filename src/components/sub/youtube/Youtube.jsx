@@ -18,7 +18,8 @@ export default function Youtube() {
 		try {
 			const data = await fetch(baseURL);
 			const json = await data.json();
-			setVids(json.items);
+			const abc = setVids(json.items);
+			console.log(abc);
 		} catch (err) {
 			console.error(err);
 		}
@@ -39,28 +40,29 @@ export default function Youtube() {
 					<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis, saepe.</p>
 				</div>
 
-				{Vids.map((data) => {
-					const [date, time] = data.snippet.publishedAt.split('T');
+				{Vids &&
+					Vids.map((data) => {
+						const [date, time] = data.snippet.publishedAt.split('T');
 
-					return (
-						<article key={data.id}>
-							<div className='pic'>
-								<Link to={`/detail/${data.id}`}>
-									<img src={data.snippet.thumbnails.standard.url} alt={data.snippet.title} />
-								</Link>
-							</div>
-							<div className='infoBox'>
-								<span>{customText(date, '.')}</span>
-								<em>{time.split('Z')[0]}</em>
-							</div>
+						return (
+							<article key={data.id}>
+								<div className='pic'>
+									<Link to={`/detail/${data.id}`}>
+										<img src={data.snippet.thumbnails.standard.url} alt={data.snippet.title} />
+									</Link>
+								</div>
+								<div className='infoBox'>
+									<span>{customText(date, '.')}</span>
+									<em>{time.split('Z')[0]}</em>
+								</div>
 
-							<div className='txt'>
-								<h2>{shortenText(data.snippet.title, 40)}</h2>
-								<p>{shortenText(data.snippet.description, 140)}</p>
-							</div>
-						</article>
-					);
-				})}
+								<div className='txt'>
+									<h2>{shortenText(data.snippet.title, 40)}</h2>
+									<p>{shortenText(data.snippet.description, 140)}</p>
+								</div>
+							</article>
+						);
+					})}
 			</section>
 		</Layout>
 	);

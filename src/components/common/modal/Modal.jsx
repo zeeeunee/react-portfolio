@@ -1,4 +1,5 @@
 import './Modal.scss';
+
 import { IoClose } from 'react-icons/io5';
 
 export default function Modal({ Open, setOpen, children }) {
