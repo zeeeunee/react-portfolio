@@ -1,0 +1,25 @@
+.CommunityModal {
+	width: 100%;
+	height: 100vh;
+	background: rgba(0, 0, 0, 0.9);
+	position: fixed;
+	top: 0;
+	left: 0;
+	padding: 5vw;
+	z-index: 5;
+	.wrap {
+		width: 100%;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+
+		.inputBox {
+			width: 30%;
+			padding-right: 50px;
+		}
+		.showBox {
+			width: 70%;
+			padding-left: 50px;
+		}
+	}
+}
