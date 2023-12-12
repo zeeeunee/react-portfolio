@@ -1,29 +1,23 @@
-import { useState } from 'react';
-import CommunityModal from '../../common/communityModal/CommunityModal';
 import Layout from '../../common/layout/Layout';
 import './Community.scss';
-import { FiPlusCircle } from 'react-icons/fi';
 
 export default function Community() {
-	const [Open, setOpen] = useState(false);
-	const openModal = (e) => {
-		setOpen(true);
-	};
 	return (
-		<>
-			<Layout title={'Community'}>
-				<section>
-					<button
-						onClick={() => {
-							setOpen(true);
-						}}
-					>
-						<FiPlusCircle />
-					</button>
-				</section>
-			</Layout>
-
-			{Open && <CommunityModal Open={Open} setOpen={setOpen}></CommunityModal>}
-		</>
+		<Layout title={'Community'}>
+			<div className='wrap'>
+				<div className='inputBox'>
+					<form>
+						<h2>Create Post!</h2>
+						<input type='text' placeholder='title' name='tit' />
+						<textarea cols='70' rows='4' name='con' placeholder='content'></textarea>
+						<nav className='btns'>
+							<button className='canBtn'>CANCEL</button>
+							<button className='postBtn'>POST</button>
+						</nav>
+					</form>
+				</div>
+				<div className='showBox'></div>
+			</div>
+		</Layout>
 	);
 }

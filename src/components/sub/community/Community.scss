@@ -1,0 +1,55 @@
+.Community {
+	width: 70vw;
+	margin: 50px auto;
+	.wrap {
+		width: 100%;
+		margin: 100px 0;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		.inputBox {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			width: 70%;
+			padding: 20px 0;
+			background-color: var(--ytColor);
+			h2 {
+				font-size: var(--titSize2);
+				margin-bottom: 10px;
+			}
+			input {
+				width: 100%;
+				border: none;
+				font-family: var(--baseFont);
+				background-color: var(--bgColor);
+			}
+			textarea {
+				width: 100%;
+				border: none;
+				font-family: var(--baseFont);
+				background-color: var(--bgColor);
+			}
+			.btns {
+				display: flex;
+				justify-content: flex-end;
+
+				gap: 7px;
+				.canBtn {
+					padding: 10px;
+					border: none;
+					font-family: var(--baseFont);
+				}
+				.postBtn {
+					padding: 10px;
+					border: none;
+					font-family: var(--baseFont);
+					background-color: var(--pointColor1);
+				}
+			}
+		}
+		.showBox {
+			width: 100%;
+		}
+	}
+}
