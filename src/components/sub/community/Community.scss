@@ -15,42 +15,46 @@
 				height: 250px;
 				padding: 20px;
 				background-color: var(--ytColor);
+				display: flex;
+				flex-wrap: wrap;
+				align-content: space-between;
 
 				h2 {
 					font-size: var(--titSize2);
 					margin: 15px 0;
 				}
-				input {
-					width: 100%;
-					border: none;
-					font-family: var(--baseFont);
-					background-color: rgba(var(--baseColor-code), 0.1);
-					border-bottom: var(--ytColor);
+				.formTxt {
+					input {
+						width: 100%;
+						border: none;
+						font-family: var(--baseFont);
+						background-color: rgba(var(--baseColor-code), 0.1);
+						border-bottom: var(--ytColor);
+					}
+					textarea {
+						width: 100%;
+						border: none;
+						font-family: var(--baseFont);
+						background-color: rgba(var(--baseColor-code), 0.1);
+					}
 				}
-				textarea {
+				nav {
 					width: 100%;
-					border: none;
-					font-family: var(--baseFont);
-					background-color: rgba(var(--baseColor-code), 0.1);
-				}
-				.btns {
 					display: flex;
 					justify-content: flex-end;
 					gap: 7px;
-					margin-top: 10px;
-
-					.canBtn {
-						padding: 10px;
+					button {
+						height: 40px;
 						border: none;
-						font-family: var(--baseFont);
 						cursor: pointer;
-					}
-					.postBtn {
 						padding: 10px;
-						border: none;
 						font-family: var(--baseFont);
-						background-color: var(--pointColor1);
-						cursor: pointer;
+						&:nth-of-type(1) {
+							color: var(--pointColor2);
+						}
+						&:nth-of-type(2) {
+							background-color: var(--pointColor1);
+						}
 					}
 				}
 			}
@@ -66,39 +70,49 @@
 			}
 		}
 		.showBox {
+			--boxGap: 15px;
+			--num: 4;
 			width: 100%;
 			margin: 100px 0;
 			display: flex;
 			flex-wrap: wrap;
-			justify-content: space-between;
+			justify-content: flex-start;
 			align-content: flex-start;
+			gap: var(--boxGap);
 
 			article {
-				width: 23%;
+				width: calc((100% - (var(--boxGap) * (var(--num) - 1))) / var(--num));
 				height: 40vh;
 				background-color: var(--ytColor);
+
 				padding: 15px;
 				margin-bottom: 20px;
 				display: flex;
 				flex-wrap: wrap;
-
-				.cloBtn {
+				span {
 					width: 100%;
 					display: flex;
 					justify-content: flex-end;
-
-					.btn1 {
-						border: none;
-						background-color: var(--ytColor);
-						cursor: pointer;
-						font-size: var(--bodySize1);
-						color: var(--pointColor2);
-					}
+					font-size: var(--bodySize2);
+					margin-bottom: 5px;
 				}
 
 				.txt {
 					width: 100%;
-
+					height: 150px;
+					input {
+						width: 100%;
+						border: none;
+						font-family: var(--baseFont);
+						background-color: rgba(var(--baseColor-code), 0.1);
+						border-bottom: var(--ytColor);
+					}
+					textarea {
+						width: 100%;
+						border: none;
+						font-family: var(--baseFont);
+						background-color: rgba(var(--baseColor-code), 0.1);
+					}
 					h2 {
 						font-size: var(--titSize2);
 						color: var(--baseColor);
@@ -108,19 +122,27 @@
 					p {
 						font-size: var(--bodySize2);
 						color: rgba(var(--baseColor-code) 0.4);
-						margin-bottom: 100px;
 					}
 				}
 
-				.ediBtn {
+				nav {
 					width: 100%;
 					display: flex;
 					justify-content: flex-end;
-					.btn2 {
+					gap: 7px;
+
+					button {
+						height: 40px;
 						border: none;
 						cursor: pointer;
 						padding: 10px;
 						font-family: var(--baseFont);
+						&:nth-of-type(1) {
+							color: var(--pointColor2);
+						}
+						&:nth-of-type(2) {
+							background-color: var(--pointColor1);
+						}
 					}
 				}
 			}

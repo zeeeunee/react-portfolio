@@ -1,9 +1,11 @@
 import Layout from '../../common/layout/Layout';
 import './Community.scss';
 import { useEffect, useRef, useState } from 'react';
-import { IoCloseOutline } from 'react-icons/io5';
+
+import { useCustomText } from '../../../hooks/useText';
 
 export default function Community() {
+	const changeText = useCustomText('combined');
 	const getLocalData = () => {
 		const data = localStorage.getItem('post');
 		if (data) return JSON.parse(data);
@@ -12,6 +14,11 @@ export default function Community() {
 	const [Post, setPost] = useState(getLocalData());
 	const refTit = useRef(null);
 	const refCon = useRef(null);
+
+	const refEditTit = useRef(null);
+	const refEditCon = useRef(null);
+
+	const editMode = useRef(false);
 
 	const resetPost = () => {
 		refTit.current.value = '';
@@ -24,15 +31,56 @@ export default function Community() {
 			return alert('제목과 본문을 모두 입력하세요.');
 		}
 		const korTime = new Date().getTime() + 1000 * 60 * 60 * 9;
-		setPost([{ title: refTit.current.value, content: refCon.current.value }, ...Post]);
+		setPost([{ title: refTit.current.value, content: refCon.current.value, date: new Date(korTime) }, ...Post]);
 		resetPost();
 	};
 
+	const enableUpdate = editIndex => {
+		if (editMode.current) return;
+		editMode.current = true;
+		setPost(
+			Post.map((el, idx) => {
+				if (editIndex === idx) el.enableUpdate = true;
+				return el;
+			})
+		);
+	};
+
+	const disableUpdate = editIndex => {
+		editMode.current = false;
+		setPost(
+			Post.map((el, idx) => {
+				if (editIndex === idx) el.enableUpdate = false;
+				return el;
+			})
+		);
+	};
+
+	const updatePost = updateIndex => {
+		if (!refEditTit.current.value.trim() || !refEditCon.current.value.trim()) {
+			return alert('수정할 글의 제목과  본문을 모두 입력하세요.');
+		}
+		editMode.current = false;
+
+		setPost(
+			Post.map((el, idx) => {
+				if (updateIndex === idx) {
+					el.title = refEditTit.current.value;
+					el.content = refEditCon.current.value;
+					el.enableUpdate = false;
+				}
+				return el;
+			})
+		);
+	};
+
 	const deletePost = delIndex => {
+		if (!window.confirm('해당 게시글을 삭제하겠습니까?')) return;
 		setPost(Post.filter((_, idx) => delIndex !== idx));
 	};
 
 	useEffect(() => {
+		Post.map(el => (el.enableUpdate = false));
 		localStorage.setItem('post', JSON.stringify(Post));
 	}, [Post]);
 
@@ -45,36 +93,51 @@ export default function Community() {
 					</div>
 					<form>
 						<h2>Create Post!</h2>
-						<input type='text' placeholder='title' name='tit' ref={refTit} />
-						<textarea cols='70' rows='4' name='con' placeholder='content' ref={refCon}></textarea>
-						<nav className='btns'>
-							<button onClick={resetPost} className='canBtn'>
-								CANCEL
-							</button>
-							<button onClick={createPost} className='postBtn'>
-								POST
-							</button>
+						<div className='formTxt'>
+							<input type='text' placeholder='title' name='tit' ref={refTit} />
+							<textarea cols='70' rows='5' name='con' placeholder='content' ref={refCon}></textarea>
+						</div>
+						<nav>
+							<button onClick={resetPost}>CANCEL</button>
+							<button onClick={createPost}>POST</button>
 						</nav>
 					</form>
 				</div>
 				<div className='showBox'>
 					{Post.map((el, idx) => {
-						return (
-							<article key={el + idx}>
-								<div className='cloBtn'>
-									<button className='btn1' onClick={() => deletePost(idx)}>
-										<IoCloseOutline />
-									</button>
-								</div>
-								<div className='txt'>
-									<h2>{el.title}</h2>
-									<p>{el.content}</p>
-								</div>
-								<div className='ediBtn'>
-									<button className='btn2'>EDIT</button>
-								</div>
-							</article>
-						);
+						const date = JSON.stringify(el.date);
+						const strDate = changeText(date.split('T')[0].slice(1), '.');
+						if (el.enableUpdate) {
+							return (
+								<article key={el + idx}>
+									<span>{strDate}</span>
+									<div className='txt'>
+										<input type='text' defaultValue={el.title} ref={refEditTit} />
+										<textarea cols='22' rows='7' defaultValue={el.content} ref={refEditCon}></textarea>
+									</div>
+									<nav>
+										<button onClick={() => disableUpdate(idx)}>CANCEL</button>
+										<button onClick={() => updatePost(idx)}>UPDATE</button>
+									</nav>
+								</article>
+							);
+						} else {
+							return (
+								<article key={el + idx}>
+									<span>{strDate}</span>
+
+									<div className='txt'>
+										<h2>{el.title}</h2>
+										<p>{el.content}</p>
+									</div>
+
+									<nav>
+										<button onClick={() => deletePost(idx)}>CLOSE</button>
+										<button onClick={() => enableUpdate(idx)}>EDIT</button>
+									</nav>
+								</article>
+							);
+						}
 					})}
 				</div>
 			</div>
