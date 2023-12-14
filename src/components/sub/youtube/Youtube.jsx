@@ -10,8 +10,8 @@ export default function Youtube() {
 	const shortenText = useCustomText('shorten');
 
 	const fetchYoutube = async () => {
-		const api_key = 'AIzaSyBQ0OBVJR5LwVP7O1wFRSbfMbLCLvWRLnE';
-		const pid = 'PLM7Wu-2kzIQNrTEyi14QDMjdugAx8sKNZ';
+		const api_key = process.env.REACT_APP_YOUTUBE_API;
+		const pid = process.env.REACT_APP_YOUTUBE_LIST;
 		const num = 6;
 		const baseURL = `https://www.googleapis.com/youtube/v3/playlistItems?key=${api_key}&part=snippet&playlistId=${pid}&maxResults=${num}`;
 
