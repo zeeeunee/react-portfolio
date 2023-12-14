@@ -86,7 +86,7 @@ export default function Community() {
 
 	return (
 		<Layout title={'Community'}>
-			<div className='wrap'>
+			<div className='CommunityWrap'>
 				<div className='inputBox'>
 					<div className='pic'>
 						<img src='/img/post.jpg' alt='post' />
