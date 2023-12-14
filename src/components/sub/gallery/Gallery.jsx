@@ -17,33 +17,33 @@ export default function Gallery() {
 	const [Open, setOpen] = useState(false);
 	const [Index, setIndex] = useState(0);
 
-	const activateBtn = (e) => {
+	const activateBtn = e => {
 		const btns = refNav.current.querySelectorAll('button');
-		btns.forEach((btn) => btn.classList.remove('on'));
+		btns.forEach(btn => btn.classList.remove('on'));
 		e && e.target.classList.add('on');
 	};
-	const handleInterest = (e) => {
+	const handleInterest = e => {
 		if (e.target.classList.contains('on')) return;
 		isUser.current = '';
 		activateBtn(e);
 		fetchFlickr({ type: 'interest' });
 	};
 
-	const handleMine = (e) => {
+	const handleMine = e => {
 		if (e.target.classList.contains('on') || isUser.current === myID.current) return;
 		isUser.current = myID.current;
 		activateBtn(e);
 		fetchFlickr({ type: 'user', id: myID.current });
 	};
 
-	const handleUser = (e) => {
+	const handleUser = e => {
 		if (isUser.current) return;
 		isUser.current = e.target.innerText;
 		activateBtn();
 		fetchFlickr({ type: 'user', id: e.target.innerText });
 	};
 
-	const handleSearch = (e) => {
+	const handleSearch = e => {
 		e.preventDefault();
 		isUser.current = '';
 		activateBtn();
@@ -53,9 +53,9 @@ export default function Gallery() {
 
 	searched.current = true;
 
-	const fetchFlickr = async (opt) => {
+	const fetchFlickr = async opt => {
 		const num = 100;
-		const flickr_api = process.env.REACT_APP_FLICKR_API;
+		const flickr_api = '7973628e19035e31ccf3734cc641b14f';
 		const baseURL = `https://www.flickr.com/services/rest/?&api_key=${flickr_api}&per_page=${num}&format=json&nojsoncallback=1&method=`;
 		const method_interest = 'flickr.interestingness.getList';
 		const method_user = 'flickr.people.getPhotos';
@@ -73,11 +73,10 @@ export default function Gallery() {
 		const data = await fetch(url);
 		const json = await data.json();
 
-		const abc = setPics(json.photos.photo);
-		console.log(abc);
+		setPics(json.photos.photo);
 	};
 
-	const openModal = (e) => {
+	const openModal = e => {
 		setOpen(true);
 	};
 
@@ -131,15 +130,14 @@ export default function Gallery() {
 											onClick={() => {
 												setOpen(true);
 												setIndex(idx);
-											}}
-										>
+											}}>
 											<img src={`https://live.staticflickr.com/${pic.server}/${pic.id}_${pic.secret}_m.jpg`} alt={pic.title} />
 										</div>
 										<div className='profile'>
 											<img
 												src={`http://farm${pic.farm}.staticflickr.com/${pic.server}/buddyicons/${pic.owner}.jpg`}
 												alt='사용자프로필이미지'
-												onError={(e) => e.target.setAttribute('src', 'https://www.flickr.com/images/buddyicon.gif')}
+												onError={e => e.target.setAttribute('src', 'https://www.flickr.com/images/buddyicon.gif')}
 											/>
 
 											<span onClick={handleUser}>{pic.owner}</span>

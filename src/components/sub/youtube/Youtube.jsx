@@ -10,8 +10,8 @@ export default function Youtube() {
 	const shortenText = useCustomText('shorten');
 
 	const fetchYoutube = async () => {
-		const api_key = process.env.REACT_APP_YOUTUBE_API;
-		const pid = process.env.REACT_APP_YOUTUBE_LIST;
+		const api_key = 'AIzaSyBQ0OBVJR5LwVP7O1wFRSbfMbLCLvWRLnE';
+		const pid = 'PLM7Wu-2kzIQNrTEyi14QDMjdugAx8sKNZ';
 		const num = 6;
 		const baseURL = `https://www.googleapis.com/youtube/v3/playlistItems?key=${api_key}&part=snippet&playlistId=${pid}&maxResults=${num}`;
 
@@ -38,8 +38,7 @@ export default function Youtube() {
 					title='YouTube video player'
 					frameborder='0'
 					allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
-					allowfullscreen
-				></iframe>
+					allowfullscreen></iframe>
 			</div>
 
 			<section className='YoutubeData'>
@@ -48,29 +47,28 @@ export default function Youtube() {
 					<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis, saepe.</p>
 				</section>
 
-				{Vids &&
-					Vids.map((data) => {
-						const [date, time] = data.snippet.publishedAt.split('T');
+				{Vids.map(data => {
+					const [date, time] = data.snippet.publishedAt.split('T');
 
-						return (
-							<article key={data.id}>
-								<div className='pic'>
-									<Link to={`/detail/${data.id}`}>
-										<img src={data.snippet.thumbnails.standard.url} alt={data.snippet.title} />
-									</Link>
-								</div>
-								<div className='infoBox'>
-									<span>{customText(date, '.')}</span>
-									<em>{time.split('Z')[0]}</em>
-								</div>
+					return (
+						<article key={data.id}>
+							<div className='pic'>
+								<Link to={`/detail/${data.id}`}>
+									<img src={data.snippet.thumbnails.standard.url} alt={data.snippet.title} />
+								</Link>
+							</div>
+							<div className='infoBox'>
+								<span>{customText(date, '.')}</span>
+								<em>{time.split('Z')[0]}</em>
+							</div>
 
-								<div className='txt'>
-									<h2>{shortenText(data.snippet.title, 40)}</h2>
-									<p>{shortenText(data.snippet.description, 140)}</p>
-								</div>
-							</article>
-						);
-					})}
+							<div className='txt'>
+								<h2>{shortenText(data.snippet.title, 40)}</h2>
+								<p>{shortenText(data.snippet.description, 140)}</p>
+							</div>
+						</article>
+					);
+				})}
 			</section>
 		</Layout>
 	);
