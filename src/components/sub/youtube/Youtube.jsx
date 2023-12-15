@@ -45,13 +45,16 @@ export default function Youtube() {
 					return (
 						<article key={data.id}>
 							<div className='pic'>
-								<Link to={`/detail/${data.id}`}>
-									<img src={data.snippet.thumbnails.standard.url} alt={data.snippet.title} />
-								</Link>
+								<img src={data.snippet.thumbnails.standard.url} alt={data.snippet.title} />
 							</div>
 							<div className='infoBox'>
-								<span>{customText(date, '.')}</span>
-								<em>{time.split('Z')[0]}</em>
+								<div className='viewDetail'>
+									<Link to={`/detail/${data.id}`}>view detail</Link>
+								</div>
+								<div className='date'>
+									<span>{customText(date, '.')}</span>
+									<em>{time.split('Z')[0]}</em>
+								</div>
 							</div>
 
 							<div className='txt'>
