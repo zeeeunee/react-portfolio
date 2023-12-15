@@ -6,6 +6,7 @@ export default function Contact() {
 	const kakao = useRef(window.kakao);
 	const [Index, setIndex] = useState(0);
 	const [Traffic, setTraffic] = useState(false);
+	const [View, setView] = useState(false);
 	const mapFrame = useRef(null);
 	const viewFrame = useRef(null);
 	const marker = useRef(null);
@@ -39,8 +40,15 @@ export default function Contact() {
 		position: mapInfo.current[Index].latlng,
 		image: new kakao.current.maps.MarkerImage(mapInfo.current[Index].imgSrc, mapInfo.current[Index].imgSize, mapInfo.current[Index].imgOpt)
 	});
-
-	const setCenter = () => mapInstance.current.setCenter(mapInfo.current[Index].latlng);
+	const roadview = () => {
+		new kakao.current.maps.RoadviewClient().getNearestPanoId(mapInfo.current[Index].latlng, 50, panoId => {
+			new kakao.current.maps.Roadview(viewFrame.current).setPanoId(panoId, mapInfo.current[Index].latlng);
+		});
+	};
+	const setCenter = () => {
+		mapInstance.current.setCenter(mapInfo.current[Index].latlng);
+		roadview();
+	};
 
 	useEffect(() => {
 		mapFrame.current.innerHTML = '';
@@ -50,10 +58,9 @@ export default function Contact() {
 		});
 		marker.current.setMap(mapInstance.current);
 		setTraffic(false);
+		setView(false);
 
-		new kakao.current.maps.RoadviewClient().getNearestPanoId(mapInfo.current[Index].latlng, 50, panoId => {
-			new kakao.current.maps.Roadview(viewFrame.current).setPanoId(panoId, mapInfo.current[Index].latlng);
-		});
+		roadview();
 
 		mapInstance.current.addControl(new kakao.current.maps.MapTypeControl(), kakao.current.maps.ControlPosition.TOPRIGHT);
 
@@ -63,11 +70,13 @@ export default function Contact() {
 		window.addEventListener('resize', setCenter);
 		return () => window.removeEventListener('resize', setCenter);
 	}, [Index]);
+
 	useEffect(() => {
 		Traffic
 			? mapInstance.current.addOverlayMapTypeId(kakao.current.maps.MapTypeId.TRAFFIC)
 			: mapInstance.current.removeOverlayMapTypeId(kakao.current.maps.MapTypeId.TRAFFIC);
 	}, [Traffic]);
+
 	return (
 		<Layout title={'Contact'}>
 			<div className='controlBox'>
@@ -80,11 +89,13 @@ export default function Contact() {
 				</nav>
 				<nav className='info'>
 					<button onClick={() => setTraffic(!Traffic)}>{Traffic ? 'Traffic OFF' : 'Traffic ON'}</button>
+					<button onClick={() => setView(!View)}>{View ? 'map' : 'road view'}</button>
 				</nav>
 			</div>
-
-			<article className='mapBox' ref={mapFrame}></article>
-			<article className='viewBox' ref={viewFrame}></article>
+			<section className='tab'>
+				<article className={`mapBox ${View ? '' : 'on'}`} ref={mapFrame}></article>
+				<article className={`viewBox ${View ? 'on' : ''}`} ref={viewFrame}></article>
+			</section>
 		</Layout>
 	);
 }
