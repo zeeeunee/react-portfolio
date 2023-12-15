@@ -1,28 +1,59 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Layout from '../../common/layout/Layout';
 import './Contact.scss';
-export default function Contact() {
-	const mapFrame = useRef(null);
-	const { kakao } = window;
-	const mapOption = useRef({ center: new kakao.maps.LatLng(37.511553, 127.022009), level: 3 });
 
-	const imageSrc = process.env.PUBLIC_URL + `/img/marker1.png`;
-	const imageSize = new kakao.maps.Size(242, 99);
-	const imageOption = { offset: new kakao.maps.Point(116, 99) };
+export default function Contact() {
+	const { kakao } = window;
+	const [Index, setIndex] = useState(0);
+	const mapFrame = useRef(null);
+	const marker = useRef(null);
+	const mapInfo = useRef([
+		{
+			title: '이케아 고양점',
+			latlng: new kakao.maps.LatLng(37.629957, 126.862974),
+			imgSrc: `${process.env.PUBLIC_URL}/img/marker1.png`,
+			imgSize: new kakao.maps.Size(232, 99),
+			imgPos: { offset: new kakao.maps.Point(116, 99) }
+		},
+		{
+			title: '이케아 광명점',
+			latlng: new kakao.maps.LatLng(37.42452, 126.881864),
+			imgSrc: `${process.env.PUBLIC_URL}/img/marker2.png`,
+			imgSize: new kakao.maps.Size(232, 99),
+			imgPos: { offset: new kakao.maps.Point(116, 99) }
+		},
+		{
+			title: '이케아 기흥점',
+			latlng: new kakao.maps.LatLng(37.222253, 127.116268),
+			imgSrc: `${process.env.PUBLIC_URL}/img/marker3.png`,
+			imgSize: new kakao.maps.Size(232, 99),
+			imgPos: { offset: new kakao.maps.Point(116, 99) }
+		}
+	]);
+
+	marker.current = new kakao.maps.Marker({
+		position: mapInfo.current[Index].latlng,
+		image: new kakao.maps.MarkerImage(mapInfo.current[Index].imgSrc, mapInfo.current[Index].imgSize, mapInfo.current[Index].imgOpt)
+	});
 
 	useEffect(() => {
-		const mapInstance = new kakao.maps.Map(mapFrame.current, mapOption.current);
-		const markerImageInstance = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption);
-		const posInstance = mapOption.current.center;
-		const markerInstance = new kakao.maps.Marker({
-			position: posInstance,
-			image: markerImageInstance
+		const mapInstance = new kakao.maps.Map(mapFrame.current, {
+			center: mapInfo.current[Index].latlng,
+			level: 3
 		});
-		markerInstance.setMap(mapInstance);
-	}, []);
+		marker.current.setMap(mapInstance);
+	}, [Index, kakao]);
+
 	return (
 		<Layout title={'Contact'}>
-			<article id='map' ref={mapFrame}></article>
+			<ul className='branch'>
+				{mapInfo.current.map((el, idx) => (
+					<button key={idx} onClick={() => setIndex(idx)} className={idx === Index ? 'on' : ''}>
+						{el.title}
+					</button>
+				))}
+			</ul>
+			<article className='mapBox' ref={mapFrame}></article>
 		</Layout>
 	);
 }

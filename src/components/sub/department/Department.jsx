@@ -13,8 +13,8 @@ export default function Department() {
 
 	const fetchDepartment = () => {
 		fetch(`${path}/DB/department.json`)
-			.then((data) => data.json())
-			.then((json) => {
+			.then(data => data.json())
+			.then(json => {
 				setMemberTit(Object.keys(json)[0]);
 				setMemberData(Object.values(json)[0]);
 			});
@@ -22,8 +22,8 @@ export default function Department() {
 
 	const fetchHistory = () => {
 		fetch(`${path}/DB/history.json`)
-			.then((data) => data.json())
-			.then((json) => {
+			.then(data => data.json())
+			.then(json => {
 				setHistoryTit(Object.keys(json)[0]);
 				setHistoryData(Object.values(json)[0]);
 			});
@@ -31,8 +31,8 @@ export default function Department() {
 
 	const fetchGray = () => {
 		fetch(`${path}/DB/gray.json`)
-			.then((data) => data.json())
-			.then((json) => {
+			.then(data => data.json())
+			.then(json => {
 				setGray(Object.values(json)[0]);
 			});
 	};
@@ -96,10 +96,8 @@ export default function Department() {
 						return (
 							<article key={member + idx}>
 								<img src={`${path}/img/${member.pic}`} alt={member.name} />
-								<div className='memberDetail'>
-									<h3>{member.name}</h3>
-									{/* <p>{member.position}</p> */}
-								</div>
+								<h3>{member.name}</h3>
+								{/* <p>{member.position}</p> */}
 							</article>
 						);
 					})}
