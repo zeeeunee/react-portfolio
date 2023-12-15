@@ -5,14 +5,16 @@ import './Contact.scss';
 export default function Contact() {
 	const kakao = useRef(window.kakao);
 	const [Index, setIndex] = useState(0);
+	const [Traffic, setTraffic] = useState(false);
 	const mapFrame = useRef(null);
+	const viewFrame = useRef(null);
 	const marker = useRef(null);
 	const mapInstance = useRef(null);
 
 	const mapInfo = useRef([
 		{
 			title: '이케아 고양점',
-			latlng: new kakao.current.maps.LatLng(37.629957, 126.862974),
+			latlng: new kakao.current.maps.LatLng(37.628636, 126.862218),
 			imgSrc: `${process.env.PUBLIC_URL}/img/marker1.png`,
 			imgSize: new kakao.current.maps.Size(232, 99),
 			imgPos: { offset: new kakao.current.maps.Point(116, 99) }
@@ -26,7 +28,7 @@ export default function Contact() {
 		},
 		{
 			title: '이케아 기흥점',
-			latlng: new kakao.current.maps.LatLng(37.222253, 127.116268),
+			latlng: new kakao.current.maps.LatLng(37.222474, 127.114621),
 			imgSrc: `${process.env.PUBLIC_URL}/img/marker3.png`,
 			imgSize: new kakao.current.maps.Size(232, 99),
 			imgPos: { offset: new kakao.current.maps.Point(116, 99) }
@@ -41,25 +43,48 @@ export default function Contact() {
 	const setCenter = () => mapInstance.current.setCenter(mapInfo.current[Index].latlng);
 
 	useEffect(() => {
+		mapFrame.current.innerHTML = '';
 		mapInstance.current = new kakao.current.maps.Map(mapFrame.current, {
 			center: mapInfo.current[Index].latlng,
 			level: 3
 		});
 		marker.current.setMap(mapInstance.current);
+		setTraffic(false);
+
+		new kakao.current.maps.RoadviewClient().getNearestPanoId(mapInfo.current[Index].latlng, 50, panoId => {
+			new kakao.current.maps.Roadview(viewFrame.current).setPanoId(panoId, mapInfo.current[Index].latlng);
+		});
+
+		mapInstance.current.addControl(new kakao.current.maps.MapTypeControl(), kakao.current.maps.ControlPosition.TOPRIGHT);
+
+		mapInstance.current.addControl(new kakao.current.maps.ZoomControl(), kakao.current.maps.ControlPosition.RIGHT);
+
+		mapInstance.current.setZoomable(false);
 		window.addEventListener('resize', setCenter);
 		return () => window.removeEventListener('resize', setCenter);
-	}, [Index, kakao]);
-
+	}, [Index]);
+	useEffect(() => {
+		Traffic
+			? mapInstance.current.addOverlayMapTypeId(kakao.current.maps.MapTypeId.TRAFFIC)
+			: mapInstance.current.removeOverlayMapTypeId(kakao.current.maps.MapTypeId.TRAFFIC);
+	}, [Traffic]);
 	return (
 		<Layout title={'Contact'}>
-			<ul className='branch'>
-				{mapInfo.current.map((el, idx) => (
-					<button key={idx} onClick={() => setIndex(idx)} className={idx === Index ? 'on' : ''}>
-						{el.title}
-					</button>
-				))}
-			</ul>
+			<div className='controlBox'>
+				<nav className='branch'>
+					{mapInfo.current.map((el, idx) => (
+						<button key={idx} onClick={() => setIndex(idx)} className={idx === Index ? 'on' : ''}>
+							{el.title}
+						</button>
+					))}
+				</nav>
+				<nav className='info'>
+					<button onClick={() => setTraffic(!Traffic)}>{Traffic ? 'Traffic OFF' : 'Traffic ON'}</button>
+				</nav>
+			</div>
+
 			<article className='mapBox' ref={mapFrame}></article>
+			<article className='viewBox' ref={viewFrame}></article>
 		</Layout>
 	);
 }

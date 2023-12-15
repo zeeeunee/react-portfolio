@@ -3,6 +3,7 @@ import './Youtube.scss';
 import { useState, useEffect } from 'react';
 import { useCustomText } from '../../../hooks/useText';
 import { Link } from 'react-router-dom';
+import { FaArrowRight } from 'react-icons/fa6';
 
 export default function Youtube() {
 	const [Vids, setVids] = useState([]);
@@ -49,6 +50,7 @@ export default function Youtube() {
 							</div>
 							<div className='infoBox'>
 								<div className='viewDetail'>
+									<FaArrowRight />
 									<Link to={`/detail/${data.id}`}>view detail</Link>
 								</div>
 								<div className='date'>
