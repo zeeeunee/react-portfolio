@@ -30,18 +30,10 @@ export default function Youtube() {
 
 	return (
 		<Layout title={'Youtube'}>
-			<div className='singleVideo'>
-				<iframe
-					width='560'
-					height='315'
-					src='https://www.youtube.com/embed/xXWUgGLByIw?si=CVoxHAJY2yeJo4Zd&amp;controls=0'
-					title='YouTube video player'
-					frameborder='0'
-					allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
-					allowfullscreen></iframe>
-			</div>
-
 			<section className='YoutubeData'>
+				<div className='topPic'>
+					<img src='/img/image.jpg' alt='sofa' />
+				</div>
 				<section className='our'>
 					<h3>Our Youtube Post</h3>
 					<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis, saepe.</p>
@@ -64,7 +56,7 @@ export default function Youtube() {
 
 							<div className='txt'>
 								<h2>{shortenText(data.snippet.title, 40)}</h2>
-								<p>{shortenText(data.snippet.description, 140)}</p>
+								<p>{shortenText(data.snippet.description, 200)}</p>
 							</div>
 						</article>
 					);
