@@ -58,22 +58,24 @@
 			}
 			.infoBox {
 				width: 100%;
-				padding: 10px;
 				font-size: var(--bodySize2);
 				color: rgba(var(--baseColor-code), 0.5);
 
 				.viewDetail {
 					width: 100%;
-					margin-bottom: 8px;
+					padding: 10px;
+
 					display: flex;
 					justify-content: flex-end;
 					font-size: var(--bodySize2);
 					color: rgba(var(--baseColor-code), 0.7);
+					background-color: rgba(var(--baseColor-code), 0.1);
 					gap: 5px;
 				}
 
 				.date {
 					width: 100%;
+					padding: 10px;
 					display: flex;
 					justify-content: space-between;
 					em {
