@@ -1,8 +1,39 @@
 import { useEffect, useRef, useState } from 'react';
 import Layout from '../../common/layout/Layout';
 import './Contact.scss';
+import emailjs from '@emailjs/browser';
 
 export default function Contact() {
+	const form = useRef();
+
+	const resetForm = () => {
+		const elArr = form.current.children;
+
+		Array.from(elArr).forEach(el => {
+			console.log(el);
+			if (el.name === 'user_name' || el.name === 'user_email' || el.name === 'message') el.value = '';
+		});
+	};
+	const sendEmail = e => {
+		e.preventDefault();
+
+		const [user, email] = form.current.querySelectorAll('input');
+		const txtArea = form.current.querySelector('textarea');
+
+		if (!user.value || !email.value || !txtArea.value) return alert('이름, 이메일주소 문의내용을 모두 입력하세요.');
+
+		emailjs.sendForm('service_1gzi4dl', 'template_8l9j4yu', form.current, 'SbGYfi4rN5zFsWjvZ').then(
+			result => {
+				alert('문의 내용이 성공적으로 전송되었습니다.');
+				resetForm();
+			},
+			error => {
+				alert('일시적인 장애로 문의 전송에 실패했습니다. 다음의 메일주소로 보내주세요.');
+				resetForm();
+			}
+		);
+	};
+
 	const kakao = useRef(window.kakao);
 	const [Index, setIndex] = useState(0);
 	const [Traffic, setTraffic] = useState(false);
@@ -79,23 +110,41 @@ export default function Contact() {
 
 	return (
 		<Layout title={'Contact'}>
-			<div className='controlBox'>
-				<nav className='branch'>
-					{mapInfo.current.map((el, idx) => (
-						<button key={idx} onClick={() => setIndex(idx)} className={idx === Index ? 'on' : ''}>
-							{el.title}
-						</button>
-					))}
-				</nav>
-				<nav className='traffic'>
-					<button onClick={() => setTraffic(!Traffic)}>{Traffic ? 'TRAFFIC OFF' : 'TRAFFIC ON'}</button>
-					<button onClick={() => setView(!View)}>{View ? 'MAP' : 'ROAD VIEW'}</button>
-				</nav>
+			<div id='mailSection'>
+				<div className='mailLeft'>
+					<h2>Get In Touch</h2>
+					<p className='p1'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium enim, quibusdam aut perspiciatis at veritatis.</p>
+					<p className='p2'>
+						Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum eligendi nobis accusantium in rerum! Voluptatibus voluptatum reprehenderit
+						facilis nesciunt mollitia ducimus alias libero. Culpa minus consequatur illo ipsum dolorem earum.
+					</p>
+				</div>
+				<form ref={form} onSubmit={sendEmail}>
+					<input type='text' name='user_name' placeholder='NAME' />
+					<input type='email' name='user_email' placeholder='EMAIL' />
+					<textarea name='message' placeholder='MESSAGE' />
+					<input className='emailButton' type='submit' value='Send' />
+				</form>
 			</div>
-			<section className='tab'>
-				<article className={`mapBox ${View ? '' : 'on'}`} ref={mapFrame}></article>
-				<article className={`viewBox ${View ? 'on' : ''}`} ref={viewFrame}></article>
-			</section>
+			<div id='mapSection'>
+				<div className='controlBox'>
+					<nav className='branch'>
+						{mapInfo.current.map((el, idx) => (
+							<button key={idx} onClick={() => setIndex(idx)} className={idx === Index ? 'on' : ''}>
+								{el.title}
+							</button>
+						))}
+					</nav>
+					<nav className='traffic'>
+						<button onClick={() => setTraffic(!Traffic)}>{Traffic ? 'TRAFFIC OFF' : 'TRAFFIC ON'}</button>
+						<button onClick={() => setView(!View)}>{View ? 'MAP' : 'ROAD VIEW'}</button>
+					</nav>
+				</div>
+				<section className='tab'>
+					<article className={`mapBox ${View ? '' : 'on'}`} ref={mapFrame}></article>
+					<article className={`viewBox ${View ? 'on' : ''}`} ref={viewFrame}></article>
+				</section>
+			</div>
 		</Layout>
 	);
 }
