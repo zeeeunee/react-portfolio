@@ -1,0 +1,96 @@
+.Members {
+	.wrap {
+		width: 100%;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+
+		.formBox {
+			width: 70%;
+			padding-left: 50px;
+
+			table {
+				width: 100%;
+
+				tr {
+					td {
+						padding: 30px 20px 10px;
+						position: relative;
+
+						p {
+							font-size: var(--bodySize2);
+							font-family: '돋움';
+						}
+
+						&::after {
+							content: '';
+							display: block;
+							width: calc(100% - 40px);
+							height: 1px;
+							font-size: var(--bodySize2);
+							background: var(--baseColor);
+							opacity: 0.6;
+							position: absolute;
+							bottom: 0;
+							left: 20px;
+						}
+
+						input[type='text'],
+						input[type='password'],
+						textarea {
+							width: 100%;
+							padding: 5px;
+							border: none;
+							font-size: var(--bodySize2);
+							font-family: var(--baseFont);
+							background-color: rgba(var(--baseColor-code), 0.1);
+						}
+						select {
+							width: 100%;
+							padding: 3px;
+							border: none;
+							background-color: rgba(var(--baseColor-code), 0.1);
+							font-family: var(--baseFont);
+						}
+						label {
+							margin-right: 40px;
+							font-size: var(--bodySize2);
+							opacity: 0.6;
+						}
+						input[type='checkbox'],
+						input[type='radio'] {
+							margin-right: 10px;
+						}
+						.formButton {
+							width: 100%;
+							width: 100%;
+							display: flex;
+							justify-content: flex-end;
+							gap: 7px;
+							input[type='submit'],
+							input[type='reset'] {
+								background: var(--baseColor);
+								padding: 10px;
+								border: none;
+								font-size: var(--bodySize2);
+								color: var(--bgColor);
+								cursor: pointer;
+								transition: 0.5s;
+
+								&:hover {
+									background-color: var(--pointColor1);
+								}
+							}
+						}
+					}
+
+					&:last-child {
+						td::after {
+							display: none;
+						}
+					}
+				}
+			}
+		}
+	}
+}

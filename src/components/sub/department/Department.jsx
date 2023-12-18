@@ -7,7 +7,6 @@ export default function Department() {
 	const [HistoryData, setHistoryData] = useState([]);
 	const [MemberTit, setMemberTit] = useState('');
 	const [MemberData, setMemberData] = useState([]);
-	const [Gray, setGray] = useState([]);
 
 	const path = process.env.PUBLIC_URL;
 
@@ -29,18 +28,9 @@ export default function Department() {
 			});
 	};
 
-	const fetchGray = () => {
-		fetch(`${path}/DB/gray.json`)
-			.then(data => data.json())
-			.then(json => {
-				setGray(Object.values(json)[0]);
-			});
-	};
-
 	useEffect(() => {
 		fetchDepartment();
 		fetchHistory();
-		fetchGray();
 	}, []);
 
 	return (
@@ -49,13 +39,12 @@ export default function Department() {
 
 			<div className='historyGray'>
 				<section className='grayImage'>
-					{Gray.map((gray, idx) => {
-						return (
-							<article key={gray + idx}>
-								<img src={`${path}/img/${gray.pic}`} alt={gray.pic} />
-							</article>
-						);
-					})}
+					<article>
+						<img src='/img/gray1.jpg' alt='grayimage1' />
+					</article>
+					<article>
+						<img src='/img/gray2.jpg' alt='grayimage2' />
+					</article>
 				</section>
 				<section className='grayRightBox'>
 					<h2>History Our Creation</h2>
