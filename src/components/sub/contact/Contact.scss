@@ -12,7 +12,7 @@
 			padding: 70px;
 			display: flex;
 			flex-wrap: wrap;
-			background-color: rgba(var(--baseColor-code), 0.1);
+			background-color: var(--pointColor3);
 
 			h2 {
 				margin-bottom: 30px;
@@ -98,7 +98,7 @@
 			background-color: var(--baseColor);
 			font-family: var(--baseFont);
 			position: relative;
-			filter: saturate(0);
+			filter: saturate(0.3);
 			transition: filter 0.5s;
 
 			&:hover {
