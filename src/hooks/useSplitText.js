@@ -7,7 +7,7 @@ export function useSplitText() {
 			tags += `<span style='transition-duration:${speed}s;transition-delay:${interval * count}s'>${letter}</span>`;
 			count++;
 		}
-		console.log(tags);
+
 		ref.innerHTML = tags;
 	};
 }

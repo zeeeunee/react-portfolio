@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, useCallback } from 'react';
 import Layout from '../../common/layout/Layout';
 import './Contact.scss';
 import emailjs from '@emailjs/browser';
@@ -71,15 +71,15 @@ export default function Contact() {
 		position: mapInfo.current[Index].latlng,
 		image: new kakao.current.maps.MarkerImage(mapInfo.current[Index].imgSrc, mapInfo.current[Index].imgSize, mapInfo.current[Index].imgOpt)
 	});
-	const roadview = () => {
+	const roadview = useRef(() => {
 		new kakao.current.maps.RoadviewClient().getNearestPanoId(mapInfo.current[Index].latlng, 50, panoId => {
 			new kakao.current.maps.Roadview(viewFrame.current).setPanoId(panoId, mapInfo.current[Index].latlng);
 		});
-	};
-	const setCenter = () => {
+	});
+	const setCenter = useCallback(() => {
 		mapInstance.current.setCenter(mapInfo.current[Index].latlng);
-		roadview();
-	};
+		roadview.current();
+	}, [Index]);
 
 	useEffect(() => {
 		mapFrame.current.innerHTML = '';
@@ -91,7 +91,7 @@ export default function Contact() {
 		setTraffic(false);
 		setView(false);
 
-		roadview();
+		roadview.current();
 
 		mapInstance.current.addControl(new kakao.current.maps.MapTypeControl(), kakao.current.maps.ControlPosition.TOPRIGHT);
 
@@ -100,7 +100,7 @@ export default function Contact() {
 		mapInstance.current.setZoomable(false);
 		window.addEventListener('resize', setCenter);
 		return () => window.removeEventListener('resize', setCenter);
-	}, [Index]);
+	}, [Index, setCenter]);
 
 	useEffect(() => {
 		Traffic
