@@ -15,24 +15,24 @@ import { useMedia } from './hooks/useMedia';
 import Menu from './components/common/menu/Menu';
 import Youtube from './components/sub/youtube/Youtube';
 import Detail from './components/sub/youtube/Detail';
+import * as types from './redux/action';
 
 function App() {
 	const dispatch = useDispatch();
 	const path = useRef(process.env.PUBLIC_URL);
 
 	const [Dark, setDark] = useState(false);
-	const [Toggle, setToggle] = useState(false);
 
 	const fetchDepartment = useCallback(async () => {
 		const data = await fetch(`${path.current}/DB/department.json`);
 		const json = await data.json();
-		dispatch({ type: 'SET_MEMBERS', payload: json.members });
+		dispatch({ type: types.MEMBER.success, payload: json.members });
 	}, [dispatch]);
 
 	const fetchHistory = useCallback(async () => {
 		const data = await fetch(`${path.current}/DB/history.json`);
 		const json = await data.json();
-		dispatch({ type: 'SET_HISTORY', payload: json.history });
+		dispatch({ type: types.HISTORY.success, payload: json.history });
 	}, [dispatch]);
 
 	const fetchYoutube = useCallback(async () => {
@@ -43,9 +43,9 @@ function App() {
 		try {
 			const data = await fetch(baseURL);
 			const json = await data.json();
-			dispatch({ type: 'SET_YOUTUBE', payload: json.items });
+			dispatch({ type: types.YOUTUBE.success, payload: json.items });
 		} catch (err) {
-			dispatch({ type: 'SET_YOUTUBE_ERR', payload: err });
+			dispatch({ type: types.YOUTUBE.fail, payload: err });
 		}
 	}, [dispatch]);
 
