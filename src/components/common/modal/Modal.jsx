@@ -4,7 +4,7 @@ import * as types from '../../../redux/action';
 
 import { IoClose } from 'react-icons/io5';
 
-export default function Modal({ Open, setOpen, children }) {
+export default function Modal({ children }) {
 	const dispatch = useDispatch();
 	const Open = useSelector(store => store.modalReducer.modal);
 	return (
