@@ -5,15 +5,8 @@ import { useCustomText } from '../../../hooks/useText';
 import Masonry from 'react-masonry-component';
 import { IoSearch } from 'react-icons/io5';
 import Modal from '../../common/modal/Modal';
-import { useDispatch, useSelector } from 'react-redux';
-import * as types from '../../../redux/action';
 
 export default function Gallery() {
-	const dispatch = useDispatch();
-
-	const error = useSelector(store => store.modalReducer.modal);
-	console.log(error);
-
 	const myID = useRef('199697926@N08');
 	const isUser = useRef(myID.current);
 	const refNav = useRef(null);
@@ -135,7 +128,7 @@ export default function Gallery() {
 										<div
 											className='pic'
 											onClick={() => {
-												dispatch({ type: types.MODAL.start, payload: true });
+												setOpen(true);
 												setIndex(idx);
 											}}>
 											<img src={`https://live.staticflickr.com/${pic.server}/${pic.id}_${pic.secret}_m.jpg`} alt={pic.title} />
@@ -157,7 +150,7 @@ export default function Gallery() {
 				</section>
 			</Layout>
 
-			<Modal>
+			<Modal Open={Open} setOpen={setOpen}>
 				{Pics.length !== 0 && (
 					<img src={`https://live.staticflickr.com/${Pics[Index].server}/${Pics[Index].id}_${Pics[Index].secret}_b.jpg`} alt={Pics[Index].title} />
 				)}
