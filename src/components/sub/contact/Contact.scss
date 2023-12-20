@@ -129,3 +129,77 @@
 		}
 	}
 }
+
+.tablet {
+	.Contact {
+		#mailSection {
+			width: 100%;
+			margin: 100px 0;
+			display: flex;
+			flex-wrap: wrap;
+
+			.mailLeft {
+				width: 50%;
+				padding: 50px;
+			}
+			form {
+				width: 50%;
+				padding: 40px;
+			}
+		}
+	}
+}
+
+.mobile {
+	.Contact {
+		#mailSection {
+			width: 100%;
+			margin: 100px 0;
+			display: flex;
+			flex-wrap: wrap;
+
+			.mailLeft {
+				width: 100%;
+				padding: 50px;
+			}
+			form {
+				width: 100%;
+				padding: 30px;
+				input {
+					margin: 7px 0;
+				}
+				textarea {
+					margin: 7px 0;
+				}
+			}
+		}
+		#mapSection {
+			width: 100%;
+			margin: 100px 0;
+			.controlBox {
+				display: flex;
+				flex-wrap: wrap;
+
+				.branch {
+					width: 100%;
+					display: flex;
+					justify-content: center;
+					gap: 10px;
+					margin-bottom: 10px;
+					button {
+						margin-right: 0px;
+					}
+				}
+				.traffic {
+					width: 100%;
+					display: flex;
+					justify-content: center;
+					gap: 10px;
+					button {
+						margin-left: 0px;
+					}
+				}
+			}
+		}
+	}
+}

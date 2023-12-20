@@ -79,6 +79,7 @@ export default function Members() {
 		<Layout title={'Members'}>
 			<div className='wrap'>
 				<div className='formBox'>
+					<h3>JOIN US</h3>
 					<form onSubmit={handleSubmit}>
 						<fieldset>
 							<legend className='h'>회원가입 폼</legend>
@@ -89,6 +90,8 @@ export default function Members() {
 											<input type='text' name='userid' placeholder='User ID' value={Val.userid} onChange={handleChange} />
 											{Errs.userid && <p>{Errs.userid}</p>}
 										</td>
+									</tr>
+									<tr>
 										<td>
 											<input type='text' name='email' placeholder='Email' value={Val.email} onChange={handleChange} />
 											{Errs.email && <p>{Errs.email}</p>}
@@ -100,6 +103,8 @@ export default function Members() {
 											<input type='password' name='pwd1' placeholder='Password' value={Val.pwd1} onChange={handleChange} />
 											{Errs.pwd1 && <p>{Errs.pwd1}</p>}
 										</td>
+									</tr>
+									<tr>
 										<td>
 											<input type='password' name='pwd2' placeholder='Re-Password' value={Val.pwd2} onChange={handleChange} />
 											{Errs.pwd2 && <p>{Errs.pwd2}</p>}
@@ -160,9 +165,11 @@ export default function Members() {
 										</td>
 									</tr>
 									<tr>
-										<td className='formButton' colSpan='2'>
-											<input type='reset' value='Cancel' onClick={handleReset} />
-											<input type='submit' value='Submit' />
+										<td colSpan='2'>
+											<div className='formbutton'>
+												<input type='reset' value='Cancel' onClick={handleReset} />
+												<input type='submit' value='Submit' />
+											</div>
 										</td>
 									</tr>
 								</tbody>
