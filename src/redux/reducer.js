@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 
-const memberReducer = (state = [], action) => {
+const memberReducer = (state = { members: [] }, action) => {
 	switch (action.type) {
 		case 'SET_MEMBERS':
 			return { ...state, members: action.payload };
@@ -9,7 +9,7 @@ const memberReducer = (state = [], action) => {
 	}
 };
 
-const historyReducer = (state = [], action) => {
+const historyReducer = (state = { history: [] }, action) => {
 	switch (action.type) {
 		case 'SET_HISTORY':
 			return { ...state, history: action.payload };
@@ -18,7 +18,7 @@ const historyReducer = (state = [], action) => {
 	}
 };
 
-const youtubeReducer = (state = [], action) => {
+const youtubeReducer = (state = { youtube: [] }, action) => {
 	switch (action.type) {
 		case 'SET_YOUTUBE':
 			return { ...state, youtube: action.payload };
@@ -29,5 +29,14 @@ const youtubeReducer = (state = [], action) => {
 	}
 };
 
-const reducers = combineReducers({ memberReducer, historyReducer, youtubeReducer });
+const modalReducer = (state = { modal: false }, action) => {
+	switch (action.type) {
+		case types.MODAL.start:
+			return { ...state, modal: action.payload };
+		default:
+			return state;
+	}
+};
+
+const reducers = combineReducers({ memberReducer, historyReducer, youtubeReducer, modalReducer });
 export default reducers;
