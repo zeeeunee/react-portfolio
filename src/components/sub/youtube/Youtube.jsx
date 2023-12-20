@@ -4,27 +4,13 @@ import { useState, useEffect } from 'react';
 import { useCustomText } from '../../../hooks/useText';
 import { Link } from 'react-router-dom';
 import { FaArrowRight } from 'react-icons/fa6';
+import { useSelector } from 'react-redux';
 
 export default function Youtube() {
-	const [Vids, setVids] = useState([]);
+	const Vids = useSelector(store => store.youtubeReducer.youtube);
+
 	const customText = useCustomText('combined');
 	const shortenText = useCustomText('shorten');
-	const fetchYoutube = async () => {
-		const api_key = 'AIzaSyBQ0OBVJR5LwVP7O1wFRSbfMbLCLvWRLnE';
-		const pid = 'PLM7Wu-2kzIQNrTEyi14QDMjdugAx8sKNZ';
-		const num = 6;
-		const baseURL = `https://www.googleapis.com/youtube/v3/playlistItems?key=${api_key}&part=snippet&playlistId=${pid}&maxResults=${num}`;
-		try {
-			const data = await fetch(baseURL);
-			const json = await data.json();
-			setVids(json.items);
-		} catch (err) {
-			console.error(err);
-		}
-	};
-	useEffect(() => {
-		fetchYoutube();
-	}, []);
 
 	return (
 		<Layout title={'Youtube'}>
