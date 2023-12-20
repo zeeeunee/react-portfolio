@@ -9,16 +9,36 @@ import Members from './components/sub/members/Members';
 import { Route } from 'react-router-dom';
 import './globalStyles/Variables.scss';
 import './globalStyles/Reset.scss';
-import { useState } from 'react';
-
+import { useState, useEffect, useRef, useCallback } from 'react';
+import { useDispatch } from 'react-redux';
 import { useMedia } from './hooks/useMedia';
 import Menu from './components/common/menu/Menu';
 import Youtube from './components/sub/youtube/Youtube';
 import Detail from './components/sub/youtube/Detail';
 
 function App() {
+	const dispatch = useDispatch();
+	const path = useRef(process.env.PUBLIC_URL);
+
 	const [Dark, setDark] = useState(false);
 	const [Toggle, setToggle] = useState(false);
+
+	const fetchDepartment = useCallback(async () => {
+		const data = await fetch(`${path.current}/DB/department.json`);
+		const json = await data.json();
+		dispatch({ type: 'SET_MEMBERS', payload: json.members });
+	}, [dispatch]);
+
+	const fetchHistory = useCallback(async () => {
+		const data = await fetch(`${path.current}/DB/history.json`);
+		const json = await data.json();
+		dispatch({ type: 'SET_HISTORY', payload: json.history });
+	}, [dispatch]);
+
+	useEffect(() => {
+		fetchDepartment();
+		fetchHistory();
+	}, [fetchDepartment, fetchHistory]);
 
 	return (
 		<>
