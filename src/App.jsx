@@ -25,6 +25,7 @@ function App() {
 	useEffect(() => {
 		dispatch({ type: types.MEMBERS.start });
 		dispatch({ type: types.HISTORY.start });
+		dispatch({ type: types.YOUTUBE.start });
 	}, [dispatch]);
 
 	const [Dark, setDark] = useState(false);
