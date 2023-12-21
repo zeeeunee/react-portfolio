@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+// import { useRef } from 'react';
 import Layout from '../../common/layout/Layout';
 import './Department.scss';
 import { useCustomText } from '../../../hooks/useText';
@@ -9,7 +9,7 @@ export default function Department() {
 	console.log(MemberData);
 	const HistoryData = useSelector(store => store.historyReducer.history);
 	const combinedTitle = useCustomText('combined');
-	const path = useRef(process.env.PUBLIC_URL);
+	const path = process.env.PUBLIC_URL;
 
 	return (
 		<Layout title={'Department'}>
