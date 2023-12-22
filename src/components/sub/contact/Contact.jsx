@@ -48,21 +48,21 @@ export default function Contact() {
 
 	const mapInfo = useRef([
 		{
-			title: 'IKEA GOYANG',
+			title: 'IKEA Go-yang',
 			latlng: new kakao.current.maps.LatLng(37.628636, 126.862218),
 			imgSrc: `${process.env.PUBLIC_URL}/img/marker1.png`,
 			imgSize: new kakao.current.maps.Size(232, 99),
 			imgPos: { offset: new kakao.current.maps.Point(116, 99) }
 		},
 		{
-			title: 'IKEA GWANGMYEONG',
+			title: 'IKEA Gwang-myeong',
 			latlng: new kakao.current.maps.LatLng(37.42452, 126.881864),
 			imgSrc: `${process.env.PUBLIC_URL}/img/marker2.png`,
 			imgSize: new kakao.current.maps.Size(232, 99),
 			imgPos: { offset: new kakao.current.maps.Point(116, 99) }
 		},
 		{
-			title: 'IKEA GIHEUMG',
+			title: 'IKEA Gi-heumg',
 			latlng: new kakao.current.maps.LatLng(37.222474, 127.114621),
 			imgSrc: `${process.env.PUBLIC_URL}/img/marker3.png`,
 			imgSize: new kakao.current.maps.Size(232, 99),
@@ -147,7 +147,7 @@ export default function Contact() {
 			</div>
 			<div id='mailSection'>
 				<div className='mailLeft'>
-					<h3>MESSAGE US</h3>
+					<h3>Message Us</h3>
 					<p className='p1'>
 						Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae non voluptatum deleniti amet id? Qui quo voluptates quis tempore
 						impedit?
@@ -158,9 +158,9 @@ export default function Contact() {
 					</p>
 				</div>
 				<form ref={form} onSubmit={sendEmail}>
-					<input type='text' name='user_name' placeholder='NAME' />
-					<input type='email' name='user_email' placeholder='EMAIL' />
-					<textarea name='message' placeholder='MESSAGE' />
+					<input type='text' name='user_name' placeholder='Name' />
+					<input type='email' name='user_email' placeholder='Email' />
+					<textarea name='message' placeholder='Message' />
 					<input className='emailButton' type='submit' value='Send' />
 				</form>
 			</div>
@@ -178,8 +178,8 @@ export default function Contact() {
 						))}
 					</nav>
 					<nav className='traffic'>
-						<button onClick={() => setTraffic(!Traffic)}>{Traffic ? 'TRAFFIC OFF' : 'TRAFFIC ON'}</button>
-						<button onClick={() => setView(!View)}>{View ? 'MAP' : 'ROAD VIEW'}</button>
+						<button onClick={() => setTraffic(!Traffic)}>{Traffic ? 'Traffic OFF' : 'Traffic ON'}</button>
+						<button onClick={() => setView(!View)}>{View ? 'MAP' : 'Road View'}</button>
 					</nav>
 				</div>
 			</div>

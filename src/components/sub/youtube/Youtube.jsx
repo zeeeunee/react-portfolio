@@ -44,7 +44,7 @@ export default function Youtube() {
 
 							<div className='txt'>
 								<h2>{shortenText(data.snippet.title, 40)}</h2>
-								<p>{shortenText(data.snippet.description, 200)}</p>
+								<p>{shortenText(data.snippet.description, 250)}</p>
 							</div>
 						</article>
 					);
