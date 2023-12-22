@@ -1,6 +1,5 @@
 import Layout from '../../common/layout/Layout';
 import './Youtube.scss';
-// import { useState, useEffect } from 'react';
 import { useCustomText } from '../../../hooks/useText';
 import { Link } from 'react-router-dom';
 import { FaArrowRight } from 'react-icons/fa6';

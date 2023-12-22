@@ -12,7 +12,6 @@ import './globalStyles/Reset.scss';
 import { useEffect, useState } from 'react';
 import * as types from './redux/actionType';
 import { useSelector, useDispatch } from 'react-redux';
-
 import { useMedia } from './hooks/useMedia';
 import Menu from './components/common/menu/Menu';
 import Youtube from './components/sub/youtube/Youtube';
