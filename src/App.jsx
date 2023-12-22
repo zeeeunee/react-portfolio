@@ -25,6 +25,7 @@ function App() {
 		dispatch({ type: types.MEMBERS.start });
 		dispatch({ type: types.HISTORY.start });
 		dispatch({ type: types.YOUTUBE.start });
+		//순서1 flickr데이터 관련 action객체를 보낼때 fetch함수에 전달할 opt값을 action에 추가로 담아서 전달
 		dispatch({ type: types.FLICKR.start, opt: { type: 'user', id: '199697926@N08' } });
 	}, [dispatch]);
 
