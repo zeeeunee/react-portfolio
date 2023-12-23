@@ -103,6 +103,7 @@
 		article {
 			width: 50%;
 			display: flex;
+
 			justify-content: space-between;
 			padding: 20px;
 			border: 1px solid rgba(var(--baseColor-code), 0.1);
@@ -125,10 +126,12 @@
 					}
 				}
 				.detailButton {
+					width: 100%;
 					font-size: var(--bodySize2);
 					color: var(--pointColor2);
 					margin-top: 10px;
 					display: flex;
+					justify-content: center;
 					cursor: pointer;
 				}
 				// .infoBox {
@@ -148,13 +151,20 @@
 			.txt {
 				width: 70%;
 				margin-left: 10px;
+				padding: 10px;
+				display: flex;
+				flex-wrap: wrap;
+				align-content: center;
+
 				h2 {
-					font-size: var(--bodySize1);
+					margin-bottom: 7px;
+					font-size: var(--bodySize2);
 					word-break: break-all;
 				}
 				p {
 					font-size: var(--bodySize2);
 					word-break: break-all;
+					color: rgba(var(--baseColor-code), 0.7);
 				}
 			}
 		}
