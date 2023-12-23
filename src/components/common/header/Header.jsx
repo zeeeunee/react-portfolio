@@ -12,43 +12,47 @@ export default function Header({ Dark, setDark }) {
 			<h1>
 				<Link to='/'>ZEEEUNEE</Link>
 			</h1>
-			<ul>
-				<li>
-					<NavLink to='/department' activeClassName={'on'}>
-						Department
-					</NavLink>
-				</li>
-				<li>
-					<NavLink to='/youtube' activeClassName={'on'}>
-						Youtube
-					</NavLink>
-				</li>
-				<li>
-					<NavLink to='/gallery' activeClassName={'on'}>
-						Gallery
-					</NavLink>
-				</li>
-				<li>
-					<NavLink to='/community' activeClassName={'on'}>
-						Community
-					</NavLink>
-				</li>
-				<li>
-					<NavLink to='/members' activeClassName={'on'}>
-						Members
-					</NavLink>
-				</li>
-				<li>
-					<NavLink to='/contact' activeClassName={'on'}>
-						Contact
-					</NavLink>
-				</li>
-			</ul>
-			<button className='menuToggle' onClick={() => dispatch({ type: types.MENU.start, payload: !Toggle })}>
-				<TiThMenu className='menuIcon' />
-			</button>
-			<div className={`themeBox ${Dark && 'dark'}`} onClick={() => setDark(!Dark)}>
-				<div className='ball'></div>
+
+			<div className='menu'>
+				<ul>
+					<li>
+						<NavLink to='/department' activeClassName={'on'}>
+							Department
+						</NavLink>
+					</li>
+					<li>
+						<NavLink to='/youtube' activeClassName={'on'}>
+							Youtube
+						</NavLink>
+					</li>
+					<li>
+						<NavLink to='/gallery' activeClassName={'on'}>
+							Gallery
+						</NavLink>
+					</li>
+					<li>
+						<NavLink to='/community' activeClassName={'on'}>
+							Community
+						</NavLink>
+					</li>
+					<li>
+						<NavLink to='/members' activeClassName={'on'}>
+							Members
+						</NavLink>
+					</li>
+					<li>
+						<NavLink to='/contact' activeClassName={'on'}>
+							Contact
+						</NavLink>
+					</li>
+				</ul>
+
+				<button className='menuToggle' onClick={() => dispatch({ type: types.MENU.start, payload: !Toggle })}>
+					<TiThMenu className='menuIcon' />
+				</button>
+				<div className={`themeBox ${Dark && 'dark'}`} onClick={() => setDark(!Dark)}>
+					<div className='ball'></div>
+				</div>
 			</div>
 		</header>
 	);

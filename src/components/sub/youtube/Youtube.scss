@@ -1,10 +1,9 @@
 .Youtube {
 	width: 70vw;
-	margin: 50px auto;
 
 	.YoutubeData {
 		width: 100%;
-		margin: 70px auto;
+		margin: 100px auto;
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
@@ -12,9 +11,9 @@
 		.topPic {
 			width: 100%;
 			height: 300px;
-			margin: 50px 0;
+
 			overflow: hidden;
-			position: relative;
+
 			img {
 				width: 100%;
 				height: 100%;
@@ -24,10 +23,8 @@
 
 		.our {
 			width: 100%;
-			margin-bottom: 100px;
+			margin: 50px 0;
 			padding: 30px 0;
-			position: absolute;
-			top: 300px;
 			background-color: var(--pointColor1);
 			h3 {
 				width: 100%;
@@ -101,12 +98,12 @@
 		// 	}
 		// }
 		article {
-			width: 50%;
+			width: 45%;
 			display: flex;
 
 			justify-content: space-between;
 			padding: 20px;
-			border: 1px solid rgba(var(--baseColor-code), 0.1);
+			border-bottom: 1px solid rgba(var(--baseColor-code), 0.1);
 			.left {
 				width: 30%;
 				display: flex;
