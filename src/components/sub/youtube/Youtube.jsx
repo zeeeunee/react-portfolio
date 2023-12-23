@@ -1,10 +1,9 @@
 import Layout from '../../common/layout/Layout';
 import './Youtube.scss';
-import { useState, useEffect } from 'react';
 import { useCustomText } from '../../../hooks/useText';
 import { Link } from 'react-router-dom';
-import { FaArrowRight } from 'react-icons/fa6';
 import { useSelector } from 'react-redux';
+import { IoMdArrowDroprightCircle } from 'react-icons/io';
 
 export default function Youtube() {
 	const Vids = useSelector(store => store.youtubeReducer.youtube);
@@ -28,18 +27,22 @@ export default function Youtube() {
 
 					return (
 						<article key={data.id}>
-							<div className='pic'>
-								<img src={data.snippet.thumbnails.standard.url} alt={data.snippet.title} />
-							</div>
-							<div className='infoBox'>
-								<div className='viewDetail'>
-									<FaArrowRight />
-									<Link to={`/detail/${data.id}`}>view detail</Link>
+							<div className='left'>
+								<div className='pic'>
+									<img src={data.snippet.thumbnails.standard.url} alt={data.snippet.title} />
 								</div>
-								<div className='date'>
-									<span>{customText(date, '.')}</span>
-									<em>{time.split('Z')[0]}</em>
+								<div className='detailButton'>
+									<Link to={`/detail/${data.id}`}>
+										<IoMdArrowDroprightCircle />
+										View Detail
+									</Link>
 								</div>
+								{/* <div className='infoBox'>
+									<div className='date'>
+										<span>{customText(date, '.')}</span>
+										<em>{time.split('Z')[0]}</em>
+									</div>
+								</div> */}
 							</div>
 
 							<div className='txt'>
