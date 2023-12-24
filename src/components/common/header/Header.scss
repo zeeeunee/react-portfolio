@@ -17,21 +17,20 @@
 	.menu {
 		width: 100%;
 		display: flex;
-		justify-content: center;
-		border: 1px solid rgba(var(--baseColor-code), 0.4);
+		justify-content: space-between;
 
 		ul {
+			width: 60%;
 			display: flex;
 			justify-content: center;
 
 			li {
 				padding: 10px 15px;
 				font-size: var(--bodySize2);
-				color: rgba(var(--baseColor-code), 0.5);
+				color: rgba(var(--baseColor-code), 0.7);
 
 				:hover {
 					padding: 10px 0;
-					background-color: var(--pointColor1);
 				}
 			}
 			a.on {
@@ -39,39 +38,44 @@
 				color: var(--baseColor);
 			}
 		}
-		.themeBox {
-			width: 60px;
-			height: 26px;
-			margin: 5px 0px 0 20px;
-			border: 1px solid var(--baseColor);
-			border-radius: 18px;
-			cursor: pointer;
-			position: relative;
-			transform: scale(0.7);
+		.darkToggle {
+			width: 20%;
+			.themeBox {
+				width: 60px;
+				height: 26px;
+				margin: 5px 0;
+				border: 1px solid var(--baseColor);
+				border-radius: 18px;
+				cursor: pointer;
+				position: relative;
+				transform: scale(0.7);
 
-			.ball {
-				width: 20px;
-				height: 20px;
-				border-radius: 20px;
-				background-color: var(--baseColor);
-				position: absolute;
-				top: 2px;
-				left: 2px;
-				transition: 0.7s;
+				.ball {
+					width: 20px;
+					height: 20px;
+					border-radius: 20px;
+					background-color: var(--baseColor);
+					position: absolute;
+					top: 2px;
+					left: 2px;
+					transition: 0.7s;
+				}
 			}
-		}
-		.themeBox.dark {
-			.ball {
-				left: 36px;
+			.themeBox.dark {
+				.ball {
+					left: 36px;
+				}
 			}
 		}
 		.menuToggle {
 			width: 20%;
 			margin: 10px;
+			display: flex;
+			justify-content: right;
 			color: var(--baseColor);
 			font-family: var(--baseFont);
-			background-color: var(--bgColor);
-			display: none;
+			background-color: transparent;
+			//display: none;
 			border: none;
 			cursor: pointer;
 			.menuIcon {
@@ -83,6 +87,18 @@
 .tablet {
 	.Header {
 		width: 80vw;
+		.menu {
+			justify-content: center;
+			ul {
+				width: 80%;
+			}
+			.darkToggle {
+				width: 20%;
+			}
+			.menuToggle {
+				display: none;
+			}
+		}
 	}
 }
 .mobile {

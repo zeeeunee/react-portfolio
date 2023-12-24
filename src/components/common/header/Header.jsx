@@ -14,6 +14,11 @@ export default function Header({ Dark, setDark }) {
 			</h1>
 
 			<div className='menu'>
+				<div className='darkToggle'>
+					<div className={`themeBox ${Dark && 'dark'}`} onClick={() => setDark(!Dark)}>
+						<div className='ball'></div>
+					</div>
+				</div>
 				<ul>
 					<li>
 						<NavLink to='/department' activeClassName={'on'}>
@@ -50,9 +55,9 @@ export default function Header({ Dark, setDark }) {
 				<button className='menuToggle' onClick={() => dispatch({ type: types.MENU.start, payload: !Toggle })}>
 					<TiThMenu className='menuIcon' />
 				</button>
-				<div className={`themeBox ${Dark && 'dark'}`} onClick={() => setDark(!Dark)}>
+				{/* <div className={`themeBox ${Dark && 'dark'}`} onClick={() => setDark(!Dark)}>
 					<div className='ball'></div>
-				</div>
+				</div> */}
 			</div>
 		</header>
 	);

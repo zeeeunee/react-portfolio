@@ -114,7 +114,7 @@ export default function Contact() {
 	return (
 		<Layout title={'Contact'}>
 			<div className='GIT'>
-				<h2>Get In Touch</h2>
+				<h2>Get in touch</h2>
 				<div className='APE'>
 					<div className='address'>
 						<div>

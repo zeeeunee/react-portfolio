@@ -91,6 +91,16 @@ export default function Gallery() {
 	return (
 		<>
 			<Layout title={'Gallery'}>
+				<section className='topPic'>
+					<img src='/img/sofa.jpg' alt='sofa' />
+				</section>
+				<div className='peace'>
+					<h3>Peace be with you</h3>
+					<div className='peaceP'>
+						<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt, quidem.</p>
+						<p>Lorem ipsum dolor sit amet consectetur.</p>
+					</div>
+				</div>
 				<article className='controls'>
 					<nav className='btnSet' ref={refNav}>
 						<button onClick={handleInterest}>Interest Gallery</button>

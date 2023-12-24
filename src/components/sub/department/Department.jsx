@@ -62,8 +62,10 @@ export default function Department() {
 						return (
 							<article key={member + idx}>
 								<img src={`${path}/img/${member.pic}`} alt={member.name} />
-								<h3>{member.name}</h3>
-								{/* <p>{member.position}</p> */}
+								<div className='NP'>
+									<h3>{member.name}</h3>
+									<p>{member.position}</p>
+								</div>
 							</article>
 						);
 					})}

@@ -3,21 +3,42 @@
 
 	.YoutubeData {
 		width: 100%;
-		margin: 100px auto;
+		margin: 100px 0;
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
 
-		.topPic {
+		.topYoutube {
 			width: 100%;
-			height: 300px;
-
-			overflow: hidden;
-
-			img {
-				width: 100%;
-				height: 100%;
-				object-fit: cover;
+			margin-bottom: 50px;
+			display: flex;
+			//background-color: var(--pointColor3);
+			.youtubePic {
+				width: 40%;
+				height: 300px;
+				//padding: 50px;
+				overflow: hidden;
+				img {
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+				}
+			}
+			.youtubeLeft {
+				width: 60%;
+				padding: 60px;
+				display: flex;
+				flex-wrap: wrap;
+				align-content: center;
+				h3 {
+					width: 100%;
+					margin-bottom: 50px;
+					font-size: var(--titSize1);
+				}
+				p {
+					width: 100%;
+					font-size: var(--bodySize2);
+				}
 			}
 		}
 
@@ -100,7 +121,7 @@
 
 				h2 {
 					margin-bottom: 7px;
-					font-size: var(--bodySize2);
+					font-size: var(--bodySize1);
 					word-break: break-all;
 				}
 				p {
