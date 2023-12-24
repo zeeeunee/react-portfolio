@@ -4,10 +4,21 @@
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
+		.memberPic {
+			width: 30%;
+			margin: 100px 0;
+			overflow: hidden;
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+		}
 
 		.formBox {
 			width: 70%;
 			margin: 100px 0;
+			background-color: var(--ytColor);
 			h3 {
 				padding: 20px;
 				font-size: var(--titSize2);
@@ -27,18 +38,18 @@
 							font-size: var(--bodySize2);
 						}
 
-						&::after {
-							content: '';
-							display: block;
-							width: calc(100% - 40px);
-							height: 1px;
-							font-size: var(--bodySize2);
-							background: var(--baseColor);
-							opacity: 0.6;
-							position: absolute;
-							bottom: 0;
-							left: 20px;
-						}
+						// &::after {
+						// 	content: '';
+						// 	display: block;
+						// 	width: calc(100% - 40px);
+						// 	height: 1px;
+						// 	font-size: var(--bodySize2);
+						// 	background: var(--baseColor);
+						// 	opacity: 0.6;
+						// 	position: absolute;
+						// 	bottom: 0;
+						// 	left: 20px;
+						// }
 
 						input[type='text'],
 						input[type='password'],
@@ -47,18 +58,20 @@
 							padding: 5px;
 							border: none;
 							font-size: var(--bodySize2);
-
-							background-color: rgba(var(--baseColor-code), 0.1);
+							font-family: var(--baseFont);
+							background-color: var(--pointColor1);
 						}
 						select {
 							width: 100%;
 							padding: 3px;
 							border: none;
-							background-color: rgba(var(--baseColor-code), 0.1);
+							font-family: var(--baseFont);
+							background-color: var(--pointColor1);
 						}
 						label {
 							margin-right: 40px;
 							font-size: var(--bodySize2);
+							font-family: var(--baseFont);
 							opacity: 0.6;
 						}
 						input[type='checkbox'],
@@ -71,20 +84,19 @@
 							justify-content: flex-end;
 							gap: 7px;
 							input[type='submit'] {
-								background: var(--pointColor1);
+								background: var(--pointColor3);
 								padding: 10px;
 								border: none;
 								font-size: var(--bodySize2);
-
+								font-family: var(--baseFont);
 								cursor: pointer;
 								transition: 0.5s;
 							}
 							input[type='reset'] {
-								background: rgba(var(--baseColor-code), 0.1);
 								padding: 10px;
 								border: none;
 								font-size: var(--bodySize2);
-
+								font-family: var(--baseFont);
 								color: var(--pointColor2);
 								cursor: pointer;
 								transition: 0.5s;
