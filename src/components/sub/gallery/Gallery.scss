@@ -121,7 +121,7 @@
 
 			.pic {
 				width: 100%;
-				height: 300px;
+
 				overflow: hidden;
 
 				img {
@@ -180,9 +180,6 @@
 		.frame {
 			article {
 				--num: 3;
-				.pic {
-					height: 200px;
-				}
 			}
 		}
 	}
