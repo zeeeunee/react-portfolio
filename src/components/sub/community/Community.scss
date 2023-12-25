@@ -83,7 +83,6 @@
 					font-size: var(--bodySize2);
 					margin-bottom: 5px;
 				}
-
 				.txt {
 					width: 100%;
 					display: flex;
@@ -102,23 +101,19 @@
 						font-family: var(--baseFont);
 						background-color: rgba(var(--baseColor-code), 0.1);
 					}
-					.txt2 {
-						display: flex;
-						flex-wrap: wrap;
-						h2 {
-							width: 100%;
-							font-size: var(--bodySize1);
-							color: var(--baseColor);
-							margin-bottom: 5px;
-						}
-						p {
-							width: 100%;
-							font-size: var(--bodySize2);
-							color: rgba(var(--baseColor-code) 0.4);
-						}
+					h3 {
+						width: 100%;
+						font-size: var(--bodySize1);
+						color: var(--baseColor);
+						margin-bottom: 5px;
+					}
+					p {
+						width: 100%;
+						margin-bottom: 60px;
+						font-size: var(--bodySize2);
+						color: rgba(var(--baseColor-code) 0.4);
 					}
 				}
-
 				nav {
 					width: 100%;
 					display: flex;

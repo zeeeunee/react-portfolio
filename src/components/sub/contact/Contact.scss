@@ -3,7 +3,6 @@
 	margin: 50px auto;
 	.GIT {
 		width: 100%;
-		height: 60vh;
 		margin-top: 100px;
 		padding: 30px;
 		background-color: var(--pointColor3);
@@ -27,15 +26,15 @@
 				flex-wrap: wrap;
 				justify-content: center;
 				div {
-					width: 60px;
-					height: 60px;
+					width: 70px;
+					height: 70px;
 					border-radius: 50%;
 					background-color: var(--pointColor1);
 					position: relative;
 					span {
 						position: absolute;
-						top: 20px;
-						left: 20px;
+						top: 26px;
+						left: 26px;
 					}
 				}
 				h3 {
@@ -56,15 +55,15 @@
 				flex-wrap: wrap;
 				justify-content: center;
 				div {
-					width: 60px;
-					height: 60px;
+					width: 70px;
+					height: 70px;
 					border-radius: 50%;
 					background-color: var(--pointColor1);
 					position: relative;
 					span {
 						position: absolute;
-						top: 20px;
-						left: 20px;
+						top: 26px;
+						left: 26px;
 					}
 				}
 				h3 {
@@ -85,15 +84,15 @@
 				flex-wrap: wrap;
 				justify-content: center;
 				div {
-					width: 60px;
-					height: 60px;
+					width: 70px;
+					height: 70px;
 					border-radius: 50%;
 					background-color: var(--pointColor1);
 					position: relative;
 					span {
 						position: absolute;
-						top: 20px;
-						left: 20px;
+						top: 26px;
+						left: 26px;
 					}
 				}
 				h3 {
@@ -239,7 +238,7 @@
 	.Contact {
 		#mailSection {
 			width: 100%;
-			margin: 100px 0;
+
 			display: flex;
 			flex-wrap: wrap;
 			.mailLeft {
@@ -251,13 +250,47 @@
 				padding: 40px;
 			}
 		}
+		#mapSection {
+			.controlBox {
+				.branch {
+					button {
+						font-size: var(--bodySize2);
+					}
+				}
+				.traffic {
+					button {
+						font-size: var(--bodySize2);
+					}
+				}
+			}
+		}
 	}
 }
 .mobile {
 	.Contact {
+		.GIT {
+			padding: 20px;
+			h2 {
+				margin-top: 0px;
+			}
+			.APE {
+				.address {
+					padding: 0px;
+					margin: 5px;
+				}
+				.phone {
+					padding: 0px;
+					margin: 5px;
+				}
+				.email {
+					padding: 0px;
+					margin: 5px;
+				}
+			}
+		}
 		#mailSection {
 			width: 100%;
-			margin: 100px 0;
+
 			display: flex;
 			flex-wrap: wrap;
 			.mailLeft {
@@ -277,7 +310,7 @@
 		}
 		#mapSection {
 			width: 100%;
-			margin: 100px 0;
+
 			.controlBox {
 				display: flex;
 				flex-wrap: wrap;

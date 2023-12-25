@@ -1,6 +1,5 @@
 .Gallery {
 	width: 70vw;
-
 	--gap: 20px;
 	--num: 4;
 
@@ -47,7 +46,8 @@
 				margin: 30px;
 				padding: 10px;
 				cursor: pointer;
-				font-size: var(--bodySize1);
+				font-family: var(--baseFont);
+				font-size: var(--bodySize2);
 				color: rgba(var(--baseColor-code), 0.3);
 				background-color: var(--bgColor);
 				border-bottom: 1px solid rgba(var(--baseColor-code), 0.6);
@@ -58,6 +58,7 @@
 
 				&.on {
 					color: rgba(var(--baseColor-code), 1);
+					font-weight: bold;
 				}
 			}
 		}
@@ -70,6 +71,7 @@
 			input {
 				width: 120px;
 				border: none;
+				font-family: var(--baseFont);
 				background-color: transparent;
 				border-bottom: 1px solid rgba(var(--baseColor-code), 0.5);
 				padding: 6px 10px;
@@ -123,22 +125,22 @@
 					cursor: pointer;
 				}
 			}
-			// .profile {
-			// 	width: 100%;
-			// 	display: flex;
-			// 	align-items: end;
-			// 	span {
-			// 		margin-left: 10px;
-			// 		cursor: pointer;
-			// 		border-bottom: 1px solid rgba(var(--baseColor-code), 0.4);
-			// 		font-size: var(--bodySize2);
-			// 		font-weight: bold;
-			// 		color: rgba(var(--baseColor-code), 0.5);
-			// 		&:hover {
-			// 			color: var(--baseColor);
-			// 		}
-			// 	}
-			// }
+			.profile {
+				width: 100%;
+				display: flex;
+				align-items: end;
+				span {
+					margin-left: 10px;
+					cursor: pointer;
+					border-bottom: 1px solid rgba(var(--baseColor-code), 0.4);
+					font-size: var(--bodySize2);
+					font-weight: bold;
+					color: rgba(var(--baseColor-code), 0.5);
+					&:hover {
+						color: var(--baseColor);
+					}
+				}
+			}
 
 			h2 {
 				width: 100%;

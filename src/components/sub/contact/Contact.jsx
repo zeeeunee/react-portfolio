@@ -48,21 +48,21 @@ export default function Contact() {
 
 	const mapInfo = useRef([
 		{
-			title: 'IKEA GOYANG',
+			title: 'IKEA Go-yang',
 			latlng: new kakao.current.maps.LatLng(37.628636, 126.862218),
 			imgSrc: `${process.env.PUBLIC_URL}/img/marker1.png`,
 			imgSize: new kakao.current.maps.Size(232, 99),
 			imgPos: { offset: new kakao.current.maps.Point(116, 99) }
 		},
 		{
-			title: 'IKEA GWANGMYEONG',
+			title: 'IKEA Gwang-Myeong',
 			latlng: new kakao.current.maps.LatLng(37.42452, 126.881864),
 			imgSrc: `${process.env.PUBLIC_URL}/img/marker2.png`,
 			imgSize: new kakao.current.maps.Size(232, 99),
 			imgPos: { offset: new kakao.current.maps.Point(116, 99) }
 		},
 		{
-			title: 'IKEA GIHEUMG',
+			title: 'IKEA Gi-heung',
 			latlng: new kakao.current.maps.LatLng(37.222474, 127.114621),
 			imgSrc: `${process.env.PUBLIC_URL}/img/marker3.png`,
 			imgSize: new kakao.current.maps.Size(232, 99),
@@ -114,7 +114,7 @@ export default function Contact() {
 	return (
 		<Layout title={'Contact'}>
 			<div className='GIT'>
-				<h2>Get In Touch</h2>
+				<h2>Get in touch</h2>
 				<div className='APE'>
 					<div className='address'>
 						<div>
@@ -178,8 +178,8 @@ export default function Contact() {
 						))}
 					</nav>
 					<nav className='traffic'>
-						<button onClick={() => setTraffic(!Traffic)}>{Traffic ? 'TRAFFIC OFF' : 'TRAFFIC ON'}</button>
-						<button onClick={() => setView(!View)}>{View ? 'MAP' : 'ROAD VIEW'}</button>
+						<button onClick={() => setTraffic(!Traffic)}>{Traffic ? 'Traffic OFF' : 'Traffic ON'}</button>
+						<button onClick={() => setView(!View)}>{View ? 'MAP' : 'Road View'}</button>
 					</nav>
 				</div>
 			</div>

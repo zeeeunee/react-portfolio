@@ -122,12 +122,10 @@ export default function Community() {
 							return (
 								<article key={el + idx}>
 									<span>{strDate}</span>
-
-									<div className='txt2'>
-										<h2>{el.title}</h2>
+									<div className='txt'>
+										<h3>{el.title}</h3>
 										<p>{el.content}</p>
 									</div>
-
 									<nav>
 										<button onClick={() => deletePost(idx)}>Close</button>
 										<button onClick={() => enableUpdate(idx)}>Edit</button>

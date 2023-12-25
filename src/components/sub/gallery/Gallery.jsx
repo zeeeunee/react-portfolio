@@ -88,7 +88,7 @@ export default function Gallery() {
 				</article>
 				<section>
 					<Masonry className={'frame'} options={{ transitionDuration: '0.5s', gutter: 20 }}>
-						{Pics.map((pic, idx) => {
+						{Pics?.map((pic, idx) => {
 							return (
 								<article key={pic.id}>
 									<div className='pic'>
