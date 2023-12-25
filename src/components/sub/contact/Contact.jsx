@@ -112,7 +112,7 @@ export default function Contact() {
 		<Layout title={'Contact'}>
 			<div id='mailSection'>
 				<div className='mailLeft'>
-					<h2>Get In Touch</h2>
+					<h2>Get in touch</h2>
 					<p className='p1'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium enim, quibusdam aut perspiciatis at veritatis.</p>
 					<p className='p2'>
 						Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum eligendi nobis accusantium in rerum! Voluptatibus voluptatum reprehenderit
