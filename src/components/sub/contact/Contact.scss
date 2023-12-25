@@ -1,12 +1,12 @@
 .Contact {
 	width: 70vw;
+	margin: 50px auto;
 	.GIT {
 		width: 100%;
 		height: 60vh;
 		margin-top: 100px;
 		padding: 30px;
-
-		background-color: var(--pointColor3);
+		background-color: var(--pointColor4);
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
@@ -20,7 +20,6 @@
 			width: 100%;
 			display: flex;
 			justify-content: center;
-
 			.address {
 				width: 25%;
 				padding: 30px;
@@ -31,7 +30,7 @@
 					width: 60px;
 					height: 60px;
 					border-radius: 50%;
-					background-color: var(--pointColor1);
+					background-color: var(--pointColor3);
 					position: relative;
 					span {
 						position: absolute;
@@ -60,7 +59,7 @@
 					width: 60px;
 					height: 60px;
 					border-radius: 50%;
-					background-color: var(--pointColor1);
+					background-color: var(--pointColor3);
 					position: relative;
 					span {
 						position: absolute;
@@ -89,7 +88,7 @@
 					width: 60px;
 					height: 60px;
 					border-radius: 50%;
-					background-color: var(--pointColor1);
+					background-color: var(--pointColor3);
 					position: relative;
 					span {
 						position: absolute;
@@ -110,10 +109,12 @@
 			}
 		}
 	}
+
 	#mailSection {
 		display: flex;
 		flex-wrap: wrap;
 		background-color: var(--ytColor);
+
 		.mailLeft {
 			width: 50%;
 			padding: 70px;
@@ -148,14 +149,16 @@
 				height: 25px;
 				margin-bottom: 7px;
 				font-family: var(--baseFont);
-				border: 1px solid rgba(var(--baseColor-code), 0.3);
+				background-color: rgba(var(--baseColor-code), 0.1);
+				border: none;
 			}
 			textarea {
 				width: 100%;
 				height: 200px;
 				margin-bottom: 7px;
 				font-family: var(--baseFont);
-				border: 1px solid rgba(var(--baseColor-code), 0.3);
+				background-color: rgba(var(--baseColor-code), 0.1);
+				border: none;
 			}
 			.emailButton {
 				width: 100%;
@@ -164,17 +167,16 @@
 				border: none;
 				background-color: var(--pointColor1);
 				cursor: pointer;
-				&:hover {
-					background-color: var(--pointColor3);
-				}
 			}
 		}
 	}
 	#mapSection {
 		width: 100%;
+
 		.controlBox {
 			display: flex;
 			justify-content: space-between;
+
 			.branch {
 				button {
 					margin-right: 10px;
@@ -183,9 +185,6 @@
 					cursor: pointer;
 					border: none;
 					background-color: var(--pointColor1);
-					&:hover {
-						background-color: var(--pointColor3);
-					}
 				}
 			}
 			.traffic {
@@ -196,9 +195,6 @@
 					cursor: pointer;
 					border: none;
 					background-color: var(--pointColor1);
-					&:hover {
-						background-color: var(--pointColor3);
-					}
 				}
 			}
 		}
@@ -231,6 +227,7 @@
 		}
 	}
 }
+
 .dark {
 	.Contact {
 		.tab {
@@ -240,12 +237,9 @@
 }
 .tablet {
 	.Contact {
-		.GIT {
-			height: 80vh;
-			padding: 20px;
-		}
 		#mailSection {
 			width: 100%;
+			margin: 100px 0;
 			display: flex;
 			flex-wrap: wrap;
 			.mailLeft {
@@ -261,42 +255,29 @@
 }
 .mobile {
 	.Contact {
-		.GIT {
-			height: 80vh;
-			padding: 10px;
-			h2 {
-				margin: 20px 0;
-			}
-			.APE {
-				.address {
-					padding: 0px;
-				}
-				.phone {
-					padding: 0px;
-				}
-				.email {
-					padding: 0px;
-				}
-			}
-		}
 		#mailSection {
+			width: 100%;
+			margin: 100px 0;
+			display: flex;
+			flex-wrap: wrap;
 			.mailLeft {
 				width: 100%;
-				padding: 30px;
-				h3 {
-					margin-bottom: 7px;
-				}
-				.p1 {
-					margin-bottom: 7px;
-				}
+				padding: 50px;
 			}
 			form {
 				width: 100%;
 				padding: 30px;
+				input {
+					margin: 7px 0;
+				}
+				textarea {
+					margin: 7px 0;
+				}
 			}
 		}
 		#mapSection {
 			width: 100%;
+			margin: 100px 0;
 			.controlBox {
 				display: flex;
 				flex-wrap: wrap;

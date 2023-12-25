@@ -88,9 +88,6 @@ export default function Community() {
 		<Layout title={'Community'}>
 			<div className='CommunityWrap'>
 				<div className='inputBox'>
-					<div className='pic'>
-						<img src='/img/post.jpg' alt='post' />
-					</div>
 					<form>
 						<h2>Create Post!</h2>
 						<div className='formTxt'>

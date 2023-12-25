@@ -2,6 +2,9 @@ import { useEffect, useRef, useState, useCallback } from 'react';
 import Layout from '../../common/layout/Layout';
 import './Contact.scss';
 import emailjs from '@emailjs/browser';
+import { FaMapMarkerAlt } from 'react-icons/fa';
+import { BiSolidPhone } from 'react-icons/bi';
+import { MdEmail } from 'react-icons/md';
 
 export default function Contact() {
 	const form = useRef();
@@ -110,13 +113,48 @@ export default function Contact() {
 
 	return (
 		<Layout title={'Contact'}>
+			<div className='GIT'>
+				<h2>Get In Touch</h2>
+				<div className='APE'>
+					<div className='address'>
+						<div>
+							<span>
+								<FaMapMarkerAlt />
+							</span>
+						</div>
+						<h3>Address</h3>
+						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, ipsam.</p>
+					</div>
+					<div className='phone'>
+						<div>
+							<span>
+								<BiSolidPhone />
+							</span>
+						</div>
+						<h3>Phone</h3>
+						<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam, voluptas?</p>
+					</div>
+					<div className='email'>
+						<div>
+							<span>
+								<MdEmail />
+							</span>
+						</div>
+						<h3>Email</h3>
+						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, minima?</p>
+					</div>
+				</div>
+			</div>
 			<div id='mailSection'>
 				<div className='mailLeft'>
-					<h2>Get in touch</h2>
-					<p className='p1'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium enim, quibusdam aut perspiciatis at veritatis.</p>
+					<h3>MESSAGE US</h3>
+					<p className='p1'>
+						Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae non voluptatum deleniti amet id? Qui quo voluptates quis tempore
+						impedit?
+					</p>
 					<p className='p2'>
-						Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum eligendi nobis accusantium in rerum! Voluptatibus voluptatum reprehenderit
-						facilis nesciunt mollitia ducimus alias libero. Culpa minus consequatur illo ipsum dolorem earum.
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem sapiente est consequuntur animi voluptas blanditiis corrupti quia
+						a iusto similique!
 					</p>
 				</div>
 				<form ref={form} onSubmit={sendEmail}>
@@ -127,6 +165,10 @@ export default function Contact() {
 				</form>
 			</div>
 			<div id='mapSection'>
+				<section className='tab'>
+					<article className={`mapBox ${View ? '' : 'on'}`} ref={mapFrame}></article>
+					<article className={`viewBox ${View ? 'on' : ''}`} ref={viewFrame}></article>
+				</section>
 				<div className='controlBox'>
 					<nav className='branch'>
 						{mapInfo.current.map((el, idx) => (
@@ -140,10 +182,6 @@ export default function Contact() {
 						<button onClick={() => setView(!View)}>{View ? 'MAP' : 'ROAD VIEW'}</button>
 					</nav>
 				</div>
-				<section className='tab'>
-					<article className={`mapBox ${View ? '' : 'on'}`} ref={mapFrame}></article>
-					<article className={`viewBox ${View ? 'on' : ''}`} ref={viewFrame}></article>
-				</section>
 			</div>
 		</Layout>
 	);
