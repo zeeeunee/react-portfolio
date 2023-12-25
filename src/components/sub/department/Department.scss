@@ -1,19 +1,15 @@
 .Department {
 	width: 70vw;
-	margin: 50px auto;
-
 	.historyGray {
 		width: 100%;
 		margin: 100px 0;
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
-
 		.grayImage {
 			width: 50%;
 			padding: 30px 0;
 			display: flex;
-
 			article {
 				width: 45%;
 				height: 300px;
@@ -33,7 +29,6 @@
 			display: flex;
 			flex-wrap: wrap;
 			align-content: flex-end;
-
 			h2 {
 				font-size: var(--titSize1);
 				color: var(--baseColor);
@@ -46,17 +41,14 @@
 			}
 		}
 	}
-
 	.historyBox {
 		width: 100%;
 		margin: 100px 0;
-
 		.con {
 			width: 100%;
 			display: flex;
 			flex-wrap: wrap;
 			justify-content: center;
-
 			article {
 				width: 50%;
 				height: 100px;
@@ -65,19 +57,16 @@
 				display: flex;
 				justify-content: center;
 				border-bottom: 1px solid rgba(var(--baseColor-code), 0.3);
-
 				&:nth-of-type(odd) {
 					display: flex;
 					justify-content: flex-end;
 					margin-right: 50%;
 				}
-
 				&:nth-of-type(even) {
 					display: flex;
 					justify-content: flex-start;
 					margin-left: 50%;
 				}
-
 				h3 {
 					font-weight: bold;
 					padding: 18px;
@@ -89,20 +78,17 @@
 			}
 		}
 	}
-
 	.memberBox {
 		width: 100%;
 		margin: 100px 0;
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
-
 		h3 {
 			width: 100%;
 			font-weight: bold;
 			margin: 7px;
 		}
-
 		.leftBox {
 			width: 38%;
 			padding: 50px;
@@ -111,7 +97,6 @@
 			display: flex;
 			flex-wrap: wrap;
 			align-content: space-between;
-
 			h3 {
 				font-weight: bold;
 				font-size: var(--pointSize);
@@ -121,13 +106,11 @@
 				font-size: var(--pointSize2);
 			}
 		}
-
 		.memberPics {
 			width: 60%;
 			display: flex;
 			flex-wrap: wrap;
 			justify-content: space-between;
-
 			article {
 				width: 30%;
 				height: 200px;
@@ -135,29 +118,42 @@
 				display: flex;
 				flex-wrap: wrap;
 				overflow: hidden;
-
+				position: relative;
 				img {
 					width: 100%;
 					height: 100%;
 					object-fit: cover;
 				}
 
-				h3 {
+				.NP {
+					position: absolute;
+					bottom: 0px;
 					width: 100%;
-					color: rgba(var(--baseColor-code), 0.8);
-					font-size: var(--bodySize1);
+					padding: 5px;
+
+					background-color: rgba(var(--baseColor-code), 0.3);
+					z-index: 5;
+					h3 {
+						color: var(--memberColor);
+						font-weight: normal;
+						font-size: var(--bodySize1);
+					}
+					p {
+						padding-left: 5px;
+						color: var(--memberColor);
+						font-weight: normal;
+						font-size: var(--bodySize2);
+					}
 				}
 			}
 		}
 	}
 }
-
 .tablet {
 	.Department {
 		.historyGray {
 			.grayImage {
 				width: 100%;
-
 				article {
 					width: 100%;
 					height: 300px;
@@ -168,7 +164,6 @@
 				width: 100%;
 			}
 		}
-
 		.memberBox {
 			justify-content: center;
 			.leftBox {
@@ -183,7 +178,6 @@
 		}
 	}
 }
-
 .mobile {
 	.Department {
 		.historyGray {
@@ -191,7 +185,6 @@
 			flex-wrap: wrap;
 			.grayImage {
 				width: 100%;
-
 				article {
 					width: 100%;
 					height: 300px;
@@ -202,23 +195,19 @@
 				width: 100%;
 			}
 		}
-
 		.historyBox {
 			width: 100%;
 			margin: 80px auto;
-
 			.con {
 				border-left: 1px solid var(--baseColor);
 				article {
 					width: 100%;
 					border-bottom: none;
-
 					&:nth-of-type(odd) {
 						justify-content: flex-start;
 						border-right: none;
 						margin-right: 0;
 					}
-
 					&:nth-of-type(even) {
 						justify-content: flex-start;
 						border-left: none;
