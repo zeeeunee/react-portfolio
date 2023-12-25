@@ -13,8 +13,17 @@ export default function Youtube() {
 	return (
 		<Layout title={'Youtube'}>
 			<section className='YoutubeData'>
-				<div className='topPic'>
-					<img src='/img/image.jpg' alt='sofa' />
+				<div className='topYoutube'>
+					<div className='youtubeLeft'>
+						<h3>Lorem, ipsum dolor.</h3>
+						<p>
+							Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam impedit fuga nam dicta odio soluta quia molestiae deserunt autem
+							obcaecati, blanditiis distinctio cumque, possimus id hic, nostrum architecto eum voluptatem?
+						</p>
+					</div>
+					<div className='youtubePic'>
+						<img src='/img/youtube2.jpg' alt='diningroom' />
+					</div>
 				</div>
 				<section className='our'>
 					<h3>Our Youtube Post</h3>

@@ -1,27 +1,29 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Fira+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Carrois+Gothic+SC&family=Crimson+Text&display=swap');
 
 :root {
-	--baseFont: 'Fira Sans', 'arial', '돋움';
-	--pointFont: 'DM Serif Display', 'arial';
-	--baseColor: #333;
+	--baseFont: 'Crimson Text', 'arial', '돋움';
+	--pointFont: 'Carrois Gothic SC', 'arial';
+	--baseColor: #504f4c;
 	--baseColor-code: 18, 18, 18;
-	--pointColor1: #dcdcb1dc;
+	--pointColor1: #e5dad0;
 	--pointColor2: orangered;
-	--pointColor3: #c3dbd6;
+	--pointColor3: #d0c0af;
+	--pointColor4: #a9b4a4;
 	--bgColor: #efefef;
 	--ytColor: #fff;
+	--memberColor: #fff;
 	--logoSize: 1.5rem;
-	--bodySize1: 1.2rem;
+	--bodySize1: 1rem;
 	--bodySize2: 0.8rem;
 	--titSize1: 2.2rem;
-	--titSize2: 1.3rem;
+	--titSize2: 1.4rem;
 	--pointSize: 8rem;
 	--pointSize2: 1.8rem;
 }
 
 .dark {
 	--baseColor: #fff;
-	--baseColor-code: 255, 255, 255;
+	--baseColor-code: 80, 79, 76;
 	--bgColor: #222;
 	--ytColor: #333;
 }
