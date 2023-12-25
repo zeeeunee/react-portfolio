@@ -1,15 +1,15 @@
 import Layout from '../../common/layout/Layout';
 import './Community.scss';
 import { useEffect, useRef, useState } from 'react';
-
 import { useCustomText } from '../../../hooks/useText';
+import postData from './dummyPosts.json';
 
 export default function Community() {
 	const changeText = useCustomText('combined');
 	const getLocalData = () => {
 		const data = localStorage.getItem('post');
 		if (data) return JSON.parse(data);
-		else return [];
+		else return postData.dummyPosts;
 	};
 	const [Post, setPost] = useState(getLocalData());
 	const refTit = useRef(null);
@@ -95,11 +95,11 @@ export default function Community() {
 						<h2>Create Post!</h2>
 						<div className='formTxt'>
 							<input type='text' placeholder='title' name='tit' ref={refTit} />
-							<textarea cols='70' rows='5' name='con' placeholder='content' ref={refCon}></textarea>
+							<textarea cols='22' rows='5' name='con' placeholder='content' ref={refCon}></textarea>
 						</div>
 						<nav>
-							<button onClick={resetPost}>CANCEL</button>
-							<button onClick={createPost}>POST</button>
+							<button onClick={resetPost}>Cancel</button>
+							<button onClick={createPost}>Post</button>
 						</nav>
 					</form>
 				</div>
@@ -113,11 +113,11 @@ export default function Community() {
 									<span>{strDate}</span>
 									<div className='txt'>
 										<input type='text' defaultValue={el.title} ref={refEditTit} />
-										<textarea cols='22' rows='7' defaultValue={el.content} ref={refEditCon}></textarea>
+										<textarea cols='22' rows='5' defaultValue={el.content} ref={refEditCon}></textarea>
 									</div>
 									<nav>
-										<button onClick={() => disableUpdate(idx)}>CANCEL</button>
-										<button onClick={() => updatePost(idx)}>UPDATE</button>
+										<button onClick={() => disableUpdate(idx)}>Cancel</button>
+										<button onClick={() => updatePost(idx)}>Update</button>
 									</nav>
 								</article>
 							);
@@ -126,14 +126,14 @@ export default function Community() {
 								<article key={el + idx}>
 									<span>{strDate}</span>
 
-									<div className='txt'>
+									<div className='txt2'>
 										<h2>{el.title}</h2>
 										<p>{el.content}</p>
 									</div>
 
 									<nav>
-										<button onClick={() => deletePost(idx)}>CLOSE</button>
-										<button onClick={() => enableUpdate(idx)}>EDIT</button>
+										<button onClick={() => deletePost(idx)}>Close</button>
+										<button onClick={() => enableUpdate(idx)}>Edit</button>
 									</nav>
 								</article>
 							);

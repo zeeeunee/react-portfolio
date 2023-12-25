@@ -1,6 +1,5 @@
 .Community {
 	width: 70vw;
-	margin: 50px auto;
 	.CommunityWrap {
 		width: 100%;
 		margin: 100px 0;
@@ -8,34 +7,33 @@
 		flex-wrap: wrap;
 		.inputBox {
 			display: flex;
-			width: 100%;
+			width: 30%;
+			margin: 50px 0;
 
 			form {
-				width: 70%;
-				height: 250px;
-				padding: 20px;
-				background-color: var(--ytColor);
+				width: 90%;
+				height: 40vh;
+				padding: 25px;
+				background-color: var(--pointColor1);
 				display: flex;
 				flex-wrap: wrap;
 				align-content: space-between;
 
 				h2 {
 					font-size: var(--titSize2);
-					margin: 15px 0;
 				}
 				.formTxt {
+					width: 100%;
 					input {
 						width: 100%;
-						border: none;
+						border: rgba(var(--baseColor-code) 0.3);
 						font-family: var(--baseFont);
-						background-color: rgba(var(--baseColor-code), 0.1);
-						border-bottom: var(--ytColor);
+						margin-bottom: 7px;
 					}
 					textarea {
 						width: 100%;
-						border: none;
+						border: rgba(var(--baseColor-code) 0.3);
 						font-family: var(--baseFont);
-						background-color: rgba(var(--baseColor-code), 0.1);
 					}
 				}
 				nav {
@@ -53,42 +51,31 @@
 							color: var(--pointColor2);
 						}
 						&:nth-of-type(2) {
-							background-color: var(--pointColor1);
+							background-color: var(--pointColor3);
 						}
 					}
-				}
-			}
-			.pic {
-				width: 30%;
-				height: 250px;
-				overflow: hidden;
-				img {
-					width: 100%;
-					height: 100%;
-					object-fit: cover;
 				}
 			}
 		}
 		.showBox {
 			--boxGap: 15px;
-			--num: 4;
-			width: 100%;
-			margin: 100px 0;
+			--num: 3;
+			width: 70%;
+			margin: 50px 0;
 			display: flex;
 			flex-wrap: wrap;
 			justify-content: flex-start;
 			align-content: flex-start;
 			gap: var(--boxGap);
-
 			article {
 				width: calc((100% - (var(--boxGap) * (var(--num) - 1))) / var(--num));
 				height: 40vh;
 				background-color: var(--ytColor);
-
-				padding: 15px;
+				padding: 25px;
 				margin-bottom: 20px;
 				display: flex;
 				flex-wrap: wrap;
+				align-content: space-between;
 				span {
 					width: 100%;
 					display: flex;
@@ -99,10 +86,12 @@
 
 				.txt {
 					width: 100%;
-					height: 150px;
+					display: flex;
+					flex-wrap: wrap;
 					input {
 						width: 100%;
 						border: none;
+						margin-bottom: 7px;
 						font-family: var(--baseFont);
 						background-color: rgba(var(--baseColor-code), 0.1);
 						border-bottom: var(--ytColor);
@@ -113,15 +102,20 @@
 						font-family: var(--baseFont);
 						background-color: rgba(var(--baseColor-code), 0.1);
 					}
-					h2 {
-						font-size: var(--titSize2);
-						color: var(--baseColor);
-						margin-bottom: 5px;
-					}
-
-					p {
-						font-size: var(--bodySize2);
-						color: rgba(var(--baseColor-code) 0.4);
+					.txt2 {
+						display: flex;
+						flex-wrap: wrap;
+						h2 {
+							width: 100%;
+							font-size: var(--bodySize1);
+							color: var(--baseColor);
+							margin-bottom: 5px;
+						}
+						p {
+							width: 100%;
+							font-size: var(--bodySize2);
+							color: rgba(var(--baseColor-code) 0.4);
+						}
 					}
 				}
 
@@ -130,7 +124,6 @@
 					display: flex;
 					justify-content: flex-end;
 					gap: 7px;
-
 					button {
 						height: 40px;
 						border: none;
@@ -149,45 +142,43 @@
 		}
 	}
 }
-
 .tablet {
 	.Community {
 		.CommunityWrap {
-			.showBox {
-				--num: 3;
+			.inputBox {
+				form {
+					padding: 20px;
+					height: 55vh;
+				}
+			}
 
+			.showBox {
+				--num: 2;
 				article {
-					height: 50vh;
+					height: 55vh;
 				}
 			}
 		}
 	}
 }
-
 .mobile {
 	.Community {
 		.CommunityWrap {
+			display: flex;
+			flex-wrap: wrap;
 			.inputBox {
-				display: flex;
-				flex-wrap: wrap;
+				width: 100%;
+				margin: 100px 0 10px 0;
 				form {
 					width: 100%;
-				}
-				.pic {
-					width: 100%;
-					height: 250px;
-					overflow: hidden;
-					img {
-						width: 100%;
-						height: 100%;
-						object-fit: cover;
-					}
+					height: 60vh;
 				}
 			}
 			.showBox {
+				width: 100%;
 				--num: 1;
 				article {
-					height: 55vh;
+					height: 60vh;
 				}
 			}
 		}
