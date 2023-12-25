@@ -1,8 +1,13 @@
 import './Header.scss';
 import { NavLink, Link } from 'react-router-dom';
 import { TiThMenu } from 'react-icons/ti';
+import { useSelector, useDispatch } from 'react-redux';
+import * as types from '../../../redux/actionType';
 
-export default function Header({ Toggle, setToggle, Dark, setDark }) {
+export default function Header() {
+	const dispatch = useDispatch();
+	const Open = useSelector(store => store.menuReducer.menu);
+	const Dark = useSelector(store => store.darkReducer.dark);
 	return (
 		<header className='Header'>
 			<h1>
@@ -10,7 +15,7 @@ export default function Header({ Toggle, setToggle, Dark, setDark }) {
 			</h1>
 			<div className='menu'>
 				<div className='darkToggle'>
-					<div className={`themeBox ${Dark && 'dark'}`} onClick={() => setDark(!Dark)}>
+					<div className={`themeBox ${Dark && 'dark'}`} onClick={() => dispatch({ type: types.DARK.start, payload: !Dark })}>
 						<div className='ball'></div>
 					</div>
 				</div>
@@ -46,7 +51,7 @@ export default function Header({ Toggle, setToggle, Dark, setDark }) {
 						</NavLink>
 					</li>
 				</ul>
-				<button className='menuToggle' onClick={() => setToggle(!Toggle)}>
+				<button className='menuToggle' onClick={() => dispatch({ type: types.MENU.start, payload: !Open })}>
 					<TiThMenu className='menuIcon' />
 				</button>
 			</div>
