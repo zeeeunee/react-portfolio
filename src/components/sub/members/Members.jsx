@@ -78,6 +78,9 @@ export default function Members() {
 	return (
 		<Layout title={'Members'}>
 			<div className='wrap'>
+				<div className='memberPic'>
+					<img src='/img/image.jpg' alt='diningroom' />
+				</div>
 				<div className='formBox'>
 					<h3>JOIN US</h3>
 					<form onSubmit={handleSubmit}>
@@ -87,7 +90,7 @@ export default function Members() {
 								<tbody>
 									<tr>
 										<td>
-											<input type='text' name='userid' placeholder='User ID' value={Val.userid} onChange={handleChange} />
+											<input type='text' name='userid' placeholder='ID' value={Val.userid} onChange={handleChange} />
 											{Errs.userid && <p>{Errs.userid}</p>}
 										</td>
 									</tr>
