@@ -144,6 +144,14 @@
 	.Youtube {
 		width: 95vw;
 		.YoutubeData {
+			.topYoutube {
+				.youtubePic {
+					width: 100%;
+				}
+				.youtubeLeft {
+					display: none;
+				}
+			}
 			article {
 				width: 100%;
 				padding: 10px;
