@@ -55,7 +55,11 @@ export default function Department() {
 				<h3>A team United by shared values</h3>
 				<div className='leftBox'>
 					<h3>6</h3>
-					<p>Professional Designers in our Team</p>
+					<div className='ppp'>
+						<p>Professional</p>
+						<p>Developers</p>
+						<p>in our Team</p>
+					</div>
 				</div>
 				<div className='memberPics'>
 					{MemberData?.map((member, idx) => {

@@ -116,7 +116,9 @@
 				font-size: var(--pointSize);
 				color: rgba(var(--baseColor-code), 0.8);
 			}
-			p {
+			.ppp {
+				width: 100%;
+				line-height: 1.2;
 				font-size: var(--pointSize2);
 			}
 		}
@@ -171,25 +173,23 @@
 		.historyGray {
 			.grayImage {
 				width: 100%;
-
 				article {
 					width: 100%;
 					height: 300px;
-					margin: 7px;
+					gap: 7px;
 				}
 			}
 			.grayRightBox {
 				width: 100%;
 			}
 		}
-
 		.memberBox {
-			justify-content: center;
+			justify-content: space-between;
 			.leftBox {
-				width: 45%;
+				width: 48%;
 			}
 			.memberPics {
-				width: 45%;
+				width: 49%;
 				article {
 					width: 45%;
 				}
@@ -197,7 +197,6 @@
 		}
 	}
 }
-
 .mobile {
 	.Department {
 		.historyGray {
@@ -205,34 +204,29 @@
 			flex-wrap: wrap;
 			.grayImage {
 				width: 100%;
-
 				article {
 					width: 100%;
 					height: 300px;
-					margin: 7px;
+					gap: 7px;
 				}
 			}
 			.grayRightBox {
 				width: 100%;
+				padding: 10px;
 			}
 		}
-
 		.historyBox {
 			width: 100%;
 			margin: 80px auto;
-
 			.con {
-				border-left: 1px solid var(--baseColor);
 				article {
 					width: 100%;
-					border-bottom: none;
 
 					&:nth-of-type(odd) {
 						justify-content: flex-start;
 						border-right: none;
 						margin-right: 0;
 					}
-
 					&:nth-of-type(even) {
 						justify-content: flex-start;
 						border-left: none;

@@ -18,6 +18,7 @@
 		.formBox {
 			width: 70%;
 			margin: 100px 0;
+			padding: 20px;
 			background-color: var(--ytColor);
 			h3 {
 				padding: 20px;
@@ -107,6 +108,31 @@
 					&:last-child {
 						td::after {
 							display: none;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+.mobile {
+	.Members {
+		.wrap {
+			.memberPic {
+				display: none;
+			}
+			.formBox {
+				width: 100%;
+				table {
+					tr {
+						td {
+							input[type='checkbox'] {
+								width: 5%;
+								margin: 0 10px 0 0;
+							}
+							label {
+								margin: 0 70px 0 0;
+							}
 						}
 					}
 				}

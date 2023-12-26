@@ -18,8 +18,9 @@ export default function Youtube() {
 					<div className='youtubeLeft'>
 						<h3>Lorem, ipsum dolor.</h3>
 						<p>
-							Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam impedit fuga nam dicta odio soluta quia molestiae deserunt autem
-							obcaecati, blanditiis distinctio cumque, possimus id hic, nostrum architecto eum voluptatem?
+							Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis doloremque reprehenderit accusantium unde ea veritatis voluptates
+							dolorum rerum perspiciatis, ratione quidem eveniet magnam vel explicabo corporis nulla inventore vero! Facere distinctio officiis non
+							ipsa eum veniam voluptas alias iure sequi.
 						</p>
 					</div>
 					<div className='youtubePic'>
