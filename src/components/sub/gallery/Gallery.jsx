@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import Layout from '../../common/layout/Layout';
 import './Gallery.scss';
 import { useCustomText } from '../../../hooks/useText';
@@ -13,9 +13,12 @@ export default function Gallery() {
 	const searched = useRef(false);
 	const shortenText = useCustomText('shorten');
 
-	const [Pics, setPics] = useState([]);
+	const [Opt, setOpt] = useState({ type: 'user', id: myID.current });
+
 	const [Open, setOpen] = useState(false);
 	const [Index, setIndex] = useState(0);
+
+	const { data: Pics, isSuccess } = useFlickrQuery();
 
 	const activateBtn = e => {
 		const btns = refNav.current.querySelectorAll('button');
@@ -26,21 +29,21 @@ export default function Gallery() {
 		if (e.target.classList.contains('on')) return;
 		isUser.current = '';
 		activateBtn(e);
-		fetchFlickr({ type: 'interest' });
+		setOpt({ type: 'interest' });
 	};
 
 	const handleMine = e => {
 		if (e.target.classList.contains('on') || isUser.current === myID.current) return;
 		isUser.current = myID.current;
 		activateBtn(e);
-		fetchFlickr({ type: 'user', id: myID.current });
+		setOpt({ type: 'user', id: myID.current });
 	};
 
 	const handleUser = e => {
 		if (isUser.current) return;
 		isUser.current = e.target.innerText;
 		activateBtn();
-		fetchFlickr({ type: 'user', id: e.target.innerText });
+		setOpt({ type: 'user', id: e.target.innerText });
 	};
 
 	const handleSearch = e => {
@@ -48,41 +51,14 @@ export default function Gallery() {
 		isUser.current = '';
 		activateBtn();
 		const keyword = e.target.children[0].value;
-		fetchFlickr({ type: 'search', keyword: keyword });
+		setOpt({ type: 'search', keyword: keyword });
 	};
 
 	searched.current = true;
 
-	const fetchFlickr = async opt => {
-		const num = 100;
-		const flickr_api = '7973628e19035e31ccf3734cc641b14f';
-		const baseURL = `https://www.flickr.com/services/rest/?&api_key=${flickr_api}&per_page=${num}&format=json&nojsoncallback=1&method=`;
-		const method_interest = 'flickr.interestingness.getList';
-		const method_user = 'flickr.people.getPhotos';
-		const method_search = 'flickr.photos.search';
-
-		const interestURL = `${baseURL}${method_interest}`;
-		const userURL = `${baseURL}${method_user}&user_id=${opt.id}`;
-		let url = '';
-		const searchURL = `${baseURL}${method_search}&tags=${opt.keyword}`;
-
-		opt.type === 'user' && (url = userURL);
-		opt.type === 'interest' && (url = interestURL);
-		opt.type === 'search' && (url = searchURL);
-
-		const data = await fetch(url);
-		const json = await data.json();
-
-		setPics(json.photos.photo);
-	};
-
 	const openModal = e => {
 		setOpen(true);
 	};
-
-	useEffect(() => {
-		fetchFlickr({ type: 'user', id: myID.current });
-	}, []);
 
 	return (
 		<>
@@ -121,7 +97,11 @@ export default function Gallery() {
 				</article>
 				<section>
 					<Masonry className={'frame'} options={{ transitionDuration: '0.5s', gutter: 20 }}>
-						{Pics &&
+						{isSuccess && searched.current && Pics.length === 0 ? (
+							<h2>해당 키워드에 대한 검색 결과가 없습니다.</h2>
+						) : (
+							isSuccess &&
+							Pics &&
 							Pics.map((pic, idx) => {
 								return (
 									<article key={pic.id}>
@@ -145,13 +125,14 @@ export default function Gallery() {
 										{/* <h2>{shortenText(pic.title, 20)}</h2> */}
 									</article>
 								);
-							})}
+							})
+						)}
 					</Masonry>
 				</section>
 			</Layout>
 
 			<Modal Open={Open} setOpen={setOpen}>
-				{Pics.length !== 0 && (
+				{isSuccess && Pics.length !== 0 && (
 					<img src={`https://live.staticflickr.com/${Pics[Index].server}/${Pics[Index].id}_${Pics[Index].secret}_b.jpg`} alt={Pics[Index].title} />
 				)}
 			</Modal>
