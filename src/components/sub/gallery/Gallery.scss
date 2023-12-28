@@ -165,14 +165,6 @@
 }
 .tablet {
 	.Gallery {
-		.topTit {
-			.leftTit {
-				width: 100%;
-			}
-			.rightTit {
-				width: 100%;
-			}
-		}
 		.frame {
 			article {
 				--num: 2;
@@ -182,16 +174,13 @@
 }
 .mobile {
 	.Gallery {
-		.topTit {
-			.leftTit {
-				width: 100%;
-			}
-			.rightTit {
-				width: 100%;
-			}
+		.peace {
+			display: none;
 		}
 		.controls {
+			margin: 50px 0;
 			.btnSet {
+				margin-bottom: 20px;
 				button {
 					margin: 10px;
 				}

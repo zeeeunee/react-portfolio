@@ -177,7 +177,7 @@
 				article {
 					width: 100%;
 					height: 300px;
-					margin: 7px;
+					gap: 7px;
 				}
 			}
 			.grayRightBox {
@@ -186,12 +186,12 @@
 		}
 
 		.memberBox {
-			justify-content: center;
+			justify-content: space-between;
 			.leftBox {
-				width: 45%;
+				width: 48%;
 			}
 			.memberPics {
-				width: 45%;
+				width: 49%;
 				article {
 					width: 45%;
 				}
@@ -211,7 +211,7 @@
 				article {
 					width: 100%;
 					height: 300px;
-					margin: 7px;
+					gap: 7px;
 				}
 			}
 			.grayRightBox {
@@ -227,7 +227,6 @@
 				border-left: 1px solid var(--baseColor);
 				article {
 					width: 100%;
-					border-bottom: none;
 
 					&:nth-of-type(odd) {
 						justify-content: flex-start;

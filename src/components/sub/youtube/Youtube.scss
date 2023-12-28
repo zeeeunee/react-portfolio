@@ -16,7 +16,7 @@
 			//background-color: var(--pointColor3);
 			.youtubePic {
 				width: 40%;
-				height: 300px;
+				height: 400px;
 				//padding: 50px;
 				overflow: hidden;
 				img {
@@ -133,7 +133,6 @@
 }
 .tablet {
 	.Youtube {
-		width: 90vw;
 		.YoutubeData {
 			article {
 				width: 50%;
@@ -143,8 +142,15 @@
 }
 .mobile {
 	.Youtube {
-		width: 95vw;
 		.YoutubeData {
+			.topYoutube {
+				.youtubePic {
+					width: 100%;
+				}
+				.youtubeLeft {
+					display: none;
+				}
+			}
 			article {
 				width: 100%;
 				padding: 10px;
