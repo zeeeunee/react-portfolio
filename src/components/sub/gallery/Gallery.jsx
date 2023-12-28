@@ -5,6 +5,7 @@ import { useCustomText } from '../../../hooks/useText';
 import Masonry from 'react-masonry-component';
 import { IoSearch } from 'react-icons/io5';
 import Modal from '../../common/modal/Modal';
+import { IoArrowBackCircle } from 'react-icons/io5';
 
 export default function Gallery() {
 	const myID = useRef('199697926@N08');
@@ -87,26 +88,16 @@ export default function Gallery() {
 	return (
 		<>
 			<Layout title={'Gallery'}>
-				<section className='topTit'>
-					<div className='leftTit'>
-						<h3>
-							<span>Let's connect</span>
-							<span>your passion with</span>
-							<span>our team</span>
-						</h3>
-						<p>
-							Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum aliquam dolores cumque, hic possimus ducimus commodi adipisci ipsa
-							rerum ad animi consequatur eaque sequi praesentium porro nemo esse deserunt, modi sint iusto. Saepe enim quod rem omnis veritatis
-							suscipit dolore sunt nihil beatae, magni quo hic cumque vel quas perferendis nulla officiis incidunt, dignissimos vitae aut libero at.
-							Nemo vel unde amet dolor at ut labore incidunt eius sit voluptatum, porro, beatae perferendis iure ratione dolorum quis minus! Quasi
-							distinctio delectus, numquam, exercitationem quaerat ab iste expedita commodi asperiores odio, totam illo doloremque amet molestiae
-							nesciunt adipisci. Vel, fugiat at?
-						</p>
-					</div>
-					<div className='rightTit'>
-						<img src='/img/gallery.jpg' alt='sofa' />
-					</div>
+				<section className='topPic'>
+					<img src='/img/sofa.jpg' alt='sofa' />
 				</section>
+				<div className='peace'>
+					<h3>Peace be with you</h3>
+					<div className='peaceP'>
+						<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt, quidem.</p>
+						<p>Lorem ipsum dolor sit amet consectetur.</p>
+					</div>
+				</div>
 				<article className='controls'>
 					<nav className='btnSet' ref={refNav}>
 						<button onClick={handleInterest}>Interest Gallery</button>
@@ -125,24 +116,27 @@ export default function Gallery() {
 							Pics.map((pic, idx) => {
 								return (
 									<article key={pic.id}>
-										<div
-											className='pic'
+										<div className='pic'>
+											<img src={`https://live.staticflickr.com/${pic.server}/${pic.id}_${pic.secret}_m.jpg`} alt={pic.title} />
+										</div>
+										<span
 											onClick={() => {
 												setOpen(true);
 												setIndex(idx);
 											}}>
-											<img src={`https://live.staticflickr.com/${pic.server}/${pic.id}_${pic.secret}_m.jpg`} alt={pic.title} />
-										</div>
+											<p>View Detail</p>
+											<IoArrowBackCircle />
+										</span>
 										<div className='profile'>
-											<img
+											{/* <img
 												src={`http://farm${pic.farm}.staticflickr.com/${pic.server}/buddyicons/${pic.owner}.jpg`}
 												alt='사용자프로필이미지'
 												onError={e => e.target.setAttribute('src', 'https://www.flickr.com/images/buddyicon.gif')}
-											/>
+											/> */}
 
-											<span onClick={handleUser}>{pic.owner}</span>
+											<span onClick={handleUser}>User {pic.owner}</span>
 										</div>
-										{/* <h2>{shortenText(pic.title, 20)}</h2> */}
+										<h2>{shortenText(pic.title, 30)}</h2>
 									</article>
 								);
 							})}
