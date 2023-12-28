@@ -1,8 +1,10 @@
 import './Header.scss';
 import { NavLink, Link } from 'react-router-dom';
 import { TiThMenu } from 'react-icons/ti';
+import { useGlobalData } from '../../../hooks/useGlobalData';
 
-export default function Header({ Toggle, setToggle, Dark, setDark }) {
+export default function Header({ Dark, setDark }) {
+	const { MenuOpen, setMenuOpen } = useGlobalData();
 	return (
 		<header className='Header'>
 			<h1>
@@ -40,7 +42,7 @@ export default function Header({ Toggle, setToggle, Dark, setDark }) {
 					</NavLink>
 				</li>
 			</ul>
-			<button className='menuToggle' onClick={() => setToggle(!Toggle)}>
+			<button className='menuToggle' onClick={() => setMenuOpen(!MenuOpen)}>
 				<TiThMenu className='menuIcon' />
 			</button>
 			<div className={`themeBox ${Dark && 'dark'}`} onClick={() => setDark(!Dark)}>

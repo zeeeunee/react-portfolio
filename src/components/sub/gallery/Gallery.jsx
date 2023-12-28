@@ -5,6 +5,8 @@ import { useCustomText } from '../../../hooks/useText';
 import Masonry from 'react-masonry-component';
 import { IoSearch } from 'react-icons/io5';
 import Modal from '../../common/modal/Modal';
+import { useFlickrQuery } from '../../../hooks/useFlickrQuery';
+import { useGlobalData } from '../../../hooks/useGlobalData';
 
 export default function Gallery() {
 	const myID = useRef('199697926@N08');
@@ -15,10 +17,11 @@ export default function Gallery() {
 
 	const [Opt, setOpt] = useState({ type: 'user', id: myID.current });
 
-	const [Open, setOpen] = useState(false);
 	const [Index, setIndex] = useState(0);
 
-	const { data: Pics, isSuccess } = useFlickrQuery();
+	const { data: Pics, isSuccess } = useFlickrQuery(Opt);
+
+	const { setModalOpen } = useGlobalData();
 
 	const activateBtn = e => {
 		const btns = refNav.current.querySelectorAll('button');
@@ -57,7 +60,7 @@ export default function Gallery() {
 	searched.current = true;
 
 	const openModal = e => {
-		setOpen(true);
+		setModalOpen(true);
 	};
 
 	return (
@@ -108,7 +111,7 @@ export default function Gallery() {
 										<div
 											className='pic'
 											onClick={() => {
-												setOpen(true);
+												setModalOpen(true);
 												setIndex(idx);
 											}}>
 											<img src={`https://live.staticflickr.com/${pic.server}/${pic.id}_${pic.secret}_m.jpg`} alt={pic.title} />
@@ -131,7 +134,7 @@ export default function Gallery() {
 				</section>
 			</Layout>
 
-			<Modal Open={Open} setOpen={setOpen}>
+			<Modal>
 				{isSuccess && Pics.length !== 0 && (
 					<img src={`https://live.staticflickr.com/${Pics[Index].server}/${Pics[Index].id}_${Pics[Index].secret}_b.jpg`} alt={Pics[Index].title} />
 				)}
