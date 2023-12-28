@@ -46,7 +46,7 @@ export default function Header({ Toggle, setToggle, Dark, setDark }) {
 						</NavLink>
 					</li>
 				</ul>
-				<button className='menuToggle' onClick={() => setMenuOpen(!MenuOpen)}>
+				<button className='menuToggle' onClick={() => setToggle(!Toggle)}>
 					<TiThMenu className='menuIcon' />
 				</button>
 			</section>
