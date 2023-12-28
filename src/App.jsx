@@ -9,7 +9,6 @@ import Members from './components/sub/members/Members';
 import { Route } from 'react-router-dom';
 import './globalStyles/Variables.scss';
 import './globalStyles/Reset.scss';
-import { useState } from 'react';
 import { useMedia } from './hooks/useMedia';
 import Menu from './components/common/menu/Menu';
 import Youtube from './components/sub/youtube/Youtube';
@@ -19,14 +18,13 @@ import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { useGlobalData } from './hooks/useGlobalData';
 
 function App() {
-	const [Dark, setDark] = useState(false);
-
 	const queryClient = new QueryClient();
+	const { Dark } = useGlobalData();
 
 	return (
 		<QueryClientProvider client={queryClient}>
 			<div className={`wrap ${Dark ? 'dark' : ''} ${useMedia()}`}>
-				<Header Dark={Dark} setDark={setDark} />
+				<Header />
 				<Route exact path='/' component={MainWrap} />
 				<Route path='/department' component={Department} />
 				<Route path='/youtube' component={Youtube} />

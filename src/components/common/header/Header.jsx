@@ -3,8 +3,9 @@ import { NavLink, Link } from 'react-router-dom';
 import { TiThMenu } from 'react-icons/ti';
 import { useGlobalData } from '../../../hooks/useGlobalData';
 
-export default function Header({ Dark, setDark }) {
+export default function Header() {
 	const { MenuOpen, setMenuOpen } = useGlobalData();
+	const { Dark, setDark } = useGlobalData();
 	return (
 		<header className='Header'>
 			<h1>
