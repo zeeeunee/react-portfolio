@@ -92,11 +92,11 @@ export default function Community() {
 						<h2>Create Post!</h2>
 						<div className='formTxt'>
 							<input type='text' placeholder='title' name='tit' ref={refTit} />
-							<textarea cols='70' rows='5' name='con' placeholder='content' ref={refCon}></textarea>
+							<textarea cols='22' rows='5' name='con' placeholder='content' ref={refCon}></textarea>
 						</div>
 						<nav>
-							<button onClick={resetPost}>CANCEL</button>
-							<button onClick={createPost}>POST</button>
+							<button onClick={resetPost}>Cancel</button>
+							<button onClick={createPost}>Post</button>
 						</nav>
 					</form>
 				</div>
@@ -113,8 +113,8 @@ export default function Community() {
 										<textarea cols='22' rows='7' defaultValue={el.content} ref={refEditCon}></textarea>
 									</div>
 									<nav>
-										<button onClick={() => disableUpdate(idx)}>CANCEL</button>
-										<button onClick={() => updatePost(idx)}>UPDATE</button>
+										<button onClick={() => disableUpdate(idx)}>Cancel</button>
+										<button onClick={() => updatePost(idx)}>Update</button>
 									</nav>
 								</article>
 							);
@@ -129,8 +129,8 @@ export default function Community() {
 									</div>
 
 									<nav>
-										<button onClick={() => deletePost(idx)}>CLOSE</button>
-										<button onClick={() => enableUpdate(idx)}>EDIT</button>
+										<button onClick={() => deletePost(idx)}>Close</button>
+										<button onClick={() => enableUpdate(idx)}>Edit</button>
 									</nav>
 								</article>
 							);
