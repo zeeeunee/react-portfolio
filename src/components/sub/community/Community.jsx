@@ -1,8 +1,8 @@
 import Layout from '../../common/layout/Layout';
 import './Community.scss';
 import { useEffect, useRef, useState } from 'react';
-
 import { useCustomText } from '../../../hooks/useText';
+import './dummyPosts.json';
 
 export default function Community() {
 	const changeText = useCustomText('combined');

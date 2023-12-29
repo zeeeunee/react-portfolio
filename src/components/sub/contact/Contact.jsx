@@ -2,6 +2,9 @@ import { useEffect, useRef, useState, useCallback } from 'react';
 import Layout from '../../common/layout/Layout';
 import './Contact.scss';
 import emailjs from '@emailjs/browser';
+import { FaMapMarkerAlt } from 'react-icons/fa';
+import { BiSolidPhone } from 'react-icons/bi';
+import { MdEmail } from 'react-icons/md';
 
 export default function Contact() {
 	const form = useRef();
@@ -45,21 +48,21 @@ export default function Contact() {
 
 	const mapInfo = useRef([
 		{
-			title: 'IKEA GOYANG',
+			title: 'IKEA Go-yang',
 			latlng: new kakao.current.maps.LatLng(37.628636, 126.862218),
 			imgSrc: `${process.env.PUBLIC_URL}/img/marker1.png`,
 			imgSize: new kakao.current.maps.Size(232, 99),
 			imgPos: { offset: new kakao.current.maps.Point(116, 99) }
 		},
 		{
-			title: 'IKEA GWANGMYEONG',
+			title: 'IKEA Gwang-myeong',
 			latlng: new kakao.current.maps.LatLng(37.42452, 126.881864),
 			imgSrc: `${process.env.PUBLIC_URL}/img/marker2.png`,
 			imgSize: new kakao.current.maps.Size(232, 99),
 			imgPos: { offset: new kakao.current.maps.Point(116, 99) }
 		},
 		{
-			title: 'IKEA GIHEUMG',
+			title: 'IKEA Gi-heung',
 			latlng: new kakao.current.maps.LatLng(37.222474, 127.114621),
 			imgSrc: `${process.env.PUBLIC_URL}/img/marker3.png`,
 			imgSize: new kakao.current.maps.Size(232, 99),
@@ -110,13 +113,48 @@ export default function Contact() {
 
 	return (
 		<Layout title={'Contact'}>
+			<div className='GIT'>
+				<h2>Get in touch</h2>
+				<div className='APE'>
+					<div className='address'>
+						<div>
+							<span>
+								<FaMapMarkerAlt />
+							</span>
+						</div>
+						<h3>Address</h3>
+						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, ipsam.</p>
+					</div>
+					<div className='phone'>
+						<div>
+							<span>
+								<BiSolidPhone />
+							</span>
+						</div>
+						<h3>Phone</h3>
+						<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam, voluptas?</p>
+					</div>
+					<div className='email'>
+						<div>
+							<span>
+								<MdEmail />
+							</span>
+						</div>
+						<h3>Email</h3>
+						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, minima?</p>
+					</div>
+				</div>
+			</div>
 			<div id='mailSection'>
 				<div className='mailLeft'>
-					<h2>Get In Touch</h2>
-					<p className='p1'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium enim, quibusdam aut perspiciatis at veritatis.</p>
+					<h3>MESSAGE US</h3>
+					<p className='p1'>
+						Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae non voluptatum deleniti amet id? Qui quo voluptates quis tempore
+						impedit?
+					</p>
 					<p className='p2'>
-						Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum eligendi nobis accusantium in rerum! Voluptatibus voluptatum reprehenderit
-						facilis nesciunt mollitia ducimus alias libero. Culpa minus consequatur illo ipsum dolorem earum.
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem sapiente est consequuntur animi voluptas blanditiis corrupti quia
+						a iusto similique!
 					</p>
 				</div>
 				<form ref={form} onSubmit={sendEmail}>
@@ -127,6 +165,10 @@ export default function Contact() {
 				</form>
 			</div>
 			<div id='mapSection'>
+				<section className='tab'>
+					<article className={`mapBox ${View ? '' : 'on'}`} ref={mapFrame}></article>
+					<article className={`viewBox ${View ? 'on' : ''}`} ref={viewFrame}></article>
+				</section>
 				<div className='controlBox'>
 					<nav className='branch'>
 						{mapInfo.current.map((el, idx) => (
@@ -136,14 +178,10 @@ export default function Contact() {
 						))}
 					</nav>
 					<nav className='traffic'>
-						<button onClick={() => setTraffic(!Traffic)}>{Traffic ? 'TRAFFIC OFF' : 'TRAFFIC ON'}</button>
-						<button onClick={() => setView(!View)}>{View ? 'MAP' : 'ROAD VIEW'}</button>
+						<button onClick={() => setTraffic(!Traffic)}>{Traffic ? 'Traffic OFF' : 'Traffic ON'}</button>
+						<button onClick={() => setView(!View)}>{View ? 'MAP' : 'Road View'}</button>
 					</nav>
 				</div>
-				<section className='tab'>
-					<article className={`mapBox ${View ? '' : 'on'}`} ref={mapFrame}></article>
-					<article className={`viewBox ${View ? 'on' : ''}`} ref={viewFrame}></article>
-				</section>
 			</div>
 		</Layout>
 	);

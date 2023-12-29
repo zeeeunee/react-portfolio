@@ -1,36 +1,137 @@
 .Contact {
 	width: 70vw;
 	margin: 50px auto;
-	#mailSection {
+	.GIT {
 		width: 100%;
-		margin: 100px 0;
+		margin-top: 100px;
+		padding: 30px;
+		background-color: var(--pointColor3);
 		display: flex;
 		flex-wrap: wrap;
-
+		justify-content: center;
+		h2 {
+			width: 100%;
+			margin-top: 50px;
+			text-align: center;
+			font-size: var(--titSize1);
+		}
+		.APE {
+			width: 100%;
+			display: flex;
+			justify-content: center;
+			.address {
+				width: 25%;
+				padding: 30px;
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+				div {
+					width: 70px;
+					height: 70px;
+					border-radius: 50%;
+					background-color: var(--pointColor1);
+					position: relative;
+					span {
+						position: absolute;
+						top: 26px;
+						left: 26px;
+					}
+				}
+				h3 {
+					width: 100%;
+					text-align: center;
+					font-size: var(--bodySize1);
+				}
+				p {
+					width: 100%;
+					text-align: center;
+					font-size: var(--bodySize2);
+				}
+			}
+			.phone {
+				width: 25%;
+				padding: 30px;
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+				div {
+					width: 70px;
+					height: 70px;
+					border-radius: 50%;
+					background-color: var(--pointColor1);
+					position: relative;
+					span {
+						position: absolute;
+						top: 26px;
+						left: 26px;
+					}
+				}
+				h3 {
+					width: 100%;
+					text-align: center;
+					font-size: var(--bodySize1);
+				}
+				p {
+					width: 100%;
+					text-align: center;
+					font-size: var(--bodySize2);
+				}
+			}
+			.email {
+				width: 25%;
+				padding: 30px;
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+				div {
+					width: 70px;
+					height: 70px;
+					border-radius: 50%;
+					background-color: var(--pointColor1);
+					position: relative;
+					span {
+						position: absolute;
+						top: 26px;
+						left: 26px;
+					}
+				}
+				h3 {
+					width: 100%;
+					text-align: center;
+					font-size: var(--bodySize1);
+				}
+				p {
+					width: 100%;
+					text-align: center;
+					font-size: var(--bodySize2);
+				}
+			}
+		}
+	}
+	#mailSection {
+		display: flex;
+		flex-wrap: wrap;
+		background-color: var(--ytColor);
 		.mailLeft {
 			width: 50%;
 			padding: 70px;
 			display: flex;
 			flex-wrap: wrap;
-			background-color: var(--pointColor3);
-
-			h2 {
-				margin-bottom: 30px;
-				border-bottom: 1px solid rgba(var(--baseColor-code), 0.5);
-				font-weight: bold;
+			align-content: space-between;
+			h3 {
+				width: 100%;
+				font-size: var(--titSize1);
+				text-align: center;
 			}
 			.p1 {
 				width: 100%;
-				margin-bottom: 20px;
 				font-size: var(--bodySize1);
 				word-break: break-all;
-				color: rgba(var(--baseColor-code), 0.7);
 			}
 			.p2 {
 				width: 100%;
 				font-size: var(--bodySize2);
 				word-break: break-all;
-				color: rgba(var(--baseColor-code), 0.5);
 			}
 		}
 		form {
@@ -40,10 +141,10 @@
 			flex-wrap: wrap;
 			align-content: space-between;
 			background-color: var(--ytColor);
-
 			input {
 				width: 100%;
 				height: 25px;
+				margin-bottom: 7px;
 				font-family: var(--baseFont);
 				background-color: rgba(var(--baseColor-code), 0.1);
 				border: none;
@@ -51,6 +152,7 @@
 			textarea {
 				width: 100%;
 				height: 200px;
+				margin-bottom: 7px;
 				font-family: var(--baseFont);
 				background-color: rgba(var(--baseColor-code), 0.1);
 				border: none;
@@ -67,7 +169,6 @@
 	}
 	#mapSection {
 		width: 100%;
-		margin: 100px 0;
 		.controlBox {
 			display: flex;
 			justify-content: space-between;
@@ -95,13 +196,12 @@
 		.tab {
 			width: 100%;
 			height: 50vh;
-			margin: 20px 0;
+			margin-bottom: 20px;
 			background-color: var(--baseColor);
 			font-family: var(--baseFont);
 			position: relative;
 			filter: saturate(0.3);
 			transition: filter 0.5s;
-
 			&:hover {
 				filter: saturate(1);
 			}
@@ -126,6 +226,109 @@
 	.Contact {
 		.tab {
 			filter: saturate(0) invert(1) contrast(0.7);
+		}
+	}
+}
+.tablet {
+	.Contact {
+		#mailSection {
+			width: 100%;
+
+			display: flex;
+			flex-wrap: wrap;
+			.mailLeft {
+				width: 50%;
+				padding: 50px;
+			}
+			form {
+				width: 50%;
+				padding: 40px;
+			}
+		}
+		#mapSection {
+			.controlBox {
+				.branch {
+					button {
+						font-size: var(--bodySize2);
+					}
+				}
+				.traffic {
+					button {
+						font-size: var(--bodySize2);
+					}
+				}
+			}
+		}
+	}
+}
+.mobile {
+	.Contact {
+		.GIT {
+			padding: 20px;
+			h2 {
+				margin-top: 0px;
+			}
+			.APE {
+				.address {
+					padding: 0px;
+					margin: 5px;
+				}
+				.phone {
+					padding: 0px;
+					margin: 5px;
+				}
+				.email {
+					padding: 0px;
+					margin: 5px;
+				}
+			}
+		}
+		#mailSection {
+			width: 100%;
+
+			display: flex;
+			flex-wrap: wrap;
+			.mailLeft {
+				width: 100%;
+				padding: 50px;
+			}
+			form {
+				width: 100%;
+				padding: 30px;
+				input {
+					margin: 7px 0;
+				}
+				textarea {
+					margin: 7px 0;
+				}
+			}
+		}
+		#mapSection {
+			width: 100%;
+
+			.controlBox {
+				display: flex;
+				flex-wrap: wrap;
+				.branch {
+					width: 100%;
+					display: flex;
+					justify-content: center;
+					gap: 10px;
+					margin-bottom: 10px;
+					button {
+						margin-right: 0px;
+					}
+				}
+				.traffic {
+					width: 100%;
+					display: flex;
+					justify-content: center;
+					gap: 10px;
+					button {
+						margin-left: 0px;
+					}
+				}
+			}
 		}
 	}
 }
