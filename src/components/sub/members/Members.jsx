@@ -78,7 +78,11 @@ export default function Members() {
 	return (
 		<Layout title={'Members'}>
 			<div className='wrap'>
+				<div className='memberPic'>
+					<img src='/img/image.jpg' alt='diningroom' />
+				</div>
 				<div className='formBox'>
+					<h3>Join Us</h3>
 					<form onSubmit={handleSubmit}>
 						<fieldset>
 							<legend className='h'>회원가입 폼</legend>
@@ -86,7 +90,7 @@ export default function Members() {
 								<tbody>
 									<tr>
 										<td>
-											<input type='text' name='userid' placeholder='User ID' value={Val.userid} onChange={handleChange} />
+											<input type='text' name='userid' placeholder='ID' value={Val.userid} onChange={handleChange} />
 											{Errs.userid && <p>{Errs.userid}</p>}
 										</td>
 										<td>
@@ -160,9 +164,11 @@ export default function Members() {
 										</td>
 									</tr>
 									<tr>
-										<td className='formButton' colSpan='2'>
-											<input type='reset' value='Cancel' onClick={handleReset} />
-											<input type='submit' value='Submit' />
+										<td colSpan='2'>
+											<div className='formbutton'>
+												<input type='reset' value='Cancel' onClick={handleReset} />
+												<input type='submit' value='Submit' />
+											</div>
 										</td>
 									</tr>
 								</tbody>

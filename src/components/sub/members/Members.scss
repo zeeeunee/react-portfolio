@@ -3,36 +3,37 @@
 		width: 100%;
 		display: flex;
 		flex-wrap: wrap;
-		justify-content: space-between;
+		justify-content: center;
+		.memberPic {
+			width: 30%;
+			margin: 100px 0;
+			overflow: hidden;
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+		}
 
 		.formBox {
 			width: 70%;
-			padding-left: 50px;
-
+			margin: 100px 0;
+			padding: 20px;
+			background-color: var(--ytColor);
+			h3 {
+				padding: 20px;
+				font-size: var(--titSize2);
+			}
 			table {
 				width: 100%;
-
 				tr {
 					td {
-						padding: 30px 20px 10px;
+						width: 50%;
+						font-size: var(--bodySize2);
+						padding: 20px;
 						position: relative;
-
 						p {
 							font-size: var(--bodySize2);
-							font-family: '돋움';
-						}
-
-						&::after {
-							content: '';
-							display: block;
-							width: calc(100% - 40px);
-							height: 1px;
-							font-size: var(--bodySize2);
-							background: var(--baseColor);
-							opacity: 0.6;
-							position: absolute;
-							bottom: 0;
-							left: 20px;
 						}
 
 						input[type='text'],
@@ -43,47 +44,50 @@
 							border: none;
 							font-size: var(--bodySize2);
 							font-family: var(--baseFont);
-							background-color: rgba(var(--baseColor-code), 0.1);
+							background-color: var(--pointColor1);
 						}
 						select {
 							width: 100%;
 							padding: 3px;
 							border: none;
-							background-color: rgba(var(--baseColor-code), 0.1);
 							font-family: var(--baseFont);
+							background-color: var(--pointColor1);
 						}
 						label {
 							margin-right: 40px;
 							font-size: var(--bodySize2);
+							font-family: var(--baseFont);
 							opacity: 0.6;
 						}
 						input[type='checkbox'],
 						input[type='radio'] {
 							margin-right: 10px;
 						}
-						.formButton {
-							width: 100%;
+						.formbutton {
 							width: 100%;
 							display: flex;
 							justify-content: flex-end;
 							gap: 7px;
-							input[type='submit'],
-							input[type='reset'] {
-								background: var(--baseColor);
+							input[type='submit'] {
+								background: var(--pointColor3);
 								padding: 10px;
 								border: none;
 								font-size: var(--bodySize2);
-								color: var(--bgColor);
+								font-family: var(--baseFont);
 								cursor: pointer;
 								transition: 0.5s;
-
-								&:hover {
-									background-color: var(--pointColor1);
-								}
+							}
+							input[type='reset'] {
+								padding: 10px;
+								border: none;
+								font-size: var(--bodySize2);
+								font-family: var(--baseFont);
+								color: var(--pointColor2);
+								cursor: pointer;
+								transition: 0.5s;
 							}
 						}
 					}
-
 					&:last-child {
 						td::after {
 							display: none;
