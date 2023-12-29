@@ -35,13 +35,15 @@ export default function Youtube() {
 
 				{isSuccess &&
 					Vids?.map(data => {
-						const [date, time] = data.snippet.publishedAt.split('T');
+						// const [date, time] = data.snippet.publishedAt.split('T');
 
 						return (
 							<article key={data.id}>
 								<div className='left'>
 									<div className='pic'>
-										<img src={data.snippet.thumbnails.standard.url} alt={data.snippet.title} />
+										<p>
+											<img src={data.snippet.thumbnails.standard.url} alt={data.snippet.title} />
+										</p>
 									</div>
 									<div className='detailButton'>
 										<Link to={`/detail/${data.id}`}>
