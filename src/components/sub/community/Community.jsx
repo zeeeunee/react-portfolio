@@ -9,7 +9,7 @@ export default function Community() {
 	const getLocalData = () => {
 		const data = localStorage.getItem('post');
 		if (data) return JSON.parse(data);
-		else return [];
+		else return postData.dummyPosts;
 	};
 	const [Post, setPost] = useState(getLocalData());
 	const refTit = useRef(null);
