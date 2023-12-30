@@ -62,7 +62,7 @@ export default function Contact() {
 			imgPos: { offset: new kakao.current.maps.Point(116, 99) }
 		},
 		{
-			title: 'IKEA Gi-geung',
+			title: 'IKEA Gi-heung',
 			latlng: new kakao.current.maps.LatLng(37.222474, 127.114621),
 			imgSrc: `${process.env.PUBLIC_URL}/img/marker3.png`,
 			imgSize: new kakao.current.maps.Size(232, 99),

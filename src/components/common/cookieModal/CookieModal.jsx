@@ -26,10 +26,12 @@ export default function CookieModal({ wid, ht, children }) {
 					<div className='controls'>
 						<nav>
 							<input ref={checkEl} type='checkbox' />
-							<span>오늘하루 팝업보지 않기</span>
+							<span> Cookie Settings</span>
 						</nav>
 
-						<span onClick={handleClose}>close</span>
+						<span className='closeButton' onClick={handleClose}>
+							OK
+						</span>
 					</div>
 				</aside>
 			)}

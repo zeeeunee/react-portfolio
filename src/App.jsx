@@ -38,8 +38,12 @@ function App() {
 				<Route path='/contact' component={Contact} />
 				<Footer />
 				<Menu />
-				<CookieModal wid={300} ht={200}>
-					<h1>쿠키 팝업</h1>
+				<CookieModal wid={500} ht={300}>
+					<h1>ZEEEUNEE uses cookies</h1>
+					<p>
+						We use cookies and similar technologies to enhance site navigation, analyze site usage, assist with our marketing efforts and enable you
+						to share content on social networks. By continuing to use this website, you agree to these Terms of Use.
+					</p>
 				</CookieModal>
 			</div>
 			<ReactQueryDevtools />
