@@ -99,7 +99,12 @@ export default function Gallery() {
 							Pics.map((pic, idx) => {
 								return (
 									<article key={pic.id}>
-										<div className='pic'>
+										<div
+											className='pic'
+											onClick={() => {
+												setModalOpen(true);
+												setIndex(idx);
+											}}>
 											<img src={`https://live.staticflickr.com/${pic.server}/${pic.id}_${pic.secret}_m.jpg`} alt={pic.title} />
 										</div>
 										<span

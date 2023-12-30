@@ -32,14 +32,14 @@
 			padding: 30px 0;
 			display: flex;
 			flex-wrap: wrap;
-			align-content: flex-end;
+			align-content: center;
 
 			h2 {
+				margin-bottom: 40px;
 				font-size: var(--titSize1);
 				color: var(--baseColor);
 			}
 			p {
-				padding: 30px 0;
 				font-size: var(--bodySize2);
 				word-break: break-all;
 				color: rgba(var(--baseColor-code), 0.4);

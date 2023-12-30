@@ -69,22 +69,25 @@
 							justify-content: flex-end;
 							gap: 7px;
 							input[type='submit'] {
-								background: var(--pointColor3);
+								background: var(--pointColor1);
 								padding: 10px;
 								border: none;
 								font-size: var(--bodySize2);
 								font-family: var(--baseFont);
 								cursor: pointer;
-								transition: 0.5s;
+								transition: 0s;
+								&:hover {
+									background: var(--pointColor2);
+									transition: 0.8s;
+								}
 							}
 							input[type='reset'] {
 								padding: 10px;
 								border: none;
 								font-size: var(--bodySize2);
 								font-family: var(--baseFont);
-								color: var(--pointColor2);
+								color: var(--pointColor5);
 								cursor: pointer;
-								transition: 0.5s;
 							}
 						}
 					}

@@ -53,12 +53,15 @@
 				border-bottom: 1px solid rgba(var(--baseColor-code), 0.6);
 
 				&:hover {
-					background-color: var(--pointColor1);
+					font-weight: bold;
+					color: rgba(var(--baseColor-code), 1);
+					transition: 0.8s;
 				}
 
 				&.on {
 					font-weight: bold;
 					color: rgba(var(--baseColor-code), 1);
+					transition: 0.8s;
 				}
 			}
 		}
@@ -107,6 +110,7 @@
 					width: 100%;
 					height: 100%;
 					object-fit: cover;
+					cursor: pointer;
 				}
 			}
 			span {
@@ -120,8 +124,12 @@
 				p {
 					margin: 10px;
 					font-size: var(--bodySize2);
-					color: var(--pointColor2);
+					color: var(--pointColor5);
 					cursor: pointer;
+					&:hover {
+						transform: scale(1.2);
+						transition: 0.8s;
+					}
 				}
 			}
 			.profile {
@@ -135,8 +143,10 @@
 					font-size: var(--bodySize2);
 					font-weight: bold;
 					color: rgba(var(--baseColor-code), 0.5);
+					transition: 0;
 					&:hover {
 						color: var(--baseColor);
+						transition: 0.8s;
 					}
 				}
 			}
