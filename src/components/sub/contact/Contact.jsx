@@ -5,6 +5,7 @@ import emailjs from '@emailjs/browser';
 import { FaMapMarkerAlt } from 'react-icons/fa';
 import { BiSolidPhone } from 'react-icons/bi';
 import { MdEmail } from 'react-icons/md';
+import { useThrottle } from '../../../hooks/useThrottle';
 
 export default function Contact() {
 	const form = useRef();
@@ -74,18 +75,20 @@ export default function Contact() {
 		position: mapInfo.current[Index].latlng,
 		image: new kakao.current.maps.MarkerImage(mapInfo.current[Index].imgSrc, mapInfo.current[Index].imgSize, mapInfo.current[Index].imgOpt)
 	});
-	const roadview = useRef(() => {
+	const roadview = useCallback(() => {
 		new kakao.current.maps.RoadviewClient().getNearestPanoId(mapInfo.current[Index].latlng, 50, panoId => {
 			new kakao.current.maps.Roadview(viewFrame.current).setPanoId(panoId, mapInfo.current[Index].latlng);
 		});
-	});
+	}, [Index]);
 	const setCenter = useCallback(() => {
 		mapInstance.current.setCenter(mapInfo.current[Index].latlng);
-		roadview.current();
 	}, [Index]);
+
+	const throttledSetCenter = useThrottle(setCenter);
 
 	useEffect(() => {
 		mapFrame.current.innerHTML = '';
+		viewFrame.current.innerHTML = '';
 		mapInstance.current = new kakao.current.maps.Map(mapFrame.current, {
 			center: mapInfo.current[Index].latlng,
 			level: 3
@@ -94,16 +97,21 @@ export default function Contact() {
 		setTraffic(false);
 		setView(false);
 
-		roadview.current();
-
 		mapInstance.current.addControl(new kakao.current.maps.MapTypeControl(), kakao.current.maps.ControlPosition.TOPRIGHT);
 
 		mapInstance.current.addControl(new kakao.current.maps.ZoomControl(), kakao.current.maps.ControlPosition.RIGHT);
 
 		mapInstance.current.setZoomable(false);
-		window.addEventListener('resize', setCenter);
-		return () => window.removeEventListener('resize', setCenter);
-	}, [Index, setCenter]);
+	}, [Index, roadview]);
+
+	useEffect(() => {
+		window.addEventListener('resize', throttledSetCenter);
+		return () => window.removeEventListener('resize', throttledSetCenter);
+	}, [throttledSetCenter]);
+
+	useEffect(() => {
+		View && viewFrame.current.children.length === 0 && roadview();
+	}, [View, roadview]);
 
 	useEffect(() => {
 		Traffic
