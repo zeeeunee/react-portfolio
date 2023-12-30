@@ -32,7 +32,7 @@ export default function Members() {
 		e.preventDefault();
 
 		if (Object.keys(check(Val)).length === 0) {
-			alert('회원가입을 축하합니다.');
+			alert('Congratulations on your membership.');
 			history.push('/');
 		}
 	};
@@ -85,7 +85,7 @@ export default function Members() {
 					<h3>Join us</h3>
 					<form onSubmit={handleSubmit}>
 						<fieldset>
-							<legend className='h'>회원가입 폼</legend>
+							<legend className='h'>Membership form</legend>
 							<table>
 								<tbody>
 									<tr>
@@ -116,10 +116,10 @@ export default function Members() {
 										<td colSpan='2'>
 											<select name='edu' onChange={handleChange}>
 												<option value=''>Education</option>
-												<option value='elementary-school'>초등학교 졸업</option>
-												<option value='middle-school'>중학교 졸업</option>
-												<option value='high-school'>고등학교 졸업</option>
-												<option value='college'>대학교 졸업</option>
+												<option value='elementary-school'>Elementary school</option>
+												<option value='middle-school'>Middle school</option>
+												<option value='high-school'>High school</option>
+												<option value='college'>University</option>
 											</select>
 											{Errs.edu && <p>{Errs.edu}</p>}
 										</td>
@@ -142,7 +142,7 @@ export default function Members() {
 											<input type='checkbox' name='interest' id='music' defaultValue='music' onChange={handleCheck} />
 											<label htmlFor='music'>Music</label>
 											<input type='checkbox' name='interest' id='game' defaultValue='game' onChange={handleCheck} />
-											<label htmlFor='game'>Game</label>
+											<label htmlFor='camping'>Camping</label>
 											{Errs.interest && <p>{Errs.interest}</p>}
 										</td>
 									</tr>
