@@ -83,7 +83,7 @@
 				height: 10px;
 				margin: 0px 5px;
 				border-radius: 5px;
-				background-color: var(--baseColor);
+				background-color: var(--pointColor3);
 				color: var(--bgColor);
 				text-indent: -9999px;
 				cursor: pointer;
@@ -98,9 +98,16 @@
 		}
 		.swiperController {
 			position: absolute;
-			bottom: 50px;
-			right: 100px;
-			z-index: 4;
+			bottom: 40px;
+			right: 250px;
+			z-index: 5px;
+			button {
+				margin: 0 10px;
+				background-color: transparent;
+				border: none;
+				color: var(--baseColor);
+				cursor: pointer;
+			}
 		}
 	}
 }

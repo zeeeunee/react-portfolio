@@ -7,6 +7,8 @@ import { Pagination, Autoplay } from 'swiper';
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 import { useCustomText } from '../../../hooks/useText';
+import { GiPauseButton } from 'react-icons/gi';
+import { FaPlay } from 'react-icons/fa6';
 
 function Btns() {
 	const swiper = useSwiper();
@@ -22,9 +24,11 @@ function Btns() {
 					swiper.slideNext(300);
 					swiper.autoplay.start();
 				}}>
-				start
+				<FaPlay />
 			</button>
-			<button onClick={() => swiper.autoplay.stop()}>stop</button>
+			<button onClick={() => swiper.autoplay.stop()}>
+				<GiPauseButton />
+			</button>
 		</nav>
 	);
 }

@@ -52,10 +52,9 @@
 						}
 						&:nth-of-type(2) {
 							background-color: var(--pointColor2);
-							transition: 0;
+							transition: all 0.3s ease-out 0.5s;
 							&:hover {
 								background-color: var(--pointColor3);
-								transition: 0.8s;
 							}
 						}
 					}
@@ -137,10 +136,9 @@
 						}
 						&:nth-of-type(2) {
 							background-color: var(--pointColor1);
-							transition: 0;
+							transition: all 0.3s ease-out 0.5s;
 							&:hover {
 								background-color: var(--pointColor2);
-								transition: 0.8s;
 							}
 						}
 					}
