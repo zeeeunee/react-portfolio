@@ -75,7 +75,7 @@
 								font-size: var(--bodySize2);
 								font-family: var(--baseFont);
 								cursor: pointer;
-								transition: all 0.3s ease-out 0.5s;
+								transition: all 0.3s ease-out;
 								&:hover {
 									background: var(--pointColor2);
 								}

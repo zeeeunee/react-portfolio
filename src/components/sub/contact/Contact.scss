@@ -112,7 +112,7 @@
 				background-color: var(--pointColor1);
 				cursor: pointer;
 
-				transition: all 0.3s ease-out 0.5s;
+				transition: all 0.3s ease-out;
 				&:hover {
 					background-color: var(--pointColor2);
 				}
@@ -133,7 +133,7 @@
 					cursor: pointer;
 					border: none;
 					background-color: var(--pointColor1);
-					transition: all 0.3s ease-out 0.5s;
+					transition: all 0.3s ease-out;
 					&:hover {
 						background-color: var(--pointColor2);
 					}

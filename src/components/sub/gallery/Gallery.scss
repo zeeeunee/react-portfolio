@@ -111,7 +111,7 @@
 					height: 100%;
 					object-fit: cover;
 					cursor: pointer;
-					transition: transform 1s ease-out 0.8s;
+					transition: transform 1s ease-out;
 					&:hover {
 						transform: scale(1.2);
 					}
@@ -130,7 +130,7 @@
 					font-size: var(--bodySize2);
 					color: var(--pointColor5);
 					cursor: pointer;
-					transition: transform 1s ease-out 0.8s;
+					transition: transform 1s ease-out;
 					&:hover {
 						transform: scale(1.2);
 					}
