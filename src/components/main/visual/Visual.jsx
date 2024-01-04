@@ -2,55 +2,38 @@ import { useYoutubeQuery } from '../../../hooks/useYoutubeQuery';
 import './Visual.scss';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay } from 'swiper';
-import { useEffect } from 'react';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 import { useCustomText } from '../../../hooks/useText';
-import { GiPauseButton } from 'react-icons/gi';
-import { FaPlay } from 'react-icons/fa6';
-
-function Btns() {
-	const swiper = useSwiper();
-
-	useEffect(() => {
-		swiper.slideNext(300);
-	}, [swiper]);
-
-	return (
-		<nav className='swiperController'>
-			<button
-				onClick={() => {
-					swiper.slideNext(300);
-					swiper.autoplay.start();
-				}}>
-				<FaPlay />
-			</button>
-			<button onClick={() => swiper.autoplay.stop()}>
-				<GiPauseButton />
-			</button>
-		</nav>
-	);
-}
+import { useRef } from 'react';
 
 export default function Visual() {
 	const { data: youtube, isSuccess } = useYoutubeQuery();
+	const swiperOpt = useRef({
+		loop: true,
+		slidesPerView: 1,
+		spaceBetween: 0,
+		centeredSlides: true,
+		onSwiper: swiper => {
+			swiper.slideNext(300);
+		},
+		breakpoints: {
+			1000: {
+				slidesPerView: 2,
+				spaceBetween: 50
+			},
+			1400: {
+				slidesPerView: 3,
+				spaceBetween: 50
+			}
+		}
+	});
+
 	const shortenText = useCustomText('shorten');
 	return (
 		<figure className='Visual'>
-			<Swiper
-				modules={[Pagination, Autoplay]}
-				pagination={{
-					clickable: true,
-					renderBullet: (index, className) => {
-						return `<span class=${className}>${index + 1}</span>`;
-					}
-				}}
-				autoplay={{
-					delay: 2000,
-					disableOnInteraction: true
-				}}
-				loop={true}>
+			<Swiper {...swiperOpt.current}>
 				{isSuccess &&
 					youtube.map((vid, idx) => {
 						if (idx >= 5) return null;
@@ -73,7 +56,6 @@ export default function Visual() {
 							</SwiperSlide>
 						);
 					})}
-				<Btns />
 			</Swiper>
 		</figure>
 	);
