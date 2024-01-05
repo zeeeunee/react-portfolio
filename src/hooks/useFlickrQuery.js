@@ -22,6 +22,8 @@ const fetchFlickr = async ({ queryKey }) => {
 	const data = await fetch(url);
 	const json = await data.json();
 
+	const abc = json;
+	console.log(abc);
 	return json.photos.photo;
 };
 
