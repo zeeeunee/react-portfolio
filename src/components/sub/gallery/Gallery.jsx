@@ -59,7 +59,7 @@ export default function Gallery() {
 
 	const fetchFlickr = async opt => {
 		const num = 100;
-		const flickr_api = '7973628e19035e31ccf3734cc641b14f';
+		const flickr_api = '9a541cffc249a97f16605be38396de1c';
 		const baseURL = `https://www.flickr.com/services/rest/?&api_key=${flickr_api}&per_page=${num}&format=json&nojsoncallback=1&method=`;
 		const method_interest = 'flickr.interestingness.getList';
 		const method_user = 'flickr.people.getPhotos';
