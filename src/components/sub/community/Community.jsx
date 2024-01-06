@@ -2,14 +2,13 @@ import Layout from '../../common/layout/Layout';
 import './Community.scss';
 import { useEffect, useRef, useState } from 'react';
 import { useCustomText } from '../../../hooks/useText';
-import postData from './dummyPosts.json';
+import postData from '../../main/info/dummyPosts.json';
 
 export default function Community() {
 	const changeText = useCustomText('combined');
 	const getLocalData = () => {
 		const data = localStorage.getItem('post');
-		if (data) return JSON.parse(data);
-		else return postData.dummyPosts;
+		return JSON.parse(data);
 	};
 	const [Post, setPost] = useState(getLocalData());
 	const refTit = useRef(null);
