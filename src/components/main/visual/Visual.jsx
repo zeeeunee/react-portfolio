@@ -4,6 +4,8 @@ import { Autoplay } from 'swiper';
 import './Visual.scss';
 import 'swiper/css';
 import { useRef, useState } from 'react';
+import { MdOutlineArrowBackIos } from 'react-icons/md';
+import { MdOutlineArrowForwardIos } from 'react-icons/md';
 
 export default function Visual() {
 	const num = useRef(5);
@@ -32,29 +34,29 @@ export default function Visual() {
 		}
 	});
 
-	const trimTitle = title => {
-		let resultTit = '';
-		if (title.includes('(')) resultTit = title.split('(')[0];
-		else if (title.includes('[')) resultTit = title.split('[')[0];
-		else resultTit = title;
-		return resultTit;
-	};
+	// const trimTitle = title => {
+	// 	let resultTit = '';
+	// 	if (title.includes('(')) resultTit = title.split('(')[0];
+	// 	else if (title.includes('[')) resultTit = title.split('[')[0];
+	// 	else resultTit = title;
+	// 	return resultTit;
+	// };
 
 	return (
 		<figure className='Visual myScroll'>
-			<div className='txtBox'>
-				<ul>
+			{/* <div className='txtBox'>
+				 <ul>
 					{isSuccess &&
 						data.map((el, idx) => {
-							if (idx >= 5) return null;
+							if (idx >= num.current) return null;
 							return (
 								<li key={el.id} className={idx === Index ? 'on' : ''}>
 									<h3>{trimTitle(el.snippet.title)}</h3>
 								</li>
 							);
 						})}
-				</ul>
-			</div>
+				</ul> 
+			</div> */}
 			<Swiper {...swiperOpt.current}>
 				{isSuccess &&
 					data.map((el, idx) => {
@@ -76,11 +78,13 @@ export default function Visual() {
 			<nav className='preview'>
 				{isSuccess && (
 					<>
-						<p className='prevBox' onClick={() => swipeRef.current.slidePrev(400)}>
-							<img src={data[PrevIndex].snippet.thumbnails.default.url} alt={data[PrevIndex].snippet.title} />
+						<p className='prevBox'>
+							<MdOutlineArrowBackIos onClick={() => swipeRef.current.slidePrev(400)} />
+							{/* <img src={data[PrevIndex].snippet.thumbnails.default.url} alt={data[PrevIndex].snippet.title} /> */}
 						</p>
-						<p className='nextBox' onClick={() => swipeRef.current.slideNext(400)}>
-							<img src={data[NextIndex].snippet.thumbnails.default.url} alt={data[NextIndex].snippet.title} />
+						<p className='nextBox'>
+							<MdOutlineArrowForwardIos onClick={() => swipeRef.current.slideNext(400)} />
+							{/* <img src={data[NextIndex].snippet.thumbnails.default.url} alt={data[NextIndex].snippet.title} /> */}
 						</p>
 					</>
 				)}

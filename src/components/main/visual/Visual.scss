@@ -3,46 +3,46 @@
 	height: calc(100vh - 90px);
 	position: relative;
 	overflow: hidden;
-	.txtBox {
-		width: 40%;
-		height: 100%;
-		padding-left: 15vw;
-		position: absolute;
-		top: 0px;
-		left: 0;
-		z-index: 2;
+	// .txtBox {
+	// 	width: 40%;
+	// 	height: 100%;
+	// 	padding-left: 15vw;
+	// 	position: absolute;
+	// 	top: 0px;
+	// 	left: 0;
+	// 	z-index: 2;
 
-		ul {
-			width: 100%;
-			height: 100%;
-			position: relative;
-			li {
-				width: 100%;
-				height: 100%;
-				position: absolute;
-				top: 0;
-				left: 0;
-				display: flex;
-				flex-wrap: wrap;
-				align-content: center;
-				font-size: 3rem;
-				opacity: 0;
-				transform: scale(1.5);
-				transition: opacity 1s, transform 1s;
-				h3 {
-					font-weight: normal;
-					color: var(--baseColor);
-				}
-			}
-			li.on {
-				opacity: 1;
-				transform: scale(1);
-			}
-		}
-	}
+	// 	ul {
+	// 		width: 100%;
+	// 		height: 100%;
+	// 		position: relative;
+	// 		li {
+	// 			width: 100%;
+	// 			height: 100%;
+	// 			position: absolute;
+	// 			top: 0;
+	// 			left: 0;
+	// 			display: flex;
+	// 			flex-wrap: wrap;
+	// 			align-content: center;
+	// 			font-size: 3rem;
+	// 			opacity: 0;
+	// 			transform: scale(1.5);
+	// 			transition: opacity 1s, transform 1s;
+	// 			h3 {
+	// 				font-weight: normal;
+	// 				color: var(--baseColor);
+	// 			}
+	// 		}
+	// 		li.on {
+	// 			opacity: 1;
+	// 			transform: scale(1);
+	// 		}
+	// 	}
+	// }
 	.swiper {
 		display: inline-block;
-		width: 80%;
+		width: 100%;
 		height: 100%;
 		padding: 10vw 0px;
 		position: absolute;
@@ -87,8 +87,8 @@
 			//prev-style
 			.swiper-slide-prev {
 				.pic {
-					transform: scale(1.5);
-					opacity: 0;
+					transform: scale(0.7);
+					opacity: 0.5;
 				}
 			}
 			//active-style
@@ -111,25 +111,27 @@
 	//preview thumbnails
 	.preview {
 		p {
-			width: 120px;
+			width: 60px;
 			height: 60px;
 			overflow: hidden;
 			position: absolute;
 			bottom: 5vh;
 			cursor: pointer;
 			z-index: 6;
+			font-size: 60px;
+			color: var(--baseColor);
 
-			img {
-				width: 100%;
-				height: 100%;
-				object-fit: cover;
-			}
+			// img {
+			// 	width: 100%;
+			// 	height: 100%;
+			// 	object-fit: cover;
+			// }
 		}
 		p.prevBox {
-			left: 50px;
+			left: 100px;
 		}
 		p.nextBox {
-			right: 50px;
+			right: 100px;
 		}
 	}
 }
