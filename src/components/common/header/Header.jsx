@@ -7,7 +7,7 @@ export default function Header() {
 	const { MenuOpen, setMenuOpen } = useGlobalData();
 	const { Dark, setDark } = useGlobalData();
 	return (
-		<header className='Header'>
+		<header className='Header myScroll'>
 			<h1>
 				<Link to='/'>ZEEEUNEE</Link>
 			</h1>

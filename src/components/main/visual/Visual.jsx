@@ -4,8 +4,7 @@ import { Autoplay } from 'swiper';
 import './Visual.scss';
 import 'swiper/css';
 import { useRef, useState } from 'react';
-import { MdOutlineArrowBackIos } from 'react-icons/md';
-import { MdOutlineArrowForwardIos } from 'react-icons/md';
+import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 
 export default function Visual() {
 	const num = useRef(5);
@@ -43,9 +42,9 @@ export default function Visual() {
 	// };
 
 	return (
-		<figure className='Visual myScroll'>
+		<figure className='Visual'>
 			{/* <div className='txtBox'>
-				 <ul>
+				<ul>
 					{isSuccess &&
 						data.map((el, idx) => {
 							if (idx >= num.current) return null;
@@ -57,6 +56,9 @@ export default function Visual() {
 						})}
 				</ul> 
 			</div> */}
+			<div className='barFrame'>
+				<p className='bar' style={{ width: (100 / num.current) * (Index + 1) + '%' }}></p>
+			</div>
 			<Swiper {...swiperOpt.current}>
 				{isSuccess &&
 					data.map((el, idx) => {
@@ -79,11 +81,11 @@ export default function Visual() {
 				{isSuccess && (
 					<>
 						<p className='prevBox'>
-							<MdOutlineArrowBackIos onClick={() => swipeRef.current.slidePrev(400)} />
+							<IoIosArrowBack onClick={() => swipeRef.current.slidePrev(400)} />
 							{/* <img src={data[PrevIndex].snippet.thumbnails.default.url} alt={data[PrevIndex].snippet.title} /> */}
 						</p>
 						<p className='nextBox'>
-							<MdOutlineArrowForwardIos onClick={() => swipeRef.current.slideNext(400)} />
+							<IoIosArrowForward onClick={() => swipeRef.current.slideNext(400)} />
 							{/* <img src={data[NextIndex].snippet.thumbnails.default.url} alt={data[NextIndex].snippet.title} /> */}
 						</p>
 					</>

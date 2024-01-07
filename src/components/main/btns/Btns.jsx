@@ -9,10 +9,9 @@ export default function Btns() {
 	const wrap = useRef(null);
 	const btns = useRef(null);
 	const baseLine = useRef(-window.innerHeight / 2);
-
 	const activation = () => {
+		console.log(activation);
 		const scroll = wrap.current.scrollTop;
-
 		secs.current.forEach((sec, idx) => {
 			if (scroll >= secs.current[idx].offsetTop + baseLine.current) {
 				Array.from(btns.current.children).forEach(btn => btn.classList.remove('on'));
@@ -35,7 +34,6 @@ export default function Btns() {
 		wrap.current.addEventListener('scroll', throttledActivation);
 		return () => wrap.current.removeEventListener('scroll', throttledActivation);
 	}, [throttledActivation]);
-
 	return (
 		<ul className='Btns' ref={btns}>
 			{Array(Num)
