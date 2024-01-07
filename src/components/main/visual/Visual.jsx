@@ -33,17 +33,17 @@ export default function Visual() {
 		}
 	});
 
-	// const trimTitle = title => {
-	// 	let resultTit = '';
-	// 	if (title.includes('(')) resultTit = title.split('(')[0];
-	// 	else if (title.includes('[')) resultTit = title.split('[')[0];
-	// 	else resultTit = title;
-	// 	return resultTit;
-	// };
+	const trimTitle = title => {
+		let resultTit = '';
+		if (title.includes('(')) resultTit = title.split('(')[0];
+		else if (title.includes('[')) resultTit = title.split('[')[0];
+		else resultTit = title;
+		return resultTit;
+	};
 
 	return (
 		<figure className='Visual'>
-			{/* <div className='txtBox'>
+			<div className='txtBox'>
 				<ul>
 					{isSuccess &&
 						data.map((el, idx) => {
@@ -54,11 +54,9 @@ export default function Visual() {
 								</li>
 							);
 						})}
-				</ul> 
-			</div> */}
-			<div className='barFrame'>
-				<p className='bar' style={{ width: (100 / num.current) * (Index + 1) + '%' }}></p>
+				</ul>
 			</div>
+
 			<Swiper {...swiperOpt.current}>
 				{isSuccess &&
 					data.map((el, idx) => {
@@ -77,6 +75,10 @@ export default function Visual() {
 						);
 					})}
 			</Swiper>
+
+			<div className='barFrame'>
+				<p className='bar' style={{ width: (100 / num.current) * (Index + 1) + '%' }}></p>
+			</div>
 			<nav className='preview'>
 				{isSuccess && (
 					<>
