@@ -5,6 +5,7 @@ import './Visual.scss';
 import 'swiper/css';
 import { useRef, useState } from 'react';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
+import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 
 export default function Visual() {
 	const num = useRef(5);
@@ -65,10 +66,14 @@ export default function Visual() {
 							<SwiperSlide key={el.id}>
 								<div className='pic'>
 									<p>
-										<img src={el.snippet.thumbnails.standard.url} alt={el.snippet.title} />
+										<Link to={`/detail/${el.id}`}>
+											<img src={el.snippet.thumbnails.standard.url} alt={el.snippet.title} />
+										</Link>
 									</p>
 									<p>
-										<img src={el.snippet.thumbnails.standard.url} alt={el.snippet.title} />
+										<Link to={`/detail/${el.id}`}>
+											<img src={el.snippet.thumbnails.standard.url} alt={el.snippet.title} />
+										</Link>
 									</p>
 								</div>
 							</SwiperSlide>
@@ -76,9 +81,16 @@ export default function Visual() {
 					})}
 			</Swiper>
 
-			<div className='barFrame'>
+			{/* <div className='barFrame'>
 				<p className='bar' style={{ width: (100 / num.current) * (Index + 1) + '%' }}></p>
-			</div>
+			</div> */}
+			<ul className='pagination'>
+				{Array(num.current)
+					.fill()
+					.map((_, idx) => {
+						return <li key={idx} className={idx === Index ? 'on' : ''} onClick={() => swipeRef.current.slideToLoop(idx, 400)}></li>;
+					})}
+			</ul>
 			<nav className='preview'>
 				{isSuccess && (
 					<>

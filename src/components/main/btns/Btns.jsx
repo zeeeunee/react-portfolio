@@ -9,6 +9,7 @@ export default function Btns() {
 	const wrap = useRef(null);
 	const btns = useRef(null);
 	const baseLine = useRef(-window.innerHeight / 2);
+
 	const activation = () => {
 		console.log(activation);
 		const scroll = wrap.current.scrollTop;

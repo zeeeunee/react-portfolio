@@ -128,7 +128,7 @@ export default function Community() {
 									</div>
 
 									<nav>
-										<button onClick={() => deletePost(idx)}>Close</button>
+										<button onClick={() => deletePost(idx)}>Delete</button>
 										<button onClick={() => enableUpdate(idx)}>Edit</button>
 									</nav>
 								</article>

@@ -1,6 +1,6 @@
 .Visual {
 	width: 100%;
-	height: calc(100vh - 90px);
+	height: 80vh;
 	position: relative;
 	overflow: hidden;
 
@@ -110,22 +110,43 @@
 		}
 	}
 
-	.barFrame {
-		width: 70%;
-		height: 5px;
-		position: absolute;
-		bottom: 60px;
-		left: 15%;
-		background: var(--baseColor);
+	// .barFrame {
+	// 	width: 70%;
+	// 	height: 5px;
+	// 	position: absolute;
+	// 	bottom: 60px;
+	// 	left: 15%;
+	// 	background: var(--baseColor);
 
-		.bar {
-			width: 0%;
-			height: 100%;
-			background: var(--pointColor2);
-			position: absolute;
-			bottom: 0;
-			left: 0;
-			transition: width 0.5s;
+	// 	.bar {
+	// 		width: 0%;
+	// 		height: 100%;
+	// 		background: var(--pointColor2);
+	// 		position: absolute;
+	// 		bottom: 0;
+	// 		left: 0;
+	// 		transition: width 0.5s;
+	// 	}
+	// }
+	.pagination {
+		width: 70%;
+		position: absolute;
+		bottom: 50px;
+		left: 47%;
+		display: flex;
+		gap: 10px;
+		z-index: 6;
+
+		li {
+			width: 10px;
+			height: 10px;
+			border-radius: 5px;
+			background: rgba(var(--baseColor-code), 0.6);
+			cursor: pointer;
+
+			&.on {
+				background: var(--pointColor2);
+			}
 		}
 	}
 	//preview thumbnails
@@ -148,10 +169,10 @@
 			// }
 		}
 		p.prevBox {
-			left: 100px;
+			left: 200px;
 		}
 		p.nextBox {
-			right: 100px;
+			right: 200px;
 		}
 	}
 }
