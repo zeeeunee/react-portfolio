@@ -2,7 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 
 const fetchFlickr = async ({ queryKey }) => {
 	const num = 100;
-	const flickr_api = process.env.REACT_APP_FLICKR_API;
+	const flickr_api = '9a541cffc249a97f16605be38396de1c';
 	const baseURL = `https://www.flickr.com/services/rest/?&api_key=${flickr_api}&per_page=${num}&format=json&nojsoncallback=1&method=`;
 	const method_interest = 'flickr.interestingness.getList';
 	const method_user = 'flickr.people.getPhotos';
