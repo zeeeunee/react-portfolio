@@ -7,23 +7,15 @@ const fetchFlickr = async ({ queryKey }) => {
 	const method_interest = 'flickr.interestingness.getList';
 	const method_user = 'flickr.people.getPhotos';
 	const method_search = 'flickr.photos.search';
-
 	const interestURL = `${baseURL}${method_interest}`;
-
 	const userURL = `${baseURL}${method_user}&user_id=${queryKey[1].id}`;
 	const searchURL = `${baseURL}${method_search}&tags=${queryKey[1].keyword}`;
-
 	let url = '';
-
 	queryKey[1].type === 'user' && (url = userURL);
 	queryKey[1].type === 'interest' && (url = interestURL);
 	queryKey[1].type === 'search' && (url = searchURL);
-
 	const data = await fetch(url);
 	const json = await data.json();
-
-	const abc = json;
-	console.log(abc);
 	return json.photos.photo;
 };
 

@@ -13,6 +13,7 @@ export default function Gallery() {
 	const myID = useRef('199821135@N02');
 	const isUser = useRef(myID.current);
 	const refNav = useRef(null);
+	const refFrameWrap = useRef(null);
 	const searched = useRef(false);
 	const shortenText = useCustomText('shorten');
 
@@ -89,7 +90,7 @@ export default function Gallery() {
 						<IoSearch className='btnSearch' />
 					</form>
 				</article>
-				<section>
+				<section ref={refFrameWrap}>
 					<Masonry className={'frame'} options={{ transitionDuration: '0.5s', gutter: 20 }}>
 						{isSuccess && searched.current && Pics.length === 0 ? (
 							<h2>해당 키워드에 대한 검색 결과가 없습니다.</h2>
@@ -122,7 +123,7 @@ export default function Gallery() {
 												onError={e => e.target.setAttribute('src', 'https://www.flickr.com/images/buddyicon.gif')}
 											/> */}
 
-											<span onClick={handleUser}>User {pic.owner}</span>
+											<span onClick={handleUser}>{pic.owner}</span>
 										</div>
 										<h2>{shortenText(pic.title, 30)}</h2>
 									</article>
