@@ -12,7 +12,7 @@ export default function Layout({ children, title }) {
 
 	const handleScroll = () => {
 		const scroll = window.scrollY;
-		scroll >= 200 ? btnTop.current.classList.add('on') : btnTop.current.classList.remove('on');
+		scroll >= 200 ? btnTop.current?.classList.add('on') : btnTop.current?.classList.remove('on');
 	};
 
 	const throttledhandleScroll = useThrottle(handleScroll);
