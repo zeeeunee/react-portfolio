@@ -1,6 +1,8 @@
 import Banner from '../banner/Banner';
 import Btns from '../btns/Btns';
 import Info from '../info/Info';
+import News from '../news/News';
+
 import Pics from '../pics/Pics';
 import Visual from '../visual/Visual';
 import './MainWrap.scss';
@@ -10,6 +12,7 @@ export default function MainWrap() {
 		<div className='MainWrap'>
 			<Visual />
 			<Info />
+			<News />
 			<Pics />
 			<Banner />
 			<Btns />

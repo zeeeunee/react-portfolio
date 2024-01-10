@@ -1,11 +1,11 @@
 import BezierEasing from 'bezier-easing';
+//npm i bezier-easing
 
 export default class Anime {
 	#defOpt = { duration: 500, callback: null, easeType: 'linear' };
 
 	//인스턴스 생성시 옵션값 전달 및 속성값 보정함수 반복 호출
 	constructor(selector, props, opt) {
-		console.log(selector);
 		this.selector = selector;
 		this.defOpt = { ...this.#defOpt, ...opt };
 		this.keys = Object.keys(props);
@@ -33,7 +33,9 @@ export default class Anime {
 			currentValue = parseFloat(getComputedStyle(this.selector)[key]);
 		}
 
-		key === 'scroll' ? (currentValue = this.selector.scrollTop) : (currentValue = parseFloat(getComputedStyle(this.selector)[key]));
+		key === 'scroll'
+			? (currentValue = this.selector.scrollTop ? this.selector.scrollTop : this.selector.scrollY)
+			: (currentValue = parseFloat(getComputedStyle(this.selector)[key]));
 
 		if (type === 'percent') {
 			const parentW = parseInt(getComputedStyle(this.selector.parentElement).width);
@@ -90,6 +92,7 @@ export default class Anime {
 		} else {
 			Object.keys(easingPresets).map(key => this.easeType === key && (easingProgress = BezierEasing(...easingPresets[key])(progress)));
 		}
+
 		return [
 			progress,
 			this.isBg
@@ -103,7 +106,7 @@ export default class Anime {
 		if (type === 'percent') this.selector.style[key] = result + '%';
 		else if (type === 'color') this.selector.style[key] = `rgb(${result[0]},${result[1]},${result[2]})`;
 		else if (key === 'opacity') this.selector.style[key] = result;
-		else if (key === 'scroll') this.selector.scrollTop = result;
+		else if (key === 'scroll') this.selector !== window ? (this.selector.scrollTop = result) : this.selector.scrollTo(0, result);
 		else this.selector.style[key] = result + 'px';
 	}
 

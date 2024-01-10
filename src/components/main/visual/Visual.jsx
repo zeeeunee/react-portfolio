@@ -51,7 +51,7 @@ export default function Visual() {
 							if (idx >= num.current) return null;
 							return (
 								<li key={el.id} className={idx === Index ? 'on' : ''}>
-									<h3>{trimTitle(el.snippet.title)}</h3>
+									{/* <h3>{trimTitle(el.snippet.title)}</h3> */}
 								</li>
 							);
 						})}
@@ -81,9 +81,6 @@ export default function Visual() {
 					})}
 			</Swiper>
 
-			{/* <div className='barFrame'>
-				<p className='bar' style={{ width: (100 / num.current) * (Index + 1) + '%' }}></p>
-			</div> */}
 			<ul className='pagination'>
 				{Array(num.current)
 					.fill()
