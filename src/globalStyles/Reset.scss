@@ -17,7 +17,9 @@ a {
 	font-weight: inherit;
 	text-decoration: none;
 }
-
+:root {
+	background-color: var(--bgColor);
+}
 .wrap {
 	color: var(--baseColor);
 	font-family: var(--baseFont);
@@ -50,13 +52,13 @@ a {
 	textarea {
 		&::placeholder {
 			background-color: transparent;
-			font-size: 1rem;
+			font-size: var(--bodySize1);
 			color: rgba(var(--baseColor-code), 0.5);
 			font-family: var(--baseFont);
 		}
 	}
 	select {
-		font-size: 1rem;
+		font-size: var(--bodySize1);
 		color: rgba(var(--baseColor-code), 0.5);
 	}
 }

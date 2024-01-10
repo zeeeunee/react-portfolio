@@ -26,7 +26,7 @@ export default function CookieModal({ wid, ht, children }) {
 					<div className='controls'>
 						<nav>
 							<input ref={checkEl} type='checkbox' />
-							<span> Cookie Settings</span>
+							<span ref={checkEl}> Cookie Settings</span>
 						</nav>
 
 						<span className='closeButton' onClick={handleClose}>
