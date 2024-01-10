@@ -25,6 +25,8 @@ export default function Btns(opt) {
 				const btnsArr = btns.current?.querySelectorAll('li');
 				btnsArr?.forEach(btn => btn.classList.remove('on'));
 				btns.current?.querySelectorAll('li')[idx]?.classList.add('on');
+				secs.current?.forEach(sec => sec.classList.remove('on'));
+				secs.current[idx]?.classList.add('on');
 			}
 		});
 	};
@@ -60,10 +62,11 @@ export default function Btns(opt) {
 
 	useEffect(() => {
 		secs.current = document.querySelectorAll(resultOpt.current.items);
+		secs.current[0]?.classList.add('on');
 		setNum(secs.current.length);
 
 		window.addEventListener('resize', throttledModifyPos);
-		window.addEventListener('scroll', throttledActivation);
+		window.addEventListener('scroll', throttledActivation, 200);
 		isAutoScroll.current && window.addEventListener('mousewheel', autoScroll);
 
 		return () => {
