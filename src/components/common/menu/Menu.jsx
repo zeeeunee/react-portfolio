@@ -1,18 +1,26 @@
 import { useEffect, useCallback, useRef } from 'react';
 import './Menu.scss';
+import { useDispatch, useSelector } from 'react-redux';
+import { menuClose } from '../../../redux/menuSlice';
 
-export default function Menu({ setToggle }) {
+export default function Menu() {
+	const dispatch = useDispatch();
+	const Open = useSelector(store => store.menu.open);
 	const closeMenu = useCallback(() => {
-		window.innerWidth >= 1000 && setToggle(false);
-	}, [setToggle]);
+		window.innerWidth >= 1000 && dispatch(menuClose());
+	}, [dispatch]);
 
 	useEffect(() => {
 		window.addEventListener('resize', closeMenu);
 		return () => window.removeEventListener('resize', closeMenu);
 	}, [closeMenu]);
 	return (
-		<aside className='Menu'>
-			<h1>Mobile Menu</h1>
-		</aside>
+		<>
+			{Open && (
+				<aside className='Menu' Onclick={() => dispatch(menuClose())}>
+					<h1>Mobile Menu</h1>
+				</aside>
+			)}
+		</>
 	);
 }

@@ -9,21 +9,32 @@ import Members from './components/sub/members/Members';
 import { Route } from 'react-router-dom';
 import './globalStyles/Variables.scss';
 import './globalStyles/Reset.scss';
-import { useState } from 'react';
-
+import { useEffect } from 'react';
 import { useMedia } from './hooks/useMedia';
 import Menu from './components/common/menu/Menu';
 import Youtube from './components/sub/youtube/Youtube';
 import Detail from './components/sub/youtube/Detail';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchYoutube } from './redux/youtubeSlice';
+import { fetchMember } from './redux/memberSlice';
+import { fetchHistory } from './redux/historySlice';
+import { fetchFlickr } from './redux/flickrSlice';
 
 function App() {
-	const [Dark, setDark] = useState(false);
-	const [Toggle, setToggle] = useState(false);
+	const dispatch = useDispatch();
+	const Dark = useSelector(store => store.dark.isDark);
+
+	useEffect(() => {
+		dispatch(fetchYoutube());
+		dispatch(fetchMember());
+		dispatch(fetchHistory());
+		dispatch(fetchFlickr({ type: 'interest' }));
+	}, [dispatch]);
 
 	return (
 		<>
 			<div className={`wrap ${Dark ? 'dark' : ''} ${useMedia()}`}>
-				<Header Dark={Dark} setDark={setDark} Toggle={Toggle} setToggle={setToggle} />
+				<Header />
 				<Route exact path='/' component={MainWrap} />
 				<Route path='/department' component={Department} />
 				<Route path='/youtube' component={Youtube} />
@@ -33,7 +44,7 @@ function App() {
 				<Route path='/members' component={Members} />
 				<Route path='/contact' component={Contact} />
 				<Footer />
-				{Toggle && <Menu setToggle={setToggle} />}
+				<Menu />
 			</div>
 		</>
 	);

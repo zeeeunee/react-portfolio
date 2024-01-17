@@ -6,8 +6,11 @@ import Masonry from 'react-masonry-component';
 import { IoSearch } from 'react-icons/io5';
 import Modal from '../../common/modal/Modal';
 import { IoArrowBackCircle } from 'react-icons/io5';
+import { useDispatch } from 'react-redux';
+import { modalOpen } from '../../../redux/modalSlice';
 
 export default function Gallery() {
+	const dispatch = useDispatch();
 	const myID = useRef('199821135@N02');
 	const isUser = useRef(myID.current);
 	const refNav = useRef(null);
@@ -121,7 +124,7 @@ export default function Gallery() {
 										</div>
 										<span
 											onClick={() => {
-												setOpen(true);
+												dispatch(modalOpen());
 												setIndex(idx);
 											}}>
 											<p>View Detail</p>

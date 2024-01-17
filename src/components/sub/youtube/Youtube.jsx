@@ -1,6 +1,6 @@
 import Layout from '../../common/layout/Layout';
 import './Youtube.scss';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useCustomText } from '../../../hooks/useText';
 import { Link } from 'react-router-dom';
 import { IoMdArrowDroprightCircle } from 'react-icons/io';
@@ -9,22 +9,6 @@ export default function Youtube() {
 	const [Vids, setVids] = useState([]);
 	const customText = useCustomText('combined');
 	const shortenText = useCustomText('shorten');
-	const fetchYoutube = async () => {
-		const api_key = 'AIzaSyBQ0OBVJR5LwVP7O1wFRSbfMbLCLvWRLnE';
-		const pid = 'PLM7Wu-2kzIQPISbXB5yK53ANqLA6I1IZs';
-		const num = 8;
-		const baseURL = `https://www.googleapis.com/youtube/v3/playlistItems?key=${api_key}&part=snippet&playlistId=${pid}&maxResults=${num}`;
-		try {
-			const data = await fetch(baseURL);
-			const json = await data.json();
-			setVids(json.items);
-		} catch (err) {
-			console.error(err);
-		}
-	};
-	useEffect(() => {
-		fetchYoutube();
-	}, []);
 
 	return (
 		<Layout title={'Youtube'}>
