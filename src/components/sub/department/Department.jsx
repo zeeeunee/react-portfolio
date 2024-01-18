@@ -1,18 +1,18 @@
 import { useEffect, useRef, useState } from 'react';
 import Layout from '../../common/layout/Layout';
 import './Department.scss';
-import { useCustomText } from '../../../hooks/useText';
+//import { useCustomText } from '../../../hooks/useText';
 
 export default function Department() {
-	const combinedTitle = useCustomText('combined');
-	const path = useRef(process.env.PUBLIC_URL);
+	//const combinedTitle = useCustomText('combined');
+	// const path = useRef(process.env.PUBLIC_URL);
 	const [MemberTit, setMemberTit] = useState('');
 	const [MemberData, setMemberData] = useState([]);
 	const [HistoryTit, setHistoryTit] = useState('');
 	const [HistoryData, setHistoryData] = useState([]);
 
 	const fetchDepartment = () => {
-		fetch(`${path.current}/DB/department.json`)
+		fetch(`${process.env.PUBLIC_URL}/DB/department.json`)
 			.then(data => data.json())
 			.then(json => {
 				setMemberTit(Object.keys(json)[0]);
@@ -21,7 +21,7 @@ export default function Department() {
 	};
 
 	const fetchHistory = () => {
-		fetch(`${path.current}/DB/history.json`)
+		fetch(`${process.env.PUBLIC_URL}/DB/history.json`)
 			.then(data => data.json())
 			.then(json => {
 				setHistoryTit(Object.keys(json)[0]);
@@ -32,7 +32,8 @@ export default function Department() {
 	useEffect(() => {
 		fetchDepartment();
 		fetchHistory();
-	}, []);
+	}, [fetchDepartment, fetchHistory]);
+
 	return (
 		<Layout title={'Department'}>
 			{/* <h2>{combinedTitle('History')}</h2> */}
@@ -84,7 +85,7 @@ export default function Department() {
 					{MemberData?.map((member, idx) => {
 						return (
 							<article key={member + idx}>
-								<img src={`${path}/img/${member.pic}`} alt={member.name} />
+								<img src={`${process.env.PUBLIC_URL}/img/${member.pic}`} alt={member.name} />
 								<div className='NP'>
 									<h3>{member.name}</h3>
 									<p>{member.position}</p>
