@@ -1,12 +1,12 @@
 import Layout from '../../common/layout/Layout';
 import './Youtube.scss';
-import { useState } from 'react';
 import { useCustomText } from '../../../hooks/useText';
 import { Link } from 'react-router-dom';
 import { IoMdArrowDroprightCircle } from 'react-icons/io';
+import { useSelector } from 'react-redux';
 
 export default function Youtube() {
-	const [Vids, setVids] = useState([]);
+	const Vids = useSelector(store => store.youtube.data);
 	const customText = useCustomText('combined');
 	const shortenText = useCustomText('shorten');
 
