@@ -18,9 +18,14 @@ export default function Youtube() {
 					<div className='youtubeLeft'>
 						<h3>Lorem, ipsum dolor.</h3>
 						<p>
-							Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis doloremque reprehenderit accusantium unde ea veritatis voluptates
-							dolorum rerum perspiciatis, ratione quidem eveniet magnam vel explicabo corporis nulla inventore vero! Facere distinctio officiis non
-							ipsa eum veniam voluptas alias iure sequi.
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam voluptatum ipsum aut ullam veniam aperiam maxime nihil, placeat fugit eius
+							corrupti ex ut temporibus assumenda quasi exercitationem maiores iste laborum tenetur ad expedita deserunt sunt neque eos. Sunt placeat,
+							unde reprehenderit, laboriosam consequuntur impedit eum esse id obcaecati animi fuga.
+						</p>
+						<p>
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit fuga enim dicta ratione illo sapiente libero amet nisi ut, quod eligendi
+							facere molestias quibusdam modi voluptatem dignissimos accusamus. Laudantium dicta distinctio eveniet architecto dolor animi.
+							Praesentium voluptatem laudantium quibusdam labore.
 						</p>
 					</div>
 					<div className='youtubePic'>
@@ -33,13 +38,17 @@ export default function Youtube() {
 				</section>
 
 				{Vids?.map(data => {
-					const [date, time] = data.snippet.publishedAt.split('T');
+					// const [date, time] = data.snippet.publishedAt.split('T');
 
 					return (
 						<article key={data.id}>
 							<div className='left'>
 								<div className='pic'>
-									<img src={data.snippet.thumbnails.standard.url} alt={data.snippet.title} />
+									<p>
+										<Link to={`/detail/${data.id}`}>
+											<img src={data.snippet.thumbnails.standard.url} alt={data.snippet.title} />
+										</Link>
+									</p>{' '}
 								</div>
 								<div className='detailButton'>
 									<Link to={`/detail/${data.id}`}>

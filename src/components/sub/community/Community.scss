@@ -1,6 +1,5 @@
 .Community {
 	width: 70vw;
-
 	.CommunityWrap {
 		width: 100%;
 		margin: 100px 0;
@@ -10,7 +9,6 @@
 			display: flex;
 			width: 30%;
 			margin: 50px 0;
-
 			form {
 				width: 90%;
 				height: 40vh;
@@ -19,7 +17,6 @@
 				display: flex;
 				flex-wrap: wrap;
 				align-content: space-between;
-
 				h2 {
 					font-size: var(--titSize2);
 				}
@@ -49,10 +46,14 @@
 						padding: 10px;
 						font-family: var(--baseFont);
 						&:nth-of-type(1) {
-							color: var(--pointColor2);
+							color: var(--pointColor5);
 						}
 						&:nth-of-type(2) {
-							background-color: var(--pointColor3);
+							background-color: var(--pointColor2);
+							transition: all 0.3s ease-out;
+							&:hover {
+								background-color: var(--pointColor3);
+							}
 						}
 					}
 				}
@@ -68,7 +69,6 @@
 			justify-content: flex-start;
 			align-content: flex-start;
 			gap: var(--boxGap);
-
 			article {
 				width: calc((100% - (var(--boxGap) * (var(--num) - 1))) / var(--num));
 				height: 40vh;
@@ -85,7 +85,6 @@
 					font-size: var(--bodySize2);
 					margin-bottom: 5px;
 				}
-
 				.txt {
 					width: 100%;
 					display: flex;
@@ -104,7 +103,7 @@
 						font-family: var(--baseFont);
 						background-color: rgba(var(--baseColor-code), 0.1);
 					}
-					h3 {
+					h2 {
 						width: 100%;
 						font-size: var(--bodySize1);
 						color: var(--baseColor);
@@ -112,18 +111,16 @@
 					}
 					p {
 						width: 100%;
-						margin-bottom: 60px;
+						margin-bottom: 70px;
 						font-size: var(--bodySize2);
 						color: rgba(var(--baseColor-code) 0.4);
 					}
 				}
-
 				nav {
 					width: 100%;
 					display: flex;
 					justify-content: flex-end;
 					gap: 7px;
-
 					button {
 						height: 40px;
 						border: none;
@@ -131,10 +128,14 @@
 						padding: 10px;
 						font-family: var(--baseFont);
 						&:nth-of-type(1) {
-							color: var(--pointColor2);
+							color: var(--pointColor5);
 						}
 						&:nth-of-type(2) {
 							background-color: var(--pointColor1);
+							transition: all 0.3s ease-out;
+							&:hover {
+								background-color: var(--pointColor2);
+							}
 						}
 					}
 				}
@@ -142,7 +143,6 @@
 		}
 	}
 }
-
 .tablet {
 	.Community {
 		.CommunityWrap {
@@ -152,7 +152,6 @@
 					height: 55vh;
 				}
 			}
-
 			.showBox {
 				--num: 2;
 				article {
@@ -162,7 +161,6 @@
 		}
 	}
 }
-
 .mobile {
 	.Community {
 		.CommunityWrap {

@@ -5,15 +5,11 @@ import { useSelector } from 'react-redux';
 
 export default function Department() {
 	const MemberData = useSelector(store => store.memberReducer.members);
-	console.log(MemberData);
 	const HistoryData = useSelector(store => store.historyReducer.history);
-	const combinedTitle = useCustomText('combined');
 	const path = process.env.PUBLIC_URL;
 
 	return (
 		<Layout title={'Department'}>
-			{/* <h2>{combinedTitle('History')}</h2> */}
-
 			<div className='historyGray'>
 				<section className='grayImage'>
 					<article>
@@ -49,7 +45,6 @@ export default function Department() {
 					})}
 				</div>
 			</section>
-			{/* <h2>{combinedTitle('Members')}</h2> */}
 
 			<section className='memberBox'>
 				<h3>A team United by shared values</h3>
@@ -57,7 +52,7 @@ export default function Department() {
 					<h3>6</h3>
 					<div className='ppp'>
 						<p>Professional</p>
-						<p>Developers</p>
+						<p>Members</p>
 						<p>in our Team</p>
 					</div>
 				</div>
