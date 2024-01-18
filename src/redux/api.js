@@ -14,8 +14,8 @@ export const fetchHistory = async () => {
 
 export const fetchYoutube = async () => {
 	const api_key = 'AIzaSyBQ0OBVJR5LwVP7O1wFRSbfMbLCLvWRLnE';
-	const pid = 'PLM7Wu-2kzIQNrTEyi14QDMjdugAx8sKNZ';
-	const num = 6;
+	const pid = 'PLM7Wu-2kzIQPISbXB5yK53ANqLA6I1IZs';
+	const num = 8;
 	const baseURL = `https://www.googleapis.com/youtube/v3/playlistItems?key=${api_key}&part=snippet&playlistId=${pid}&maxResults=${num}`;
 
 	const data = await fetch(baseURL);

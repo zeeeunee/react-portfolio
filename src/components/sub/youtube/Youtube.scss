@@ -1,22 +1,21 @@
 .Youtube {
 	width: 70vw;
-
+	margin: 50px auto;
 	.YoutubeData {
 		width: 100%;
 		margin: 100px 0;
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
-
 		.topYoutube {
 			width: 100%;
 			margin-bottom: 50px;
 			display: flex;
-
+			//background-color: var(--pointColor3);
 			.youtubePic {
 				width: 40%;
 				height: 400px;
-
+				margin: 60px 0;
 				overflow: hidden;
 				img {
 					width: 100%;
@@ -32,16 +31,22 @@
 				align-content: center;
 				h3 {
 					width: 100%;
-					margin-bottom: 50px;
+					margin-bottom: 30px;
 					font-size: var(--titSize1);
 				}
 				p {
-					width: 100%;
-					font-size: var(--bodySize2);
+					margin-bottom: 20px;
+					&:nth-of-type(1) {
+						width: 100%;
+						font-size: var(--bodySize1);
+					}
+					&:nth-of-type(2) {
+						width: 100%;
+						font-size: var(--bodySize2);
+					}
 				}
 			}
 		}
-
 		.our {
 			width: 100%;
 			margin-bottom: 50px;
@@ -78,21 +83,38 @@
 					width: 100px;
 					height: 100px;
 					overflow: hidden;
-					img {
+					position: relative;
+					border-radius: 50%;
+					p {
 						width: 100%;
 						height: 100%;
-						border-radius: 50%;
-						object-fit: cover;
+						position: absolute;
+						top: 0;
+						left: 0;
+						img {
+							width: 100%;
+							height: 100%;
+							object-fit: cover;
+							transform: scale(1.4);
+							transition: transform 1s ease-out;
+							&:hover {
+								transform: scale(1.6);
+							}
+						}
 					}
 				}
 				.detailButton {
 					width: 100%;
 					font-size: var(--bodySize2);
-					color: var(--pointColor2);
+					color: var(--pointColor5);
 					margin-top: 10px;
 					display: flex;
 					justify-content: center;
 					cursor: pointer;
+					transition: transform 1s ease-out;
+					&:hover {
+						transform: scale(1.2);
+					}
 				}
 				// .infoBox {
 				// 	width: 100%;
@@ -115,7 +137,6 @@
 				display: flex;
 				flex-wrap: wrap;
 				align-content: center;
-
 				h2 {
 					margin-bottom: 7px;
 					font-size: var(--bodySize1);
@@ -132,17 +153,22 @@
 }
 .tablet {
 	.Youtube {
-		width: 90vw;
 		.YoutubeData {
 			article {
 				width: 50%;
+			}
+			.youtubeLeft {
+				p {
+					&:nth-of-type(2) {
+						display: none;
+					}
+				}
 			}
 		}
 	}
 }
 .mobile {
 	.Youtube {
-		width: 95vw;
 		.YoutubeData {
 			.topYoutube {
 				.youtubePic {

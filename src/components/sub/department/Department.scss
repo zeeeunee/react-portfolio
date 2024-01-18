@@ -1,5 +1,6 @@
 .Department {
 	width: 70vw;
+	margin: 50px auto;
 	.historyGray {
 		width: 100%;
 		margin: 100px 0;
@@ -28,13 +29,13 @@
 			padding: 30px 0;
 			display: flex;
 			flex-wrap: wrap;
-			align-content: flex-end;
+			align-content: center;
 			h2 {
+				margin-bottom: 40px;
 				font-size: var(--titSize1);
 				color: var(--baseColor);
 			}
 			p {
-				padding: 30px 0;
 				font-size: var(--bodySize2);
 				word-break: break-all;
 				color: rgba(var(--baseColor-code), 0.4);
@@ -102,7 +103,9 @@
 				font-size: var(--pointSize);
 				color: rgba(var(--baseColor-code), 0.8);
 			}
-			p {
+			.ppp {
+				width: 100%;
+
 				font-size: var(--pointSize2);
 			}
 		}
@@ -124,13 +127,11 @@
 					height: 100%;
 					object-fit: cover;
 				}
-
 				.NP {
 					position: absolute;
 					bottom: 0px;
 					width: 100%;
 					padding: 5px;
-
 					background-color: rgba(var(--baseColor-code), 0.3);
 					z-index: 5;
 					h3 {
@@ -140,6 +141,7 @@
 					}
 					p {
 						padding-left: 5px;
+						margin-bottom: 5px;
 						color: var(--memberColor);
 						font-weight: normal;
 						font-size: var(--bodySize2);
@@ -193,16 +195,15 @@
 			}
 			.grayRightBox {
 				width: 100%;
-				padding: 10px;
 			}
 		}
 		.historyBox {
 			width: 100%;
 			margin: 80px auto;
 			.con {
+				border-left: 1px solid var(--baseColor);
 				article {
 					width: 100%;
-
 					&:nth-of-type(odd) {
 						justify-content: flex-start;
 						border-right: none;

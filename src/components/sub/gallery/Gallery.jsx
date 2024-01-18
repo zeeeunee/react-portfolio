@@ -12,7 +12,7 @@ import { IoArrowBackCircle } from 'react-icons/io5';
 export default function Gallery() {
 	const dispatch = useDispatch();
 	const Pics = useSelector(store => store.flickrReducer.flickr);
-	const myID = useRef('199697926@N08');
+	const myID = useRef('199821135@N02');
 	const isUser = useRef(myID.current);
 	const refNav = useRef(null);
 	const searched = useRef(false);
@@ -104,13 +104,7 @@ export default function Gallery() {
 									</span>
 
 									<div className='profile'>
-										{/* <img
-											src={`http://farm${pic.farm}.staticflickr.com/${pic.server}/buddyicons/${pic.owner}.jpg`}
-											alt='사용자프로필이미지'
-											onError={e => e.target.setAttribute('src', 'https://www.flickr.com/images/buddyicon.gif')}
-										/> */}
-
-										<span onClick={handleUser}>User {pic.owner}</span>
+										<span onClick={handleUser}>{pic.owner}</span>
 									</div>
 									<h2>{shortenText(pic.title, 30)}</h2>
 								</article>

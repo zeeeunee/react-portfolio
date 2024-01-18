@@ -14,7 +14,6 @@
 				object-fit: cover;
 			}
 		}
-
 		.formBox {
 			width: 70%;
 			margin: 100px 0;
@@ -35,20 +34,6 @@
 						p {
 							font-size: var(--bodySize2);
 						}
-
-						// &::after {
-						// 	content: '';
-						// 	display: block;
-						// 	width: calc(100% - 40px);
-						// 	height: 1px;
-						// 	font-size: var(--bodySize2);
-						// 	background: var(--baseColor);
-						// 	opacity: 0.6;
-						// 	position: absolute;
-						// 	bottom: 0;
-						// 	left: 20px;
-						// }
-
 						input[type='text'],
 						input[type='password'],
 						textarea {
@@ -82,22 +67,24 @@
 							justify-content: flex-end;
 							gap: 7px;
 							input[type='submit'] {
-								background: var(--pointColor3);
+								background: var(--pointColor1);
 								padding: 10px;
 								border: none;
 								font-size: var(--bodySize2);
 								font-family: var(--baseFont);
 								cursor: pointer;
-								transition: 0.5s;
+								transition: all 0.3s ease-out;
+								&:hover {
+									background: var(--pointColor2);
+								}
 							}
 							input[type='reset'] {
 								padding: 10px;
 								border: none;
 								font-size: var(--bodySize2);
 								font-family: var(--baseFont);
-								color: var(--pointColor2);
+								color: var(--pointColor5);
 								cursor: pointer;
-								transition: 0.5s;
 							}
 						}
 					}
@@ -111,7 +98,6 @@
 		}
 	}
 }
-
 .mobile {
 	.Members {
 		.wrap {
