@@ -32,7 +32,7 @@ export default function Members() {
 		e.preventDefault();
 
 		if (Object.keys(check(Val)).length === 0) {
-			alert('회원가입을 축하합니다.');
+			alert('Congratulations on your membership.');
 			history.push('/');
 		}
 	};
@@ -45,26 +45,26 @@ export default function Members() {
 		const [m1, m2] = value.email.split('@');
 		const m3 = m2 && m2.split('.');
 
-		if (value.userid.length < 5) errs.userid = '아이디는 최소 5글자 이상 입력하세요';
-		if (value.comments.length < 10) errs.comments = '남기는 말은 최소 10글자 이상 입력하세요';
-		if (!value.gender) errs.gender = '성별을 선택하세요';
-		if (value.interest.length === 0) errs.interest = '관심사를 하나이상 선택하세요.';
-		if (!value.edu) errs.edu = '최종학력을 선택하세요.';
-		if (value.pwd1 !== value.pwd2 || !value.pwd2) errs.pwd2 = '두개의 비밀번호를 같게 입력하세요.';
-		if (!m1 || !m2 || !m3[0] || !m3[1]) errs.email = '올바른 이메일 형식으로 입력하세요';
+		if (value.userid.length < 5) errs.userid = 'Please enter at least 5 characters.';
+		if (value.comments.length < 10) errs.comments = 'Please enter at least 10 characters.';
+		if (!value.gender) errs.gender = 'Please choose a gender.';
+		if (value.interest.length === 0) errs.interest = 'Please choose your interests.';
+		if (!value.edu) errs.edu = 'Please choose your final academic background.';
+		if (value.pwd1 !== value.pwd2 || !value.pwd2) errs.pwd2 = 'Please enter the same password.';
+		if (!m1 || !m2 || !m3[0] || !m3[1]) errs.email = 'Please enter it in email format.';
 		if (!num.test(value.pwd1) || !txt.test(value.pwd1) || !spc.test(value.pwd1) || value.pwd1.length < 5)
-			errs.pwd1 = '비밀번호는 특수문자, 문자, 숫자를 모두포함해서 5글자 이상 입력하세요.';
-		if (value.pwd1 !== value.pwd2 || !value.pwd2) errs.pwd2 = '두개의 비밀번호를 같게 입력하세요.';
+			errs.pwd1 = 'Please enter a password of at least 5 characters including all special characters, letters, and numbers.';
+
 		if (!/@/.test(value.email)) {
-			errs.email = '이메일주소에는 @를 포함해야 합니다.';
+			errs.email = "Please enter with '@'.";
 		} else {
 			const [forward, backward] = value.email.split('@');
 			if (!forward || !backward) {
-				errs.email = '@앞뒤로 문자가 모두 포함되야 합니다.';
+				errs.email = "All characters must be included before and after '@'.";
 			} else {
 				const [forward, backward] = value.email.split('.');
 				if (!forward || !backward) {
-					errs.email = '.앞뒤로 문자가 모두 포함되야 합니다.';
+					errs.email = "All characters must be included before and after '.'.";
 				}
 			}
 		}
@@ -82,10 +82,10 @@ export default function Members() {
 					<img src='/img/image.jpg' alt='diningroom' />
 				</div>
 				<div className='formBox'>
-					<h3>Join Us</h3>
+					<h3>Join us</h3>
 					<form onSubmit={handleSubmit}>
 						<fieldset>
-							<legend className='h'>회원가입 폼</legend>
+							<legend className='h'>Membership form</legend>
 							<table>
 								<tbody>
 									<tr>
@@ -114,10 +114,10 @@ export default function Members() {
 										<td colSpan='2'>
 											<select name='edu' onChange={handleChange}>
 												<option value=''>Education</option>
-												<option value='elementary-school'>초등학교 졸업</option>
-												<option value='middle-school'>중학교 졸업</option>
-												<option value='high-school'>고등학교 졸업</option>
-												<option value='college'>대학교 졸업</option>
+												<option value='elementary-school'>Elementary school</option>
+												<option value='middle-school'>Middle school</option>
+												<option value='high-school'>High school</option>
+												<option value='college'>University</option>
 											</select>
 											{Errs.edu && <p>{Errs.edu}</p>}
 										</td>
@@ -146,7 +146,7 @@ export default function Members() {
 											<label htmlFor='music'>Music</label>
 
 											<input type='checkbox' name='interest' id='game' defaultValue='game' onChange={handleCheck} />
-											<label htmlFor='game'>Game</label>
+											<label htmlFor='camping'>Camping</label>
 											{Errs.interest && <p>{Errs.interest}</p>}
 										</td>
 									</tr>
