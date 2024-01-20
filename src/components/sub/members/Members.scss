@@ -1,11 +1,18 @@
 .Members {
-	.wrap {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	h1 {
 		width: 100%;
+	}
+
+	.wrap {
+		width: 80%;
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
 		.memberPic {
-			width: 30%;
+			width: 35%;
 			margin: 100px 0;
 			overflow: hidden;
 			img {
@@ -16,7 +23,7 @@
 		}
 
 		.formBox {
-			width: 70%;
+			width: 65%;
 			margin: 100px 0;
 			padding: 20px;
 			background-color: var(--ytColor);

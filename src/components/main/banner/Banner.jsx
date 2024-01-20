@@ -1,9 +1,24 @@
 import { useRef, useState } from 'react';
 import { useBannerQuery } from '../../../hooks/useBanner';
 import { Autoplay } from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
 import './Banner.scss';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
+import { FaPlay, FaPause } from 'react-icons/fa6';
+
+function Btns() {
+	const swiper = useSwiper();
+	return (
+		<nav className='swiperController'>
+			<button onClick={() => swiper.autoplay.start()}>
+				<FaPlay />
+			</button>
+			<button onClick={() => swiper.autoplay.stop()}>
+				<FaPause />
+			</button>
+		</nav>
+	);
+}
 
 export default function Banner() {
 	const path = process.env.PUBLIC_URL;
@@ -37,27 +52,29 @@ export default function Banner() {
 						if (idx >= num.current) return null;
 						return (
 							<SwiperSlide key={banner + idx}>
+								<div className='box'></div>
 								<article className='picture'>
 									<img key={banner + idx} src={`${path}/img/${banner.pic}`} alt='diningroom' />
 								</article>
 							</SwiperSlide>
 						);
 					})}
+				<Btns />
 			</Swiper>
-			<nav className='allow'>
+			<nav className='arrow'>
 				{isSuccess && (
 					<>
-						<p className='prevAllow'>
+						<p className='prevArrow'>
 							<IoIosArrowBack onClick={() => swipeRef.current.slidePrev(400)} />
 						</p>
-						<p className='nextAllow'>
+						<p className='nextArrow'>
 							<IoIosArrowForward onClick={() => swipeRef.current.slideNext(400)} />
 						</p>
 					</>
 				)}
 			</nav>
 			<div className='counter'>
-				<strong>{Index + 1}</strong> / <span>{num.current}</span>
+				<span>{Index + 1}</span> / <span>{num.current}</span>
 			</div>
 		</section>
 	);
