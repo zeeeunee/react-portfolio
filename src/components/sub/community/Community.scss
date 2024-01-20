@@ -20,20 +20,23 @@
 				align-content: space-between;
 
 				h2 {
-					font-size: var(--titSize2);
+					font-size: var(--titSize1);
 				}
 				.formTxt {
 					width: 100%;
 					input {
 						width: 100%;
-						border: rgba(var(--baseColor-code) 0.3);
+						border: none;
 						font-family: var(--baseFont);
+						font-size: var(--titSize2);
 						margin-bottom: 7px;
 					}
 					textarea {
 						width: 100%;
-						border: rgba(var(--baseColor-code) 0.3);
+						height: 20vh;
+						border: none;
 						font-family: var(--baseFont);
+						font-size: var(--bodySize1);
 					}
 				}
 				nav {
@@ -97,25 +100,29 @@
 						border: none;
 						margin-bottom: 7px;
 						font-family: var(--baseFont);
+						font-size: var(--titSize2);
 						background-color: rgba(var(--baseColor-code), 0.1);
 						border-bottom: var(--ytColor);
 					}
 					textarea {
 						width: 100%;
+						height: 20vh;
 						border: none;
 						font-family: var(--baseFont);
+						font-size: var(--bodySize1);
 						background-color: rgba(var(--baseColor-code), 0.1);
 					}
 					h2 {
 						width: 100%;
-						font-size: var(--bodySize1);
+						font-size: var(--titSize2);
 						color: var(--baseColor);
 						margin-bottom: 5px;
 					}
 					p {
 						width: 100%;
-						margin-bottom: 70px;
-						font-size: var(--bodySize2);
+						height: 20vh;
+
+						font-size: var(--bodySize1);
 						color: rgba(var(--baseColor-code) 0.4);
 					}
 				}
