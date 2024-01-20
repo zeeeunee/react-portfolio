@@ -35,30 +35,16 @@ export default function Visual() {
 		}
 	});
 
-	const trimTitle = title => {
-		let resultTit = '';
-		if (title.includes('(')) resultTit = title.split('(')[0];
-		else if (title.includes('[')) resultTit = title.split('[')[0];
-		else resultTit = title;
-		return resultTit;
-	};
+	// const trimTitle = title => {
+	// 	let resultTit = '';
+	// 	if (title.includes('(')) resultTit = title.split('(')[0];
+	// 	else if (title.includes('[')) resultTit = title.split('[')[0];
+	// 	else resultTit = title;
+	// 	return resultTit;
+	// };
 
 	return (
 		<figure className='Visual'>
-			<div className='txtBox'>
-				<ul>
-					{isSuccess &&
-						data.map((el, idx) => {
-							if (idx >= num.current) return null;
-							return (
-								<li key={el.id} className={idx === Index ? 'on' : ''}>
-									{/* <h3>{trimTitle(el.snippet.title)}</h3> */}
-								</li>
-							);
-						})}
-				</ul>
-			</div>
-
 			<Swiper {...swiperOpt.current}>
 				{isSuccess &&
 					data.map((el, idx) => {
@@ -81,6 +67,20 @@ export default function Visual() {
 						);
 					})}
 			</Swiper>
+
+			{/* <div className='txtBox'>
+				<ul>
+					{isSuccess &&
+						data.map((el, idx) => {
+							if (idx >= num.current) return null;
+							return (
+								<li key={el.id} className={idx === Index ? 'on' : ''}>
+									<h3>{trimTitle(el.snippet.title)}</h3>
+								</li>
+							);
+						})}
+				</ul>
+			</div> */}
 
 			<ul className='pagination'>
 				{Array(num.current)

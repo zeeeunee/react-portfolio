@@ -1,7 +1,9 @@
 .Visual {
 	width: 100%;
-	height: 80vh;
+	height: 90vh;
 	position: relative;
+	display: flex;
+	flex-wrap: wrap;
 	overflow: hidden;
 
 	.swiper {
@@ -9,9 +11,7 @@
 		width: 100%;
 		height: 100%;
 		padding: 10vw 0px;
-		position: absolute;
-		top: -20px;
-		right: 0;
+
 		.swiper-wrapper {
 			height: inherit;
 			.swiper-slide {
@@ -23,7 +23,6 @@
 					position: relative;
 					opacity: 0.4;
 					transform: scale(0.5);
-					position: relative;
 					transition: opacity 0.5s, transform 0.5s;
 					> p {
 						position: absolute;
@@ -73,11 +72,6 @@
 	}
 	// .txtBox {
 	// 	width: 100%;
-	// 	padding-left: 15vw;
-	// 	position: absolute;
-	// 	bottom: 120px;
-	// 	left: 15%;
-	// 	z-index: 2;
 
 	// 	ul {
 	// 		width: 60%;
@@ -113,11 +107,10 @@
 	.pagination {
 		width: 70%;
 		position: absolute;
-		bottom: 50px;
+		bottom: 80px;
 		left: 47%;
 		display: flex;
 		gap: 10px;
-		z-index: 6;
 
 		li {
 			width: 10px;
@@ -136,7 +129,7 @@
 		p {
 			width: 60px;
 			height: 60px;
-			overflow: hidden;
+			// overflow: hidden;
 			position: absolute;
 			bottom: 5vh;
 			cursor: pointer;

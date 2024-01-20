@@ -11,10 +11,10 @@ export default function MainWrap() {
 	return (
 		<div className='MainWrap'>
 			<Visual />
-			<Info />
-			<News />
 			<Pics />
+			{/* <News /> */}
 			<Banner />
+			<Info />
 			<Btns />
 		</div>
 	);

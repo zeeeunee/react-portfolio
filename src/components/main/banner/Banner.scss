@@ -1,7 +1,56 @@
 .Banner {
 	width: 100%;
-	height: 100vh;
+	height: 60vh;
 	background: var(--pointColor4);
 	position: relative;
-	padding: 10vw;
+
+	.swiper {
+		display: inline-block;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+		position: relative;
+
+		.swiper-wrapper {
+			height: inherit;
+			.swiper-slide {
+				width: 100%;
+				height: inherit;
+				.picture {
+					width: 100%;
+					height: 60vh;
+					overflow: hidden;
+					img {
+						width: 100%;
+						height: 100%;
+						object-fit: cover;
+					}
+				}
+			}
+		}
+	}
+	.allow {
+		p {
+			width: 60px;
+			height: 60px;
+			position: absolute;
+			bottom: 5vh;
+			cursor: pointer;
+			z-index: 6;
+			font-size: 60px;
+			color: var(--pointColor1);
+		}
+		p.prevAllow {
+			border-radius: 10%;
+			background-color: rgba(var(--baseColor-code), 0.2);
+			left: 100px;
+			top: 49%;
+		}
+		p.nextAllow {
+			border-radius: 10%;
+			background-color: rgba(var(--baseColor-code), 0.2);
+			right: 100px;
+			top: 49%;
+		}
+	}
 }

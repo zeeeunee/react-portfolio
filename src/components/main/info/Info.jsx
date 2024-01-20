@@ -15,17 +15,18 @@ export default function Info() {
 	return (
 		<section className='Info myScroll'>
 			<div className='showBox'>
+				<h2 className='post'>P O S T</h2>
 				{Post.map((el, idx) => {
 					const date = JSON.stringify(el.date);
 					const strDate = changeText(date.split('T')[0].slice(1), '.');
-					if (idx >= 4) return null;
+					if (idx >= 5) return null;
 					return (
 						<article key={el + idx}>
 							<div className='txt'>
 								<h2>{el.title}</h2>
 								<p>{el.content}</p>
-								<span>{strDate}</span>
 							</div>
+							<span className='date'>{strDate}</span>
 						</article>
 					);
 				})}
