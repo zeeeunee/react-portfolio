@@ -56,6 +56,9 @@ export default function Banner() {
 					</>
 				)}
 			</nav>
+			<div className='counter'>
+				<strong>{Index + 1}</strong> / <span>{num.current}</span>
+			</div>
 		</section>
 	);
 }

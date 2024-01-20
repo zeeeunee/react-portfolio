@@ -42,15 +42,26 @@
 		}
 		p.prevAllow {
 			border-radius: 10%;
-			background-color: rgba(var(--baseColor-code), 0.2);
+			background-color: rgba(var(--baseColor-code), 0.3);
 			left: 100px;
 			top: 49%;
 		}
 		p.nextAllow {
 			border-radius: 10%;
-			background-color: rgba(var(--baseColor-code), 0.2);
+			background-color: rgba(var(--baseColor-code), 0.3);
 			right: 100px;
 			top: 49%;
 		}
+	}
+	.counter {
+		padding: 5px 15px;
+		z-index: 5;
+		position: absolute;
+		right: 100px;
+		bottom: 50px;
+		font-size: var(--titSize1);
+		color: var(--bgColor);
+		border-radius: 10%;
+		background-color: rgba(var(--baseColor-code), 0.3);
 	}
 }
