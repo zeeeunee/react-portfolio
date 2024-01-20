@@ -1,9 +1,21 @@
 .Menu {
 	width: 200px;
 	height: 100vh;
+	padding: 20px;
 	background: var(--pointColor1);
 	position: fixed;
 	top: 0;
 	left: 0;
 	z-index: 5;
+	h1 {
+		font-size: var(--titSize1);
+		margin-bottom: 10px;
+	}
+	ul {
+		li {
+			padding: 10px 0;
+			font-size: var(--titSize2);
+			border-bottom: 1px solid rgba(var(--baseColor-code), 0.2);
+		}
+	}
 }
