@@ -44,22 +44,21 @@
 				margin: 30px;
 				padding: 10px;
 				cursor: pointer;
-				font-size: var(--bodySize2);
+				font-size: var(--titSize2);
 				font-family: var(--baseFont);
 				color: rgba(var(--baseColor-code), 0.3);
 				background-color: var(--bgColor);
-				border-bottom: 1px solid rgba(var(--baseColor-code), 0.6);
+				border-bottom: none;
 
 				&:hover {
 					font-weight: bold;
 					color: rgba(var(--baseColor-code), 1);
-					transition: 0.8s;
 				}
 
 				&.on {
 					font-weight: bold;
 					color: rgba(var(--baseColor-code), 1);
-					transition: 0.8s;
+					border-bottom: 1px solid rgba(var(--baseColor-code), 0.6);
 				}
 			}
 		}
