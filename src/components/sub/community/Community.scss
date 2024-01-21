@@ -1,5 +1,4 @@
 .Community {
-	width: 70vw;
 	.CommunityWrap {
 		width: 100%;
 		margin: 100px 0;
@@ -7,21 +6,23 @@
 		flex-wrap: wrap;
 		.inputBox {
 			display: flex;
+			flex-wrap: wrap;
 			width: 30%;
-			margin: 50px 0;
 
 			form {
-				width: 90%;
+				width: 100%;
 				height: 40vh;
 				padding: 25px;
+				margin-right: 20px;
 				background-color: var(--pointColor1);
 				display: flex;
 				flex-wrap: wrap;
 				align-content: space-between;
-
 				h2 {
+					width: 100%;
 					font-size: var(--titSize1);
 				}
+
 				.formTxt {
 					width: 100%;
 					input {
@@ -33,8 +34,9 @@
 					}
 					textarea {
 						width: 100%;
-						height: 20vh;
+						height: 15vh;
 						border: none;
+						margin-bottom: 7px;
 						font-family: var(--baseFont);
 						font-size: var(--bodySize1);
 					}
@@ -68,7 +70,7 @@
 			--boxGap: 15px;
 			--num: 3;
 			width: 70%;
-			margin: 50px 0;
+
 			display: flex;
 			flex-wrap: wrap;
 			justify-content: flex-start;
