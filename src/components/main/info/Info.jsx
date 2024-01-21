@@ -30,6 +30,7 @@ export default function Info() {
 								<h2>{el.title}</h2>
 								<p>{el.content}</p>
 							</div>
+
 							<span className='date'>{strDate}</span>
 						</article>
 					);

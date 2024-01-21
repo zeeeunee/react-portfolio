@@ -12,9 +12,8 @@
 			width: 100%;
 			margin-bottom: 50px;
 			display: flex;
-			//background-color: var(--pointColor3);
 			.youtubePic {
-				width: 40%;
+				width: 60%;
 				height: 400px;
 				margin: 60px 0;
 				overflow: hidden;
@@ -25,8 +24,8 @@
 				}
 			}
 			.youtubeLeft {
-				width: 60%;
-				padding: 60px;
+				width: 40%;
+				padding: 60px 60px 60px 0;
 				display: flex;
 				flex-wrap: wrap;
 				align-content: center;

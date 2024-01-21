@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react';
 import { useFlickrQuery } from '../../../hooks/useFlickrQuery';
 import './Pics.scss';
+import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 
 export default function Pics() {
 	const myID = useRef('199821135@N02');
@@ -16,7 +17,10 @@ export default function Pics() {
 					return (
 						<div>
 							<article>
-								<img key={pic.id} src={`https://live.staticflickr.com/${pic.server}/${pic.id}_${pic.secret}_m.jpg`} alt={pic.title} />
+								<Link to='/gallery'>
+									{' '}
+									<img key={pic.id} src={`https://live.staticflickr.com/${pic.server}/${pic.id}_${pic.secret}_m.jpg`} alt={pic.title} />
+								</Link>
 							</article>
 							<h2>{pic.title}</h2>
 						</div>
