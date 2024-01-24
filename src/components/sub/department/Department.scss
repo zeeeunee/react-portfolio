@@ -59,21 +59,49 @@
 			article {
 				width: 50%;
 				height: 100px;
-				padding: 0 20px;
 				align-items: center;
 				display: flex;
-				justify-content: center;
+
 				border-bottom: 1px solid rgba(var(--baseColor-code), 0.3);
 
-				&:nth-of-type(odd) {
+				.yearOdd {
+					width: 80%;
 					display: flex;
+					align-items: center;
 					justify-content: flex-end;
+					ul {
+						li {
+							text-align: right;
+						}
+					}
+				}
+				.yearEven {
+					width: 80%;
+					display: flex;
+					align-items: center;
+					justify-content: flex-start;
+				}
+
+				.arrowOdd {
+					width: 20%;
+					svg {
+						font-size: 5rem;
+					}
+				}
+				.arrowEven {
+					width: 20%;
+					display: flex;
+					justify-content: right;
+					svg {
+						font-size: 5rem;
+					}
+				}
+
+				&:nth-of-type(odd) {
 					margin-right: 50%;
 				}
 
 				&:nth-of-type(even) {
-					display: flex;
-					justify-content: flex-start;
 					margin-left: 50%;
 				}
 

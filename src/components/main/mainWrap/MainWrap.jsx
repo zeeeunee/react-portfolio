@@ -1,9 +1,8 @@
 import Banner from '../banner/Banner';
 import Btns from '../btns/Btns';
 import Info from '../info/Info';
-import News from '../news/News';
-
 import Pics from '../pics/Pics';
+import Illust from '../illust/Illust';
 import Visual from '../visual/Visual';
 import './MainWrap.scss';
 
@@ -12,7 +11,7 @@ export default function MainWrap() {
 		<div className='MainWrap'>
 			<Visual />
 			<Pics />
-			{/* <News /> */}
+			{/* <Illust /> */}
 			<Banner />
 			<Info />
 			<Btns />
