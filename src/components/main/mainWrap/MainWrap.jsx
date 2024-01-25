@@ -11,7 +11,7 @@ export default function MainWrap() {
 		<div className='MainWrap'>
 			<Visual />
 			<Pics />
-			{/* <Illust /> */}
+			<Illust />
 			<Banner />
 			<Info />
 			<Btns />
