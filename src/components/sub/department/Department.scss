@@ -41,7 +41,7 @@
 			p {
 				font-size: var(--bodySize2);
 				word-break: break-all;
-				color: rgba(var(--baseColor-code), 0.4);
+				color: rgba(var(--baseColor-code), 0.8);
 			}
 		}
 	}
@@ -254,7 +254,6 @@
 			margin: 80px auto;
 
 			.con {
-				border-left: 1px solid var(--baseColor);
 				article {
 					width: 100%;
 
