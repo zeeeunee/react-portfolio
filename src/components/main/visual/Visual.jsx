@@ -57,11 +57,6 @@ export default function Visual() {
 											<img src={el.snippet.thumbnails.standard.url} alt={el.snippet.title} />
 										</Link>
 									</p>
-									<p>
-										<Link to={`/detail/${el.id}`}>
-											<img src={el.snippet.thumbnails.standard.url} alt={el.snippet.title} />
-										</Link>
-									</p>
 								</div>
 							</SwiperSlide>
 						);
