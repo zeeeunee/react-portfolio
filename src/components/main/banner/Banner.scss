@@ -88,3 +88,27 @@
 		background-color: rgba(var(--baseColor-code), 0.3);
 	}
 }
+
+.mobile {
+	.Banner {
+		height: 40vh;
+		.swiper {
+			.swiperController {
+				bottom: 0px;
+			}
+		}
+		.arrow {
+			p.prevArrow {
+				top: 47%;
+				left: 0;
+			}
+			p.nextArrow {
+				right: 0;
+				top: 47%;
+			}
+		}
+		.counter {
+			bottom: 0px;
+		}
+	}
+}

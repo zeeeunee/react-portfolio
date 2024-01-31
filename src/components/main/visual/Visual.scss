@@ -70,44 +70,11 @@
 			}
 		}
 	}
-	// .txtBox {
-	// 	width: 100%;
-
-	// 	ul {
-	// 		width: 60%;
-	// 		height: 100%;
-	// 		position: relative;
-	// 		li {
-	// 			width: 100%;
-	// 			height: 100%;
-	// 			position: absolute;
-	// 			top: 0;
-	// 			left: 0;
-	// 			display: flex;
-	// 			flex-wrap: wrap;
-	// 			align-content: center;
-	// 			font-size: var(--bodySize1);
-	// 			word-break: break-all;
-	// 			text-align: center;
-	// 			opacity: 0;
-	// 			transform: scale(1.5);
-	// 			transition: opacity 1s, transform 1s;
-	// 			h3 {
-	// 				font-weight: normal;
-	// 				color: var(--baseColor);
-	// 			}
-	// 		}
-	// 		li.on {
-	// 			opacity: 1;
-	// 			transform: scale(1);
-	// 		}
-	// 	}
-	// }
 
 	.pagination {
 		width: 70%;
 		position: absolute;
-		bottom: 80px;
+		bottom: 5vh;
 		left: 47%;
 		display: flex;
 		gap: 10px;
@@ -129,19 +96,13 @@
 		p {
 			width: 60px;
 			height: 60px;
-			// overflow: hidden;
+
 			position: absolute;
 			bottom: 5vh;
 			cursor: pointer;
 			z-index: 6;
 			font-size: 60px;
 			color: var(--baseColor);
-
-			// img {
-			// 	width: 100%;
-			// 	height: 100%;
-			// 	object-fit: cover;
-			// }
 		}
 		p.prevBox {
 			left: 200px;
@@ -151,7 +112,7 @@
 		}
 	}
 }
-.mobile,
+
 .tablet {
 	.Visual {
 		display: flex;
@@ -160,18 +121,6 @@
 		align-content: center;
 		gap: 60px;
 
-		.txtBox {
-			width: 100%;
-			height: 30%;
-			padding-left: 0;
-			padding: 5vh 10vw;
-			position: relative;
-			top: 100px;
-
-			h3 {
-				font-size: 2.5rem;
-			}
-		}
 		.swiper {
 			width: 100%;
 			height: 70%;
@@ -184,8 +133,63 @@
 				}
 			}
 		}
+		.pagination {
+			height: 10vh;
+			left: 44%;
+		}
+		.preview {
+			p {
+				height: 12vh;
+			}
+
+			p.prevBox {
+				left: 50px;
+			}
+			p.nextBox {
+				right: 50px;
+			}
+		}
 	}
 }
+
+.mobile {
+	.Visual {
+		height: 60vh;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-content: center;
+		gap: 60px;
+		.swiper {
+			width: 100%;
+			height: 70%;
+			padding: 0 5vw;
+			position: relative;
+
+			.swiper-wrapper {
+				.swiper-slide {
+					height: 100%;
+				}
+			}
+		}
+		.pagination {
+			height: 9vh;
+			left: 38%;
+		}
+		.preview {
+			p {
+				height: 12vh;
+			}
+			p.prevBox {
+				left: 20px;
+			}
+			p.nextBox {
+				right: 20px;
+			}
+		}
+	}
+}
+
 //dark theme style
 .dark {
 	.Visual {

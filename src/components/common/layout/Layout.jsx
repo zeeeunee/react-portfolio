@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import './Layout.scss';
-import { useSplitText } from '../../../hooks/useSplitText';
+import { useSplitText } from '../../../hooks/useText';
 import Anime from '../../../asset/anime';
 import { useThrottle } from '../../../hooks/useThrottle';
 

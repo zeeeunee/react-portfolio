@@ -44,3 +44,20 @@
 		}
 	}
 }
+.tablet {
+	.Info {
+		padding: 10vw;
+	}
+}
+.mobile {
+	.Info {
+		padding: 15vw 5vw;
+		.showBox {
+			article {
+				.date {
+					display: none;
+				}
+			}
+		}
+	}
+}
