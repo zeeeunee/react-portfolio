@@ -56,6 +56,7 @@
 							color: var(--pointColor5);
 						}
 						&:nth-of-type(2) {
+							color: var(--baseColor);
 							background-color: var(--pointColor2);
 							transition: all 0.3s ease-out;
 							&:hover {
@@ -144,6 +145,7 @@
 							color: var(--pointColor5);
 						}
 						&:nth-of-type(2) {
+							color: var(--baseColor);
 							background-color: var(--pointColor1);
 							transition: all 0.3s ease-out;
 							&:hover {
@@ -186,6 +188,7 @@
 				form {
 					width: 100%;
 					height: 60vh;
+					margin-right: 0;
 				}
 			}
 			.showBox {

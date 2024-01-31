@@ -133,6 +133,7 @@
 					border: none;
 					background-color: var(--pointColor1);
 					transition: all 0.3s ease-out;
+					color: var(--baseColor);
 					&:hover {
 						background-color: var(--pointColor2);
 					}
