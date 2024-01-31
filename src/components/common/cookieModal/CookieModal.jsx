@@ -20,7 +20,7 @@ export default function CookieModal({ wid, ht, children }) {
 	return (
 		<>
 			{!Close && (
-				<aside className='CookieModal' style={{ width: wid, height: ht, marginLeft: -wid / 2, marginTop: -ht / 2 }}>
+				<aside className='CookieModal'>
 					<div className='content'>{children}</div>
 
 					<div className='controls'>
