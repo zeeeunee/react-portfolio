@@ -2,7 +2,7 @@ import { useRef, useState } from 'react';
 import './CookieModal.scss';
 import { useCookie } from '../../../hooks/useCookie';
 
-export default function CookieModal({ wid, ht, children }) {
+export default function CookieModal({ children }) {
 	const { isCookie, setCookie } = useCookie();
 
 	const checkEl = useRef(null);

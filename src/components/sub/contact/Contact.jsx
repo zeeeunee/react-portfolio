@@ -14,7 +14,6 @@ export default function Contact() {
 		const elArr = form.current.children;
 
 		Array.from(elArr).forEach(el => {
-			console.log(el);
 			if (el.name === 'user_name' || el.name === 'user_email' || el.name === 'message') el.value = '';
 		});
 	};
@@ -24,15 +23,15 @@ export default function Contact() {
 		const [user, email] = form.current.querySelectorAll('input');
 		const txtArea = form.current.querySelector('textarea');
 
-		if (!user.value || !email.value || !txtArea.value) return alert('이름, 이메일주소 문의내용을 모두 입력하세요.');
+		if (!user.value || !email.value || !txtArea.value) return alert('Please fill in all the contents.');
 
 		emailjs.sendForm('service_1gzi4dl', 'template_8l9j4yu', form.current, 'SbGYfi4rN5zFsWjvZ').then(
 			result => {
-				alert('문의 내용이 성공적으로 전송되었습니다.');
+				alert('Successfully transmitted.');
 				resetForm();
 			},
 			error => {
-				alert('일시적인 장애로 문의 전송에 실패했습니다. 다음의 메일주소로 보내주세요.');
+				alert('Transmission failed. Please send it to the following e-mail address.');
 				resetForm();
 			}
 		);

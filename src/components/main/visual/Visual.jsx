@@ -35,14 +35,6 @@ export default function Visual() {
 		}
 	});
 
-	// const trimTitle = title => {
-	// 	let resultTit = '';
-	// 	if (title.includes('(')) resultTit = title.split('(')[0];
-	// 	else if (title.includes('[')) resultTit = title.split('[')[0];
-	// 	else resultTit = title;
-	// 	return resultTit;
-	// };
-
 	return (
 		<figure className='Visual'>
 			<Swiper {...swiperOpt.current}>
@@ -63,20 +55,6 @@ export default function Visual() {
 					})}
 			</Swiper>
 
-			{/* <div className='txtBox'>
-				<ul>
-					{isSuccess &&
-						data.map((el, idx) => {
-							if (idx >= num.current) return null;
-							return (
-								<li key={el.id} className={idx === Index ? 'on' : ''}>
-									<h3>{trimTitle(el.snippet.title)}</h3>
-								</li>
-							);
-						})}
-				</ul>
-			</div> */}
-
 			<ul className='pagination'>
 				{Array(num.current)
 					.fill()
@@ -89,11 +67,9 @@ export default function Visual() {
 					<>
 						<p className='prevBox'>
 							<IoIosArrowBack onClick={() => swipeRef.current.slidePrev(400)} />
-							{/* <img src={data[PrevIndex].snippet.thumbnails.default.url} alt={data[PrevIndex].snippet.title} /> */}
 						</p>
 						<p className='nextBox'>
 							<IoIosArrowForward onClick={() => swipeRef.current.slideNext(400)} />
-							{/* <img src={data[NextIndex].snippet.thumbnails.default.url} alt={data[NextIndex].snippet.title} /> */}
 						</p>
 					</>
 				)}

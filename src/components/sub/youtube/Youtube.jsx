@@ -6,7 +6,6 @@ import { IoMdArrowDroprightCircle } from 'react-icons/io';
 import { useYoutubeQuery } from '../../../hooks/useYoutubeQuery';
 
 export default function Youtube() {
-	const customText = useCustomText('combined');
 	const shortenText = useCustomText('shorten');
 
 	const { data: Vids, isSuccess, isError, isLoading } = useYoutubeQuery();
@@ -40,8 +39,6 @@ export default function Youtube() {
 
 				{isSuccess &&
 					Vids?.map(data => {
-						// const [date, time] = data.snippet.publishedAt.split('T');
-
 						return (
 							<article key={data.id}>
 								<div className='left'>
@@ -58,12 +55,6 @@ export default function Youtube() {
 											View Detail
 										</Link>
 									</div>
-									{/* <div className='infoBox'>
-										<div className='date'>
-											<span>{customText(date, '.')}</span>
-											<em>{time.split('Z')[0]}</em>
-										</div>
-									</div> */}
 								</div>
 								<div className='txt'>
 									<h2>{shortenText(data.snippet.title, 28)}</h2>

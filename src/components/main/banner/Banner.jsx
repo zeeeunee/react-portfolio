@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react';
-import { useBannerQuery } from '../../../hooks/useBanner';
+import { useBannerQuery } from '../../../hooks/useBannerQuery';
 import { Autoplay } from 'swiper';
 import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
 import './Banner.scss';

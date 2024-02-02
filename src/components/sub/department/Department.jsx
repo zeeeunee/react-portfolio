@@ -1,21 +1,16 @@
 import Layout from '../../common/layout/Layout';
 import './Department.scss';
-import { useCustomText } from '../../../hooks/useText';
 import { useDepartmentQuery } from '../../../hooks/useDepartmentQuery';
 import { useHistoryQuery } from '../../../hooks/useHistoryQuery';
 import { FiArrowDownLeft, FiArrowDownRight } from 'react-icons/fi';
 
 export default function Department() {
-	const combinedTitle = useCustomText('combined');
 	const path = process.env.PUBLIC_URL;
-
 	const { data: MemberData, isSuccess: isMember } = useDepartmentQuery();
 	const { data: HistoryData, isSuccess: isHistory } = useHistoryQuery();
 
 	return (
 		<Layout title={'Department'}>
-			{/* <h2>{combinedTitle('History')}</h2> */}
-
 			<div className='historyGray'>
 				<section className='grayImage'>
 					<article>
