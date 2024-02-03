@@ -1,0 +1,114 @@
+.Banner {
+	width: 100%;
+	height: 60vh;
+
+	position: relative;
+
+	.swiper {
+		display: inline-block;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+		position: relative;
+
+		.swiper-wrapper {
+			height: inherit;
+			.swiper-slide {
+				width: 100%;
+				height: inherit;
+				.picture {
+					width: 100%;
+					height: 60vh;
+					overflow: hidden;
+
+					img {
+						width: 100%;
+						height: 100%;
+						object-fit: cover;
+					}
+				}
+			}
+		}
+		.swiperController {
+			position: absolute;
+			bottom: 50px;
+			right: 85px;
+			z-index: 5;
+
+			button {
+				height: 56px;
+				padding: 0 10px;
+				border: none;
+				border-radius: 10%;
+				background-color: rgba(var(--baseColor-code), 0.3);
+				cursor: pointer;
+				svg {
+					padding: 5px;
+
+					color: var(--bgColor);
+					font-size: var(--titSize1);
+				}
+			}
+		}
+	}
+	.arrow {
+		p {
+			width: 60px;
+			height: 60px;
+			position: absolute;
+			bottom: 5vh;
+			cursor: pointer;
+			z-index: 6;
+			font-size: 60px;
+			color: var(--pointColor1);
+		}
+		p.prevArrow {
+			border-radius: 10%;
+			background-color: rgba(var(--baseColor-code), 0.3);
+			left: 100px;
+			top: 49%;
+		}
+		p.nextArrow {
+			border-radius: 10%;
+			background-color: rgba(var(--baseColor-code), 0.3);
+			right: 100px;
+			top: 49%;
+		}
+	}
+	.counter {
+		height: 56px;
+		padding: 5px 15px;
+		z-index: 5;
+		position: absolute;
+		right: 200px;
+		bottom: 50px;
+		font-size: var(--titSize1);
+		color: var(--bgColor);
+		border-radius: 10%;
+		background-color: rgba(var(--baseColor-code), 0.3);
+	}
+}
+
+.mobile {
+	.Banner {
+		height: 40vh;
+		.swiper {
+			.swiperController {
+				bottom: 0px;
+			}
+		}
+		.arrow {
+			p.prevArrow {
+				top: 47%;
+				left: 0;
+			}
+			p.nextArrow {
+				right: 0;
+				top: 47%;
+			}
+		}
+		.counter {
+			bottom: 0px;
+		}
+	}
+}

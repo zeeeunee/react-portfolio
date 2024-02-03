@@ -1,10 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import Layout from '../../common/layout/Layout';
 import './Department.scss';
-//import { useCustomText } from '../../../hooks/useText';
 
 export default function Department() {
-	//const combinedTitle = useCustomText('combined');
 	// const path = useRef(process.env.PUBLIC_URL);
 	const [MemberTit, setMemberTit] = useState('');
 	const [MemberData, setMemberData] = useState([]);
@@ -36,8 +34,6 @@ export default function Department() {
 
 	return (
 		<Layout title={'Department'}>
-			{/* <h2>{combinedTitle('History')}</h2> */}
-
 			<div className='historyGray'>
 				<section className='grayImage'>
 					<article>
@@ -73,7 +69,6 @@ export default function Department() {
 					})}
 				</div>
 			</section>
-			{/* <h2>{combinedTitle('Members')}</h2> */}
 
 			<section className='memberBox'>
 				<h3>A team United by shared values</h3>

@@ -19,6 +19,7 @@ import { fetchYoutube } from './redux/youtubeSlice';
 import { fetchMember } from './redux/memberSlice';
 import { fetchHistory } from './redux/historySlice';
 import { fetchFlickr } from './redux/flickrSlice';
+import { fetchBanner } from './redux/bannerSlice';
 
 function App() {
 	const dispatch = useDispatch();
@@ -28,6 +29,7 @@ function App() {
 		dispatch(fetchYoutube());
 		dispatch(fetchMember());
 		dispatch(fetchHistory());
+		dispatch(fetchBanner());
 		dispatch(fetchFlickr({ type: 'user', id: '199821135@N02' }));
 	}, [dispatch]);
 

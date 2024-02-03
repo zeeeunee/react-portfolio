@@ -10,6 +10,7 @@ import flickrReducer from './redux/flickrSlice';
 import modalReducer from './redux/modalSlice';
 import menuReducer from './redux/menuSlice';
 import darkReducer from './redux/darkSlice';
+import bannerReducer from './redux/bannerSlice';
 
 const store = configureStore({
 	reducer: {
@@ -19,7 +20,8 @@ const store = configureStore({
 		flickr: flickrReducer,
 		modal: modalReducer,
 		menu: menuReducer,
-		dark: darkReducer
+		dark: darkReducer,
+		banner: bannerReducer
 	}
 });
 
