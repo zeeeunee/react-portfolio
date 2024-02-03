@@ -1,0 +1,185 @@
+.Visual {
+	width: 100%;
+	height: 90vh;
+	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+	overflow: hidden;
+
+	.swiper {
+		display: inline-block;
+		width: 100%;
+		height: 100%;
+		padding: 10vw 0px;
+
+		.swiper-wrapper {
+			height: inherit;
+			.swiper-slide {
+				width: 100%;
+				height: inherit;
+				.pic {
+					width: 100%;
+					height: 100%;
+					position: relative;
+					opacity: 0.4;
+					transform: scale(0.5);
+					transition: opacity 0.5s, transform 0.5s;
+					p {
+						position: absolute;
+						width: 100%;
+						height: 100%;
+						top: 0;
+						left: 0;
+						overflow: hidden;
+
+						img {
+							width: 100%;
+							height: 100%;
+							object-fit: cover;
+							transform: scale(1.5);
+						}
+					}
+				}
+			}
+			//prev-style
+			.swiper-slide-prev {
+				.pic {
+					transform: scale(0.7);
+					opacity: 0.5;
+				}
+			}
+			//active-style
+			.swiper-slide-active {
+				.pic {
+					transform: scale(1);
+					opacity: 1;
+				}
+			}
+			//active-style
+			.swiper-slide-next {
+				.pic {
+					transform: scale(0.7);
+					opacity: 0.5;
+				}
+			}
+		}
+	}
+
+	.pagination {
+		width: 70%;
+		position: absolute;
+		bottom: 5vh;
+		left: 47%;
+		display: flex;
+		gap: 10px;
+
+		li {
+			width: 10px;
+			height: 10px;
+			border-radius: 5px;
+			background: rgba(var(--baseColor-code), 0.6);
+			cursor: pointer;
+
+			&.on {
+				background: var(--pointColor2);
+			}
+		}
+	}
+	//preview thumbnails
+	.preview {
+		p {
+			width: 60px;
+			height: 60px;
+
+			position: absolute;
+			bottom: 5vh;
+			cursor: pointer;
+			z-index: 6;
+			font-size: 60px;
+			color: var(--baseColor);
+		}
+		p.prevBox {
+			left: 200px;
+		}
+		p.nextBox {
+			right: 200px;
+		}
+	}
+}
+
+.tablet {
+	.Visual {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-content: center;
+		gap: 60px;
+
+		.swiper {
+			width: 100%;
+			height: 70%;
+			padding: 5vh 10vw;
+			position: relative;
+
+			.swiper-wrapper {
+				.swiper-slide {
+					height: 100%;
+				}
+			}
+		}
+		.pagination {
+			height: 10vh;
+			left: 44%;
+		}
+		.preview {
+			p {
+				height: 12vh;
+			}
+
+			p.prevBox {
+				left: 50px;
+			}
+			p.nextBox {
+				right: 50px;
+			}
+		}
+	}
+}
+
+.mobile {
+	.Visual {
+		height: 60vh;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-content: center;
+		gap: 60px;
+		.swiper {
+			width: 100%;
+			height: 70%;
+			padding: 0 5vw;
+			position: relative;
+
+			.swiper-wrapper {
+				.swiper-slide {
+					height: 100%;
+				}
+			}
+		}
+		.pagination {
+			height: 9vh;
+			left: 38%;
+		}
+		.preview {
+			p {
+				height: 12vh;
+			}
+			p.prevBox {
+				left: 20px;
+			}
+			p.nextBox {
+				right: 20px;
+			}
+		}
+	}
+}
