@@ -19,6 +19,15 @@ const historyReducer = (state = { history: [] }, action) => {
 	}
 };
 
+const bannerReducer = (state = { banner: [] }, action) => {
+	switch (action.type) {
+		case types.BANNER.success:
+			return { ...state, banner: action.payload };
+		default:
+			return state;
+	}
+};
+
 const youtubeReducer = (state = { youtube: [] }, action) => {
 	switch (action.type) {
 		case types.YOUTUBE.success:
@@ -48,5 +57,5 @@ const menuReducer = (state = { menu: false }, action) => {
 	}
 };
 
-const reducers = combineReducers({ memberReducer, historyReducer, youtubeReducer, modalReducer, menuReducer });
+const reducers = combineReducers({ memberReducer, historyReducer, youtubeReducer, modalReducer, menuReducer, bannerReducer });
 export default reducers;

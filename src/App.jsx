@@ -35,6 +35,12 @@ function App() {
 		dispatch({ type: types.HISTORY.success, payload: json.history });
 	}, [dispatch]);
 
+	const fetchBanner = useCallback(async () => {
+		const data = await fetch(`${path.current}/DB/banner.json`);
+		const json = await data.json();
+		dispatch({ type: types.BANNER.success, payload: json.banner });
+	}, [dispatch]);
+
 	const fetchYoutube = useCallback(async () => {
 		const api_key = 'AIzaSyBQ0OBVJR5LwVP7O1wFRSbfMbLCLvWRLnE';
 		const pid = 'PLM7Wu-2kzIQPISbXB5yK53ANqLA6I1IZs';
@@ -53,7 +59,8 @@ function App() {
 		fetchDepartment();
 		fetchHistory();
 		fetchYoutube();
-	}, [fetchDepartment, fetchHistory, fetchYoutube]);
+		fetchBanner();
+	}, [fetchDepartment, fetchHistory, fetchYoutube, fetchBanner]);
 
 	return (
 		<>

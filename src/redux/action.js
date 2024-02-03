@@ -4,6 +4,12 @@ export const MEMBER = {
 	fail: 'MEMBER_FAIL'
 };
 
+export const BANNER = {
+	start: 'BANNER_START',
+	success: 'BANNER_SUCCESS',
+	fail: 'BANNER_FAIL'
+};
+
 export const HISTORY = {
 	start: 'HISTORY_START',
 	success: 'HISTORY_SUCCESS',
