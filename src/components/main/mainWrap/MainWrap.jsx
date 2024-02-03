@@ -3,6 +3,7 @@ import Visual from '../visual/Visual';
 import Btns from '../btns/Btns';
 import './MainWrap.scss';
 import Banner from '../banner/Banner';
+import Info from '../info/Info';
 
 export default function MainWrap() {
 	return (
@@ -11,6 +12,7 @@ export default function MainWrap() {
 			<Visual />
 			<Pics />
 			<Banner />
+			<Info />
 		</div>
 	);
 }
