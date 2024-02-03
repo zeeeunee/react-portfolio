@@ -24,8 +24,8 @@
 
 			li {
 				padding: 10px 15px;
-				font-size: var(--bodySize1);
-				color: rgba(var(--baseColor-code), 0.8);
+				font-size: var(--titSize2);
+				color: var(--baseColor);
 				&:hover {
 					color: var(--pointColor2);
 				}
@@ -77,6 +77,7 @@
 			cursor: pointer;
 			.menuIcon {
 				color: var(--baseColor);
+				font-size: var(--titSize2);
 			}
 		}
 	}
@@ -87,6 +88,9 @@
 			justify-content: center;
 			ul {
 				width: 80%;
+				li {
+					font-size: var(--bodySize1);
+				}
 			}
 			.darkToggle {
 				width: 20%;
