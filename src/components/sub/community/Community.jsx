@@ -2,7 +2,7 @@ import Layout from '../../common/layout/Layout';
 import './Community.scss';
 import { useEffect, useRef, useState } from 'react';
 import { useCustomText } from '../../../hooks/useText';
-import postData from './dummyPosts.json';
+import postData from '../../main/info/dummyPosts.json';
 
 export default function Community() {
 	const changeText = useCustomText('combined');

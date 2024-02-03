@@ -1,5 +1,4 @@
 .Community {
-	width: 70vw;
 	.CommunityWrap {
 		width: 100%;
 		margin: 100px 0;
@@ -7,31 +6,39 @@
 		flex-wrap: wrap;
 		.inputBox {
 			display: flex;
+			flex-wrap: wrap;
 			width: 30%;
-			margin: 50px 0;
+
 			form {
-				width: 90%;
+				width: 100%;
 				height: 40vh;
 				padding: 25px;
+				margin-right: 20px;
 				background-color: var(--pointColor1);
 				display: flex;
 				flex-wrap: wrap;
 				align-content: space-between;
 				h2 {
-					font-size: var(--titSize2);
+					width: 100%;
+					font-size: var(--titSize1);
 				}
+
 				.formTxt {
 					width: 100%;
 					input {
 						width: 100%;
-						border: rgba(var(--baseColor-code) 0.3);
+						border: none;
 						font-family: var(--baseFont);
+						font-size: var(--titSize2);
 						margin-bottom: 7px;
 					}
 					textarea {
 						width: 100%;
-						border: rgba(var(--baseColor-code) 0.3);
+						height: 15vh;
+						border: none;
+						margin-bottom: 7px;
 						font-family: var(--baseFont);
+						font-size: var(--bodySize1);
 					}
 				}
 				nav {
@@ -49,6 +56,7 @@
 							color: var(--pointColor5);
 						}
 						&:nth-of-type(2) {
+							color: var(--baseColor);
 							background-color: var(--pointColor2);
 							transition: all 0.3s ease-out;
 							&:hover {
@@ -63,7 +71,7 @@
 			--boxGap: 15px;
 			--num: 3;
 			width: 70%;
-			margin: 50px 0;
+
 			display: flex;
 			flex-wrap: wrap;
 			justify-content: flex-start;
@@ -85,6 +93,7 @@
 					font-size: var(--bodySize2);
 					margin-bottom: 5px;
 				}
+
 				.txt {
 					width: 100%;
 					display: flex;
@@ -94,28 +103,33 @@
 						border: none;
 						margin-bottom: 7px;
 						font-family: var(--baseFont);
+						font-size: var(--titSize2);
 						background-color: rgba(var(--baseColor-code), 0.1);
 						border-bottom: var(--ytColor);
 					}
 					textarea {
 						width: 100%;
+						height: 20vh;
 						border: none;
 						font-family: var(--baseFont);
+						font-size: var(--bodySize1);
 						background-color: rgba(var(--baseColor-code), 0.1);
 					}
 					h2 {
 						width: 100%;
-						font-size: var(--bodySize1);
+						font-size: var(--titSize2);
 						color: var(--baseColor);
 						margin-bottom: 5px;
 					}
 					p {
 						width: 100%;
-						margin-bottom: 70px;
-						font-size: var(--bodySize2);
+						height: 20vh;
+
+						font-size: var(--bodySize1);
 						color: rgba(var(--baseColor-code) 0.4);
 					}
 				}
+
 				nav {
 					width: 100%;
 					display: flex;
@@ -131,6 +145,7 @@
 							color: var(--pointColor5);
 						}
 						&:nth-of-type(2) {
+							color: var(--baseColor);
 							background-color: var(--pointColor1);
 							transition: all 0.3s ease-out;
 							&:hover {
@@ -152,6 +167,7 @@
 					height: 55vh;
 				}
 			}
+
 			.showBox {
 				--num: 2;
 				article {
@@ -172,6 +188,7 @@
 				form {
 					width: 100%;
 					height: 60vh;
+					margin-right: 0;
 				}
 			}
 			.showBox {
