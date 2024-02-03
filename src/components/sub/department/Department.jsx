@@ -1,7 +1,7 @@
 import Layout from '../../common/layout/Layout';
 import './Department.scss';
-import { useCustomText } from '../../../hooks/useText';
 import { useSelector } from 'react-redux';
+import { FiArrowDownLeft, FiArrowDownRight } from 'react-icons/fi';
 
 export default function Department() {
 	const path = process.env.PUBLIC_URL;
@@ -36,21 +36,42 @@ export default function Department() {
 			<section className='historyBox'>
 				<div className='con'>
 					{HistoryData?.map((history, idx) => {
-						return (
-							<article key={history + idx}>
-								<h3>{Object.keys(history)[0]}</h3>
-
-								<ul>
-									{Object.values(history)[0].map((list, idx) => {
-										return <li key={list + idx}>{list}</li>;
-									})}
-								</ul>
-							</article>
-						);
+						if (0 === idx % 2) {
+							return (
+								<article key={history + idx}>
+									<span className='arrowOdd'>
+										<FiArrowDownLeft />
+									</span>
+									<div className='yearOdd'>
+										<ul>
+											{Object.values(history)[0].map((list, idx) => {
+												return <li key={list + idx}>{list}</li>;
+											})}
+										</ul>
+										<h3>{Object.keys(history)[0]}</h3>
+									</div>
+								</article>
+							);
+						} else {
+							return (
+								<article key={history + idx}>
+									<div className='yearEven'>
+										<h3>{Object.keys(history)[0]}</h3>
+										<ul>
+											{Object.values(history)[0].map((list, idx) => {
+												return <li key={list + idx}>{list}</li>;
+											})}
+										</ul>
+									</div>
+									<span className='arrowEven'>
+										<FiArrowDownRight />
+									</span>
+								</article>
+							);
+						}
 					})}
 				</div>
 			</section>
-			{/* <h2>{combinedTitle('Members')}</h2> */}
 
 			<section className='memberBox'>
 				<h3>A team United by shared values</h3>
