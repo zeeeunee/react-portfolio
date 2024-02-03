@@ -42,10 +42,10 @@ export default function Pics() {
 				Pics.map((pic, idx) => {
 					if (idx >= num.current) return null;
 					return (
-						<div>
+						<div key={pic.id}>
 							<article>
 								<Link to='/gallery'>
-									<img key={pic.id} src={`https://live.staticflickr.com/${pic.server}/${pic.id}_${pic.secret}_m.jpg`} alt={pic.title} />
+									<img src={`https://live.staticflickr.com/${pic.server}/${pic.id}_${pic.secret}_m.jpg`} alt={pic.title} />
 								</Link>
 							</article>
 							<h2>{pic.title}</h2>
