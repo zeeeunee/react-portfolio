@@ -2,7 +2,6 @@ import { takeLatest, call, put, fork, all } from 'redux-saga/effects';
 import { fetchDepartment, fetchHistory, fetchYoutube, fetchFlickr } from './api';
 import * as types from './actionType';
 
-//members
 function* callMembers() {
 	yield takeLatest(types.MEMBERS.start, returnMembers);
 }
@@ -16,7 +15,6 @@ function* returnMembers() {
 	}
 }
 
-//history
 function* callHistory() {
 	yield takeLatest(types.HISTORY.start, returnHistory);
 }
@@ -30,7 +28,6 @@ function* returnHistory() {
 	}
 }
 
-//youtube
 function* callYoutube() {
 	yield takeLatest(types.YOUTUBE.start, returnYoutube);
 }
@@ -44,15 +41,12 @@ function* returnYoutube() {
 	}
 }
 
-//flickr
 function* callFlickr() {
 	yield takeLatest(types.FLICKR.start, returnFlickr);
 }
-//순서2 액션 객체파라미터 전달
+
 function* returnFlickr(action) {
 	try {
-		//순서3 액션 객체에 같이 전달된 opt값을 call메서드의 두번째 인수로 전달
-		//해당 두번째 인수값을 fetchFlickr함수에 전달
 		const response = yield call(fetchFlickr, action.opt);
 		yield put({ type: types.FLICKR.success, payload: response.photos.photo });
 	} catch (err) {
