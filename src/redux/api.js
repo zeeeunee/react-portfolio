@@ -12,6 +12,12 @@ export const fetchHistory = async () => {
 	return json;
 };
 
+export const fetchBanner = async () => {
+	const data = await fetch(`${path}/DB/banner.json`);
+	const json = data.json();
+	return json;
+};
+
 export const fetchYoutube = async () => {
 	const api_key = 'AIzaSyBQ0OBVJR5LwVP7O1wFRSbfMbLCLvWRLnE';
 	const pid = 'PLM7Wu-2kzIQPISbXB5yK53ANqLA6I1IZs';

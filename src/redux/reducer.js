@@ -15,6 +15,13 @@ const historyReducer = (state = { history: [] }, action) => {
 	else return state;
 };
 
+const bannerReducer = (state = { banner: [] }, action) => {
+	if (action.type === types.BANNER.start) return state;
+	else if (action.type === types.BANNER.success) return { ...state, banner: action.payload };
+	else if (action.type === types.BANNER.fail) return { ...state, banner: action.payload };
+	else return state;
+};
+
 const youtubeReducer = (state = { youtube: [] }, action) => {
 	if (action.type === types.YOUTUBE.start) return state;
 	else if (action.type === types.YOUTUBE.success) return { ...state, youtube: action.payload };
@@ -44,5 +51,14 @@ const darkReducer = (state = { dark: false }, action) => {
 	else return state;
 };
 
-const reducers = combineReducers({ membersReducer, historyReducer, youtubeReducer, flickrReducer, modalReducer, menuReducer, darkReducer });
+const reducers = combineReducers({
+	membersReducer,
+	historyReducer,
+	youtubeReducer,
+	flickrReducer,
+	modalReducer,
+	menuReducer,
+	darkReducer,
+	bannerReducer
+});
 export default reducers;

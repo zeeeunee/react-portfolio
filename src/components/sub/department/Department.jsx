@@ -4,7 +4,6 @@ import { useCustomText } from '../../../hooks/useText';
 import { useSelector } from 'react-redux';
 
 export default function Department() {
-	const combinedTitle = useCustomText('combined');
 	const path = process.env.PUBLIC_URL;
 
 	const { historyReducer, membersReducer } = useSelector(store => store);
@@ -16,8 +15,6 @@ export default function Department() {
 
 	return (
 		<Layout title={'Department'}>
-			{/* <h2>{combinedTitle('History')}</h2> */}
-
 			<div className='historyGray'>
 				<section className='grayImage'>
 					<article>

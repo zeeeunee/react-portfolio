@@ -24,6 +24,7 @@ function App() {
 	useEffect(() => {
 		dispatch({ type: types.MEMBERS.start });
 		dispatch({ type: types.HISTORY.start });
+		dispatch({ type: types.BANNER.start });
 		dispatch({ type: types.YOUTUBE.start });
 		dispatch({ type: types.FLICKR.start, opt: { type: 'user', id: '199821135@N02' } });
 	}, [dispatch]);

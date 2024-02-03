@@ -10,6 +10,12 @@ export const HISTORY = {
 	fail: 'HISTORY_FAIL'
 };
 
+export const BANNER = {
+	start: 'BANNER_START',
+	success: 'BANNER_SUCCESS',
+	fail: 'BANNER_FAIL'
+};
+
 export const YOUTUBE = {
 	start: 'YOUTUBE_START',
 	success: 'YOUTUBE_SUCCESS',

@@ -1,5 +1,5 @@
 import { takeLatest, call, put, fork, all } from 'redux-saga/effects';
-import { fetchDepartment, fetchHistory, fetchYoutube, fetchFlickr } from './api';
+import { fetchDepartment, fetchHistory, fetchYoutube, fetchFlickr, fetchBanner } from './api';
 import * as types from './actionType';
 
 function* callMembers() {
@@ -25,6 +25,19 @@ function* returnHistory() {
 		yield put({ type: types.HISTORY.success, payload: response.history });
 	} catch (err) {
 		yield put({ type: types.HISTORY.fail, payload: err });
+	}
+}
+
+function* callBanner() {
+	yield takeLatest(types.BANNER.start, returnBanner);
+}
+
+function* returnBanner() {
+	try {
+		const response = yield call(fetchBanner);
+		yield put({ type: types.BANNER.success, payload: response.banner });
+	} catch (err) {
+		yield put({ type: types.BANNER.fail, payload: err });
 	}
 }
 
@@ -55,5 +68,5 @@ function* returnFlickr(action) {
 }
 
 export default function* rootSaga() {
-	yield all([fork(callMembers), fork(callHistory), fork(callYoutube), fork(callFlickr)]);
+	yield all([fork(callMembers), fork(callHistory), fork(callYoutube), fork(callFlickr), fork(callBanner)]);
 }
