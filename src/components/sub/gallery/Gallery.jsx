@@ -132,12 +132,6 @@ export default function Gallery() {
 										</span>
 
 										<div className='profile'>
-											{/* <img
-												src={`http://farm${pic.farm}.staticflickr.com/${pic.server}/buddyicons/${pic.owner}.jpg`}
-												alt='사용자프로필이미지'
-												onError={e => e.target.setAttribute('src', 'https://www.flickr.com/images/buddyicon.gif')}
-											/> */}
-
 											<span onClick={handleUser}>{pic.owner}</span>
 										</div>
 										<h2>{shortenText(pic.title, 30)}</h2>

@@ -36,7 +36,7 @@ export default function Visual() {
 	});
 
 	return (
-		<figure className='Visual'>
+		<figure className='Visual myScroll'>
 			<Swiper {...swiperOpt.current}>
 				{Vids?.map((el, idx) => {
 					if (idx >= num.current) return null;
