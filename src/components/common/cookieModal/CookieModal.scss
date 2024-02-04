@@ -1,0 +1,46 @@
+.CookieModal {
+	width: 400px;
+	height: 300px;
+	margin-left: -200px;
+	margin-top: -150px;
+	background-color: var(--baseColor);
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	z-index: 6;
+	color: var(--bgColor);
+	padding: 30px;
+	display: flex;
+	flex-wrap: wrap;
+	align-content: space-between;
+
+	* {
+		color: inherit;
+	}
+
+	.content {
+		width: 100%;
+		h1 {
+			font-size: var(--titSize2);
+			font-weight: normal;
+			margin-bottom: 20px;
+		}
+		p {
+			font-size: var(--bodySize2);
+		}
+	}
+
+	.controls {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+
+		span {
+			cursor: pointer;
+		}
+		.closeButton {
+			border: 1px solid var(--bgColor);
+			padding: 5px 10px;
+		}
+	}
+}

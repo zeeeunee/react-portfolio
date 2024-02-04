@@ -16,12 +16,16 @@ import Menu from './components/common/menu/Menu';
 import Youtube from './components/sub/youtube/Youtube';
 import Detail from './components/sub/youtube/Detail';
 import * as types from './redux/action';
+import { useCookie } from './hooks/useCookie';
+import CookieModal from './components/common/cookieModal/CookieModal';
 
 function App() {
 	const dispatch = useDispatch();
 	const path = useRef(process.env.PUBLIC_URL);
 
 	const [Dark, setDark] = useState(false);
+
+	useCookie('today', 'done', 20);
 
 	const fetchDepartment = useCallback(async () => {
 		const data = await fetch(`${path.current}/DB/department.json`);
@@ -76,6 +80,13 @@ function App() {
 				<Route path='/contact' component={Contact} />
 				<Footer />
 				<Menu />
+				<CookieModal wid={500} ht={300}>
+					<h1>ZEEEUNEE uses cookies</h1>
+					<p>
+						We use cookies and similar technologies to enhance site navigation, analyze site usage, assist with our marketing efforts and enable you
+						to share content on social networks. By continuing to use this website, you agree to these Terms of Use.
+					</p>
+				</CookieModal>
 			</div>
 		</>
 	);
