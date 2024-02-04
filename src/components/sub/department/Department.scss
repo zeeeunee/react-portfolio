@@ -1,16 +1,18 @@
 .Department {
-	width: 70vw;
 	margin: 50px auto;
+
 	.historyGray {
 		width: 100%;
 		margin: 100px 0;
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
+
 		.grayImage {
 			width: 50%;
 			padding: 30px 0;
 			display: flex;
+
 			article {
 				width: 45%;
 				height: 300px;
@@ -30,6 +32,7 @@
 			display: flex;
 			flex-wrap: wrap;
 			align-content: center;
+
 			h2 {
 				margin-bottom: 40px;
 				font-size: var(--titSize1);
@@ -38,36 +41,70 @@
 			p {
 				font-size: var(--bodySize2);
 				word-break: break-all;
-				color: rgba(var(--baseColor-code), 0.4);
+				color: rgba(var(--baseColor-code), 0.8);
 			}
 		}
 	}
+
 	.historyBox {
 		width: 100%;
 		margin: 100px 0;
+
 		.con {
 			width: 100%;
 			display: flex;
 			flex-wrap: wrap;
 			justify-content: center;
+
 			article {
 				width: 50%;
 				height: 100px;
-				padding: 0 20px;
 				align-items: center;
 				display: flex;
-				justify-content: center;
+
 				border-bottom: 1px solid rgba(var(--baseColor-code), 0.3);
-				&:nth-of-type(odd) {
+
+				.yearOdd {
+					width: 80%;
 					display: flex;
+					align-items: center;
 					justify-content: flex-end;
+					ul {
+						li {
+							text-align: right;
+						}
+					}
+				}
+				.yearEven {
+					width: 80%;
+					display: flex;
+					align-items: center;
+					justify-content: flex-start;
+				}
+
+				.arrowOdd {
+					width: 20%;
+					svg {
+						font-size: 5rem;
+					}
+				}
+				.arrowEven {
+					width: 20%;
+					display: flex;
+					justify-content: right;
+					svg {
+						font-size: 5rem;
+					}
+				}
+
+				&:nth-of-type(odd) {
 					margin-right: 50%;
 				}
+
 				&:nth-of-type(even) {
-					display: flex;
-					justify-content: flex-start;
 					margin-left: 50%;
 				}
+
 				h3 {
 					font-weight: bold;
 					padding: 18px;
@@ -79,25 +116,29 @@
 			}
 		}
 	}
+
 	.memberBox {
 		width: 100%;
 		margin: 100px 0;
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
+
 		h3 {
 			width: 100%;
 			font-weight: bold;
 			margin: 7px;
 		}
+
 		.leftBox {
 			width: 38%;
 			padding: 50px;
 			margin: 7px;
-			background-color: var(--pointColor1);
+			background-color: var(--pointColor2);
 			display: flex;
 			flex-wrap: wrap;
 			align-content: space-between;
+
 			h3 {
 				font-weight: bold;
 				font-size: var(--pointSize);
@@ -109,29 +150,34 @@
 				font-size: var(--pointSize2);
 			}
 		}
+
 		.memberPics {
 			width: 60%;
 			display: flex;
 			flex-wrap: wrap;
 			justify-content: space-between;
+
 			article {
 				width: 30%;
-				height: 200px;
+				height: 300px;
 				margin: 7px;
 				display: flex;
 				flex-wrap: wrap;
 				overflow: hidden;
 				position: relative;
+
 				img {
 					width: 100%;
 					height: 100%;
 					object-fit: cover;
 				}
+
 				.NP {
 					position: absolute;
 					bottom: 0px;
 					width: 100%;
 					padding: 5px;
+
 					background-color: rgba(var(--baseColor-code), 0.3);
 					z-index: 5;
 					h3 {
@@ -151,11 +197,13 @@
 		}
 	}
 }
+
 .tablet {
 	.Department {
 		.historyGray {
 			.grayImage {
 				width: 100%;
+
 				article {
 					width: 100%;
 					height: 300px;
@@ -166,6 +214,7 @@
 				width: 100%;
 			}
 		}
+
 		.memberBox {
 			justify-content: space-between;
 			.leftBox {
@@ -180,6 +229,7 @@
 		}
 	}
 }
+
 .mobile {
 	.Department {
 		.historyGray {
@@ -187,6 +237,7 @@
 			flex-wrap: wrap;
 			.grayImage {
 				width: 100%;
+
 				article {
 					width: 100%;
 					height: 300px;
@@ -197,18 +248,21 @@
 				width: 100%;
 			}
 		}
+
 		.historyBox {
 			width: 100%;
 			margin: 80px auto;
+
 			.con {
-				border-left: 1px solid var(--baseColor);
 				article {
 					width: 100%;
+
 					&:nth-of-type(odd) {
 						justify-content: flex-start;
 						border-right: none;
 						margin-right: 0;
 					}
+
 					&:nth-of-type(even) {
 						justify-content: flex-start;
 						border-left: none;
