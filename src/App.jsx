@@ -20,10 +20,13 @@ import { fetchMember } from './redux/memberSlice';
 import { fetchHistory } from './redux/historySlice';
 import { fetchFlickr } from './redux/flickrSlice';
 import { fetchBanner } from './redux/bannerSlice';
+import { useCookie } from './hooks/useCookie';
+import CookieModal from './components/common/cookieModal/CookieModal';
 
 function App() {
 	const dispatch = useDispatch();
 	const Dark = useSelector(store => store.dark.isDark);
+	useCookie('today', 'done', 20);
 
 	useEffect(() => {
 		dispatch(fetchYoutube());
@@ -47,6 +50,13 @@ function App() {
 				<Route path='/contact' component={Contact} />
 				<Footer />
 				<Menu />
+				<CookieModal>
+					<h1>ZEEEUNEE uses cookies</h1>
+					<p>
+						We use cookies and similar technologies to enhance site navigation, analyze site usage, assist with our marketing efforts and enable you
+						to share content on social networks. By continuing to use this website, you agree to these Terms of Use.
+					</p>
+				</CookieModal>
 			</div>
 		</>
 	);
