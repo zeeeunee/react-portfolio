@@ -80,7 +80,7 @@ function App() {
 				<Route path='/contact' component={Contact} />
 				<Footer />
 				<Menu />
-				<CookieModal wid={500} ht={300}>
+				<CookieModal>
 					<h1>ZEEEUNEE uses cookies</h1>
 					<p>
 						We use cookies and similar technologies to enhance site navigation, analyze site usage, assist with our marketing efforts and enable you
