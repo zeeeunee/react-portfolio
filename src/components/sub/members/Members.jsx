@@ -93,23 +93,25 @@ export default function Members() {
 											<input type='text' name='userid' placeholder='ID' value={Val.userid} onChange={handleChange} />
 											{Errs.userid && <p>{Errs.userid}</p>}
 										</td>
+									</tr>
+									<tr>
 										<td>
 											<input type='text' name='email' placeholder='Email' value={Val.email} onChange={handleChange} />
 											{Errs.email && <p>{Errs.email}</p>}
 										</td>
 									</tr>
-
 									<tr>
 										<td>
 											<input type='password' name='pwd1' placeholder='Password' value={Val.pwd1} onChange={handleChange} />
 											{Errs.pwd1 && <p>{Errs.pwd1}</p>}
 										</td>
+									</tr>
+									<tr>
 										<td>
 											<input type='password' name='pwd2' placeholder='Re-Password' value={Val.pwd2} onChange={handleChange} />
 											{Errs.pwd2 && <p>{Errs.pwd2}</p>}
 										</td>
 									</tr>
-
 									<tr>
 										<td colSpan='2'>
 											<select name='edu' onChange={handleChange}>
@@ -122,35 +124,28 @@ export default function Members() {
 											{Errs.edu && <p>{Errs.edu}</p>}
 										</td>
 									</tr>
-
 									<tr>
 										<td colSpan='2'>
 											<input type='radio' defaultValue='female' id='female' name='gender' onChange={handleChange} />
 											<label htmlFor='female'>Female</label>
-
 											<input type='radio' defaultValue='male' id='male' name='gender' onChange={handleChange} />
 											<label htmlFor='male'>Male</label>
 											{Errs.gender && <p>{Errs.gender}</p>}
 										</td>
 									</tr>
-
 									<tr>
 										<td colSpan='2'>
 											<input type='checkbox' name='interest' id='sports' defaultValue='sports' onChange={handleCheck} />
 											<label htmlFor='sports'>Sports</label>
-
 											<input type='checkbox' name='interest' id='reading' defaultValue='reading' onChange={handleCheck} />
 											<label htmlFor='reading'>Reading</label>
-
 											<input type='checkbox' name='interest' id='music' defaultValue='music' onChange={handleCheck} />
 											<label htmlFor='music'>Music</label>
-
 											<input type='checkbox' name='interest' id='game' defaultValue='game' onChange={handleCheck} />
 											<label htmlFor='camping'>Camping</label>
 											{Errs.interest && <p>{Errs.interest}</p>}
 										</td>
 									</tr>
-
 									<tr>
 										<td colSpan='2'>
 											<textarea

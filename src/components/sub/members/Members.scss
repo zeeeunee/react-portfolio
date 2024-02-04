@@ -1,11 +1,18 @@
 .Members {
-	.wrap {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	h1 {
 		width: 100%;
+	}
+
+	.wrap {
+		width: 80%;
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
 		.memberPic {
-			width: 30%;
+			width: 35%;
 			margin: 100px 0;
 			overflow: hidden;
 			img {
@@ -14,8 +21,9 @@
 				object-fit: cover;
 			}
 		}
+
 		.formBox {
-			width: 70%;
+			width: 65%;
 			margin: 100px 0;
 			padding: 20px;
 			background-color: var(--ytColor);
@@ -107,6 +115,7 @@
 			}
 			.formBox {
 				width: 100%;
+				padding: 0px;
 				table {
 					tr {
 						td {
@@ -115,7 +124,7 @@
 								margin: 0 10px 0 0;
 							}
 							label {
-								margin: 0 60px 0 0;
+								margin: 0 50px 0 0;
 							}
 						}
 					}
