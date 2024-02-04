@@ -16,10 +16,13 @@ import { useMedia } from './hooks/useMedia';
 import Menu from './components/common/menu/Menu';
 import Youtube from './components/sub/youtube/Youtube';
 import Detail from './components/sub/youtube/Detail';
+import { useCookie } from './hooks/useCookie';
+import CookieModal from './components/common/cookieModal/CookieModal';
 
 function App() {
 	const dispatch = useDispatch();
 	const Dark = useSelector(store => store.darkReducer.dark);
+	useCookie('today', 'done', 20);
 
 	useEffect(() => {
 		dispatch({ type: types.MEMBERS.start });
@@ -43,6 +46,13 @@ function App() {
 				<Route path='/contact' component={Contact} />
 				<Footer />
 				<Menu />
+				<CookieModal wid={500} ht={300}>
+					<h1>ZEEEUNEE uses cookies</h1>
+					<p>
+						We use cookies and similar technologies to enhance site navigation, analyze site usage, assist with our marketing efforts and enable you
+						to share content on social networks. By continuing to use this website, you agree to these Terms of Use.
+					</p>
+				</CookieModal>
 			</div>
 		</>
 	);
