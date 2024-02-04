@@ -1,8 +1,8 @@
 .CookieModal {
-	width: 400px;
-	height: 300px;
-	margin-left: -200px;
-	margin-top: -150px;
+	width: 600px;
+	height: 400px;
+	margin-left: -300px;
+	margin-top: -200px;
 	background-color: var(--baseColor);
 	position: fixed;
 	top: 50%;
@@ -42,5 +42,13 @@
 			border: 1px solid var(--bgColor);
 			padding: 5px 10px;
 		}
+	}
+}
+.mobile {
+	.CookieModal {
+		width: 400px;
+		height: 300px;
+		margin-left: -200px;
+		margin-top: -150px;
 	}
 }
