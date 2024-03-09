@@ -29,7 +29,6 @@ export const fetchYoutube = async () => {
 	return json;
 };
 
-//순서4 saga단에서 call메서드의 2번째 인수로 전달 된 opt값이 내부로 전달
 export const fetchFlickr = async opt => {
 	const num = 100;
 	const flickr_api = '7973628e19035e31ccf3734cc641b14f';
@@ -50,8 +49,5 @@ export const fetchFlickr = async opt => {
 	const data = await fetch(url);
 	const json = await data.json();
 
-	//순서5 saga에서는 순수 json객체만 반환시킴
-	//이유는 saga단에서 promise상태값에 따라서 데이터값을 액션에 담아줌
-	//지금 단계에서는 promise상태가 pending상태이기 때문에 json안쪽의 property접근불가
 	return json;
 };
